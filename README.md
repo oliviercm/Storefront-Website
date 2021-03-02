@@ -1,10 +1,6 @@
 # Storefront
 
-This is a storefront running on a LAMP stack.
-
-## Description of Components
-
-WIP
+This is an HTML storefront.
 
 ## Authors
 
