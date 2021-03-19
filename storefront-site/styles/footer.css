@@ -47,6 +47,10 @@ footer hr {
     text-decoration: none;
 }
 
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
 .footer-logo-container {
     margin-top: 24px;
     display: flex;
