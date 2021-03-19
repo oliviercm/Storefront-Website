@@ -47,10 +47,6 @@ footer hr {
     text-decoration: none;
 }
 
-.footer-nav-spacer {
-    width: 24px;
-}
-
 .footer-logo-container {
     margin-top: 24px;
     display: flex;
