@@ -6,36 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="header.css">
 </head>
 
-<body topmargin="20">
-    <table>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="./index.html">
+                <img src="./images/logo-transparent.png" class="logo">
+            </a>
+        </div>
+        <form class="search-form">
+            <input type="text" class="search-field" autocomplete="off" placeholder="Search...">
+        </form>
+        <nav class="header-nav">
+            <a href="./html/cart.html" class="header-nav-link">🛒 Cart</a>
+            <a href="./html/user-preferences.html" class="header-nav-link">⚙️ Preferences</a>
+            <a href="./html/login.html" class="header-nav-link">Login</a>
+        </nav>
+    </header>
+
+    <table align="center">
         <tr>
-            <th><a href="./index.html"><img src="./images/gray-circle.png" width="48"></a></th>
-            <th nowrap>Pandemic Essentials</th>
-            <th width="100%"></th>
-            <th nowrap><a href="./html/cart.html">🛒 Cart</a></th>
-            <th><a href="./html/login.html">Login</a></th>
-            <th><a href="./html/user-preferences.html">Preferences</a></th>
-        </tr>
-    </table>
-    
-    <table align = "center">
-        <tr>
-            <th><center><h1>Products</h1></center></th>
+            <th>
+                <center>
+                    <h1>Products</h1>
+                </center>
+            </th>
             <th> </th>
             <th>
-                <form>                
+                <form>
                     <select name="Filter">
-                    <OPTION VALUE=Default>Search/Filter
-                    <OPTION VALUE=Price>Price
-                    <OPTION VALUE=Rating>Rating
+                        <OPTION VALUE=Default>Search/Filter
+                        <OPTION VALUE=Price>Price
+                        <OPTION VALUE=Rating>Rating
                     </select>
                 </form>
             </th>
             <br>
             <br>
-        
+
         <tr>
             <th><a href="./html/products/product1.html"><img src="./images/product1.png" width="200"></a></th>
             <th><a href="./html/products/product2.html"><img src="./images/product2.png" width="200"></a></th>
