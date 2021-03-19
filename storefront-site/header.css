@@ -61,6 +61,7 @@ header {
     padding-left: 40px;
     resize: horizontal;
     width: 100%;
+    border-radius: 4px;
 }
 
 .search-field:focus {
