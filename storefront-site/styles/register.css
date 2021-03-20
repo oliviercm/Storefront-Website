@@ -66,6 +66,7 @@
 
 .create-account-button:hover {
     cursor: pointer;
+    background-image: linear-gradient(#e4c782, #e0b23d);
 }
 
 #password-requirement {

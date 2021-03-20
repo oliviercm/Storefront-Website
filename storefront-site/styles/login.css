@@ -66,6 +66,7 @@
 
 .sign-in-button:hover {
     cursor: pointer;
+    background-image: linear-gradient(#e4c782, #e0b23d);
 }
 
 #disclaimer {
@@ -108,4 +109,5 @@
 
 .create-account-container button:hover {
     cursor: pointer;
+    background-image: linear-gradient(#dddddd, #bbbbbb);
 }
