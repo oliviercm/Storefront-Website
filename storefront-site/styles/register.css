@@ -64,6 +64,10 @@
     margin-bottom: 12px;
 }
 
+.create-account-button:hover {
+    cursor: pointer;
+}
+
 #password-requirement {
     font-size: 75%;
 }
