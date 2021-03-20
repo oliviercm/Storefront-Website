@@ -82,6 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .create-account-container span {
