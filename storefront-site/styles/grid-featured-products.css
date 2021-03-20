@@ -72,8 +72,8 @@
 .featured-product img {
     display: block;
     margin: auto;
-    max-height: 85%;
-    max-width: 85%;
+    max-height: 200px;
+    max-width: 200px;
     width: auto;
     height: auto;
 }
