@@ -42,3 +42,7 @@ footer .mini-footer-content nav a {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+footer span {
+    white-space: nowrap;
+}
