@@ -1,0 +1,16 @@
+.homepage-banner-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 12px;
+    padding: 0;
+}
+
+.homepage-banner {
+    width: 100%;
+}
+
+.homepage-banner img {
+    width: 100%;
+}
