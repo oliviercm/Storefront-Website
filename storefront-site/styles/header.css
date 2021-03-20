@@ -71,3 +71,76 @@ header {
     outline: none;
     border: 3px solid goldenrod;
 }
+
+.header-login-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.header-login-dropdown-content {
+    position: relative;
+    display: none;
+    font-family: Arial, sans-serif;
+}
+
+.header-login-dropdown-content ul, .header-login-dropdown-content li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-login-dropdown-content:after {
+    position: absolute;
+    left: 80%;
+    transform: translateX(-50%);
+    top: 0px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #337281;
+}
+
+.header-login-dropdown-content a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 15px 20px;
+}
+
+.header-login-dropdown-content a:hover {
+    text-decoration: underline;
+    color: #c75b2d;
+}
+
+.header-login-dropdown-content>div {
+    white-space: nowrap;
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    padding-top: 12px;
+}
+
+.header-login-dropdown-flex {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid #337281;
+    border-width: 2px;
+    border-radius: 4px;
+}
+
+.header-login-dropdown-content>ul>li>a {
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.header-login-dropdown:hover>.header-login-dropdown-content {
+    display: block;
+}
+
+.header-login-dropdown-content:hover {
+    display: block;
+}
