@@ -38,7 +38,7 @@ header {
     font-weight: bold;
     line-height: 25px;
     text-decoration: none;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 .header-nav-link:hover {

@@ -6,7 +6,7 @@
     width: 90%;
     margin: 1% auto;
     padding: 0;
-    font-family: Verdana;
+    font-family: Verdana, sans-serif;
 }
 
 .featured-product-container {
@@ -59,7 +59,7 @@
     margin-right: auto;
     margin-top: 18px;
     margin-bottom: 18px;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background-color: white;
     border: 2px solid gray;
     border-radius: 4px;
