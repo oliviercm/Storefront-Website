@@ -1,0 +1,122 @@
+.register-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 24px;
+    padding-top: 12px;
+}
+
+.logo {
+    width: 256px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.register-form {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-top: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.register-form hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 1px;
+    border: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0));
+}
+
+.register-form input {
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    width: 338px;
+    padding: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.8);
+    border-radius: 4px;
+}
+
+.register-form input:focus {
+    outline-width: 2;
+    outline-color: goldenrod;
+}
+
+.form-spacer {
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.create-account-button {
+    background-image: linear-gradient(#f6db9d, #f0c352);
+    font-size: 110%;
+    padding: 8px;
+    margin: auto;
+    width: 100%;
+    border: 1px solid #a88734;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+#password-requirement {
+    font-size: 75%;
+}
+
+#disclaimer {
+    font-size: 70%;
+}
+
+#already-registered {
+    font-size: 90%;
+}
+
+footer hr {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(128, 128, 128, 0.5), rgba(0, 0, 0, 0));
+}
+
+footer .register-footer-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 30%;
+}
+
+footer .register-footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.8;
+    margin-top: 12px;
+    width: 100%;
+    font-size: 70%;
+    color: #505050;
+    font-family: Arial, sans-serif;
+}
+
+footer .register-footer-content nav {
+    display: flex;
+    flex: 0;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    line-height: 2;
+    margin-top: 8px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+footer .register-footer-content nav a {
+    margin-left: 10px;
+    margin-right: 10px;
+}

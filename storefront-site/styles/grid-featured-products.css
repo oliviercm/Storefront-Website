@@ -37,16 +37,6 @@
     padding-top: 0px;
 }
 
-.featured-product-content span a {
-    text-decoration: none;
-    color: #0066c0;
-}
-
-.featured-product-content span a:hover {
-    text-decoration: underline;
-    color: #c75b2d;
-}
-
 .featured-product {
     display: flex;
     align-items: center;

@@ -3,6 +3,16 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #0066c0;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #c75b2d;
+}
+
 a:focus {
     outline-color: transparent;
 }

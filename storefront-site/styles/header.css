@@ -29,6 +29,11 @@ header {
     white-space: nowrap;
 }
 
+.header-nav a, .header-nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .header-nav-link {
     background: #4E9CAF;
     padding: 10px;
