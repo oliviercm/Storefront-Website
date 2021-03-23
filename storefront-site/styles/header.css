@@ -43,7 +43,7 @@ header {
     font-weight: bold;
     line-height: 25px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-nav-link:hover {
@@ -90,7 +90,7 @@ header {
 .header-login-dropdown-content {
     position: relative;
     display: none;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-login-dropdown-content ul, .header-login-dropdown-content li {
