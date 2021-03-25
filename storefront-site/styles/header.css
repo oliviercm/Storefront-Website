@@ -18,6 +18,11 @@ header {
     margin-right: 20px;
 }
 
+.logo-container h1 {
+    display: inline;
+    margin: 0;
+}
+
 .logo {
     max-height: 64px;
     margin: 0;
