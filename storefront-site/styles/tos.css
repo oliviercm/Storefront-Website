@@ -24,3 +24,9 @@
 .terms-of-service {
     grid-area: main;
 }
+
+.terms-of-service-nav ul {
+    list-style: disc inside;
+    padding-left: 24px;
+    margin: 12px 0 24px 0;
+}

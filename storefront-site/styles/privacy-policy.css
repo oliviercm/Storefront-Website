@@ -24,3 +24,9 @@
 .privacy-policy {
     grid-area: main;
 }
+
+.privacy-policy-nav ul {
+    list-style: disc inside;
+    padding-left: 24px;
+    margin: 12px 0 24px 0;
+}
