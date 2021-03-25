@@ -1,0 +1,26 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 13% auto;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar main";
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.sidebar-nav {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 12px;
+}
+
+.sidebar-nav li {
+    line-height: 1.5;
+    font-size: 0.9em;
+}
+
+.privacy-policy {
+    grid-area: main;
+}
