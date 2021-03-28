@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Preferences</title>
+    <title>Change Email</title>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/google-material-icons.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/user-preferences.css">
+    <link rel="stylesheet" href="../styles/user-preferences-change.css">
     <link rel="stylesheet" href="../styles/footer.css">
 </head>
 
@@ -52,49 +52,25 @@
         <nav class="hierarchical-nav">
             <a href="./user-preferences.html">Your Account</a>
             &nbsp;>&nbsp;
-            <b>Preferences</b>
+            <a href="./user-preferences.html">Preferences</a>
+            &nbsp;>&nbsp;
+            <b>Change Email</b>
         </nav>
-        <h1>Preferences</h1>
-        <div class="preferences-form">
+        <h1>Change Email</h1>
+        <form class="preferences-form" action="./user-preferences.html">
             <div class="preferences-form-section">
-                <a href="./user-preferences-change-name.html">
-                    <button type="button">Edit</button>
-                </a>
-                <b>Name:</b>
+                Use the form below to change the email for your account.
                 <br>
-                John Doe
-            </div>
-            <hr>
-            <div class="preferences-form-section">
-                <a href="./user-preferences-change-email.html">
-                    <button type="button">Edit</button>
-                </a>
-                <b>Email:</b>
                 <br>
-                example@example.com
-            </div>
-            <hr>
-            <div class="preferences-form-section">
-                <a href="./user-preferences-change-password.html">
-                    <button type="button">Edit</button>
-                </a>
-                <b>Password:</b>
+                <label for="email"><b>New email</b></label>
                 <br>
-                ********
-            </div>
-            <hr>
-            <div class="preferences-form-section">
-                <a href="./user-preferences-change-email-subscription.html">
-                    <button type="button">Edit</button>
-                </a>
-                <b>Email Subscriptions:</b>
+                <input type="email" name="email" value="example@example.com" required autofocus>
                 <br>
-                <span style="color: #505050;">Manage your email subscription preferences</span>
+                <a href="../index.html">
+                    <button type="submit" class="submit-button">Save Changes</button>
+                </a>
             </div>
-        </div>
-        <a href="../index.html">
-            <button type="button" class="preferences-done-button">Done</button>
-        </a>
+        </form>
     </div>
 
     <!-- BEGIN FOOTER -->
