@@ -1,58 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/mini-footer.css">
 </head>
 
-<body topmargin="20"> 
-    <table>
-        <tr>
-            <th><a href="../index.html"><img src="../images/gray-circle.png" width="48"></a></th>
-            <th nowrap>Pandemic Essentials</th>
-            <th width="100%"></th>
-            <th nowrap><a href="./cart.html">🛒 Cart</a></th>
-            <th><a href="./login.html">Login</a></th>
-        </tr>
-    </table>
-    <h2>Login Page</h2><br>    
-    <div class="login">    
-    <form id="login" method="get" action="login.php">    
-        <label><b>User Name     
-        </b>    
-        </label>    
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
-        <br><br>    
-        <label><b>Password     
-        </b>    
-        </label>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
-        <br><br>    
-        <input type="button" name="log" id="log" value="Log In">       
-        <br><br>    
-        <input type="checkbox" id="check">    
-        <span>Remember me</span>    
-        <br><br>    
-        <a href="#">Forgot Password</a>    
-        <br>
-        <br>
-        <td><a href="./register.html">Create an Account</a></td>
-        <br>
-    </form>     
-</div>    
-</body>    
-
-<footer>
-    <table>
-        <tr>
-            <td><a href="./aboutus.html">About us</a></td>
-            <td><a href="./faq.html">FAQ's</a></td>
-        </tr>
-        <tr>
-            <td width="100%" align="center"> &copy; 2021 Copyright Codeninjas</td>
-        </tr>
-    </table>
-</footer>
+<body>
+    <div class="login-outer-container">
+        <a href="../index.html" class="logo">
+            <img src="../images/logo-black.png" class="logo">
+        </a>
+        <form class="login-form">
+            <h1>Sign-In</h1>
+            <label for="email"><b>Email</b></label>
+            <br>
+            <input type="email" name="email" required autofocus>
+            <br>
+            <div class="form-spacer"></div>
+            <label for="password"><b>Password</b></label>
+            <br>
+            <input type="password" name="password" required>
+            <br>
+            <div class="form-spacer"></div>
+            <button type="submit" class="sign-in-button">Continue</button>
+            <br>
+            <span id="disclaimer">By continuing, you agree to our <a href="./tos.html">Terms of Service</a> and <a href="./privacy-policy.html">Privacy Policy</a>.</span>
+            <br>
+            <div class="form-spacer"></div>
+            <a href="./faq.html" id="need-help">Need help?</a>
+        </form>
+        <div class="create-account-container">
+            <span>New to PandemicEssentials?</span>
+            <a href="register.html">
+                <button type="button" class="create-account-link">Create your PandemicEssentials Account</button>
+            </a>
+        </div>
+    </div>
+    <footer id="footer">
+        <hr>
+        <div class="mini-footer-container">
+            <div class="mini-footer-content">
+                <nav>
+                    <a href="./tos.html">Terms of Service</a>
+                    <a href="./privacy-policy.html">Privacy Policy</a>
+                    <a href="./faq.html">Help</a>
+                </nav>
+                <span>
+                    &copy; 2021, PandemicEssentials.com or its affiliates
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>

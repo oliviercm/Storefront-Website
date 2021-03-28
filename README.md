@@ -1,6 +1,6 @@
 # Description
 
-This is an HTML-only storefront.
+This is a storefront website.
 
 ## Authors
 
