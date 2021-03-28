@@ -65,6 +65,10 @@ a:focus {
     outline-color: transparent;
 }
 
+b {
+    font-weight: bold;
+}
+
 h1 {
     display: block;
     font-size: 2em;
