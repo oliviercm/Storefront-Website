@@ -29,8 +29,8 @@
     margin-bottom: 18px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
-    border: 2px solid gray;
-    border-radius: 4px;
+    /* border: 2px solid gray;
+    border-radius: 4px; */
 }
 
 .product-listing a {
@@ -40,9 +40,9 @@
     text-decoration: none;
 }
 
-.product-listing:hover {
+/* .product-listing:hover {
     border: 2px solid goldenrod;
-}
+} */
 
 .product-listing img {
     display: block;
