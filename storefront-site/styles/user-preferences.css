@@ -1,0 +1,86 @@
+.hierarchical-nav {
+    font-size: 0.85em;
+}
+
+.preferences-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 24px;
+    padding-top: 12px;
+}
+
+.preferences-form {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.preferences-form h1 {
+    font-size: 1.5em;
+    margin: 0.75em 0;
+}
+
+.preferences-form input {
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    width: 338px;
+    padding: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.8);
+    border-radius: 4px;
+}
+
+.preferences-form input:focus {
+    outline-width: 2;
+    outline-color: goldenrod;
+}
+
+.preferences-form-section {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.5;
+    font-size: 0.9em;
+}
+
+.preferences-form-section b {
+    font-size: 1.1em;
+}
+
+.preferences-form hr {
+    border: none;
+    height: 1px;
+    color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.preferences-form-section button {
+    float: right;
+    background-image: linear-gradient(#f0f0f0, #d0d0d0);
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    padding: 7px 20px 7px 20px;
+}
+
+.preferences-form-section button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#dddddd, #bbbbbb);
+}
+
+.preferences-done-button {
+    background-image: linear-gradient(#f6db9d, #f0c352);
+    padding: 8px 12px;
+    border: 1px solid #a88734;
+    border-radius: 2px;
+    margin: 20px 0px 24px 16px;
+}
+
+.preferences-done-button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#e4c782, #e0b23d);
+}
