@@ -1,0 +1,22 @@
+.meet {
+    margin-left: 4vw;
+}
+.team {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 10vh;
+}
+
+.head-shot {
+    height: 200px; 
+    width: 200px; 
+    margin-left: 60px;
+    background-color: gray;
+}
+
+.what-we-do {
+    margin-left: 4vw;
+    width: 80vw;
+    margin-bottom: 4vh;
+}
