@@ -1,0 +1,19 @@
+.confirmation-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-top: 12px;
+}
+
+.confirmation-inner-container {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}

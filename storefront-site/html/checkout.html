@@ -6,59 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Out</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/google-material-icons.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/checkout.css">
 </head>
 
-<body topmargin="20">
-    <table>
+<body>
+    <!-- Header, the top bar , hyperlink is set up properly-->
+    <header>
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
+            </a>
+        </div>
+        <form class="search-form">
+            <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
+        </form>
+        <nav class="header-nav">
+            <a href="./cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart</a>
+            <a href="./user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+                Preferences</a>
+            <div class="header-login-dropdown">
+                <a href="./login.html" class="header-nav-link">Sign In ▼</a>
+                <nav class="header-login-dropdown-content">
+                    <div>
+                        <div class="header-login-dropdown-flex">
+                            <a href="./login.html">Sign In <span class="material-icons"
+                                    style="font-size: 16px;">login</span></a>
+                            <a href="./register.html">Register <span class="material-icons"
+                                    style="font-size: 16px;">person_add</span></a>
+                            <a href="../index.html">Log Out <span class="material-icons"
+                                    style="font-size: 16px;">logout</span></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
+    <!-- END HEADER -->
+
+    <table align="right">
         <tr>
-            <th><a href="../index.html"><img src="../images/gray-circle.png" width="48"></a></th>
-            <th nowrap>Pandemic Essentials</th>
-            <th width="100%"></th>
-            <th nowrap><a href="./cart.html">🛒 Cart</a></th>
-            <th><a href="./login.html">Login</a></th>
-            <th><a href="./user-preferences.html">Preferences</a></th>
+            <th width="15%">⚪</th>
+            <th width="0%">――――――――</th>
+            <th width="15%">⚫</th>
+            <th width="0%">――――――――</th>
+            <th width="15%">⚪</th>
+        </tr>
+        <tr>
+            <th width="15%">Cart</th>
+            <th width="0%"></th>
+            <th width="15%">Payment</th>
+            <th width="0%"></th>
+            <th width="15%">Complete</th>
         </tr>
     </table>
     <br>
     <br>
-        <table align="right">
-            <tr>
-                <th width="15%">⚪</th>
-                <th width="0%">――――――――</th>
-                <th width="15%">⚫</th>
-                <th width="0%">――――――――</th>
-                <th width="15%">⚪</th>
-            </tr>
-            <tr>
-                <th width="15%">Cart</th>
-                <th width="0%"></th>
-                <th width="15%">Payment</th>
-                <th width="0%"></th>
-                <th width="15%">Complete</th>
-            </tr>
-        </table>
 
-        <br>
-        <br>
-        <form>
-            <table>
-                <tr>
-                    <th><label for="cardNumber">CARD NUMBER</label></th>>
-                    <th width="10%"></th>
-                    <th><label for="securityNumber">CVC</label></th>
-                </tr>
-                <tr>
-                    <th><input type="text" id="cardNumber" name="cardNumber" value=></th>
-                    <th width="10%"></th>
-                    <th><input type="text" id="securityNumber" name="CVC" value=><br></th>
-                </tr>
-            </table>
-            <label for="cardHolder"><strong>CARD HOLDER NAME</strong></label><br>
-            <input type="text" id="cardName" name="cardName" value=><br>
-
-            <label for="expiration"><strong>EXPIRATION DATE</strong> </label><br>
-            <input list="Day" name="Day">
-            <datalist id="Day">
+    <div class="checkout-outer-container">
+        <form class="checkout-billingAddress">
+            <h2>Card Information</h2>
+            <label for="cardInfo"><b>CARD NUMBER </b></label><br>
+            <input type="text" id="cardNumber" name="cardNumber" onkeyup="value=value.replace(/[^\d]/g,'')"
+                maxlength="16" placeholder="0000 0000 0000 0000">
+            <input type="text" id="cvc" name="CVC" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"
+                placeholder=CVC>
+            <br>
+            <label for="cardName"><b>CARD HOLDER NAME </b></label><br>
+            <input type="text" id="cardName" name="cardName" placeholder="Code Ninja">
+            <br>
+            <label for="expiration"><b>EXPIRATION DATE </b></label><br>
+            <input list="Day" name="Day" placeholder = "Day">
+            <datalist id="Day" >
                 <option value="1">
                 <option value="2">
                 <option value="3">
@@ -69,7 +92,7 @@
                 <option value="8">
                 <option value="9">
                 <option value="10">
-                <option value="11">                
+                <option value="11">
                 <option value="12">
                 <option value="13">
                 <option value="14">
@@ -90,11 +113,9 @@
                 <option value="29">
                 <option value="30">
                 <option value="31">
-              </datalist>
-              DD
-            &nbsp; &nbsp;
-              <input list="Month" name="Month">
-              <datalist id="Month">
+            </datalist>
+            <input list="Month" name="Month" placeholder = "Month">
+            <datalist id="Month">
                 <option value="Jan">
                 <option value="Feb">
                 <option value="Mar">
@@ -104,83 +125,119 @@
                 <option value="July">
                 <option value="Aug">
                 <option value="Sept">
-                <option value="Oct">                
+                <option value="Oct">
                 <option value="Nov">
                 <option value="Dec">
-                </datalist>
-                MM
-            &nbsp; &nbsp;
-              <input list="Year" name="Year">
-              <datalist id="Year">
-                <option value="2021">
-                <option value="2022">
-                <option value="2023">
-                <option value="2024">
-                <option value="2025">
-                <option value="2026">
-                <option value="2027">
-                <option value="2028">
-                <option value="2029">
-                <option value="2030">
-                </datalist>
-                YY
-                <br>
-                <br>
-            <h3> SHIPPING ADDRESS</h3>
-                <label for="fullName">Full NAME</label><br>
-                <input type="text" id="fullName" name="fullName" value=""><br>
-                <label for="streetAddress">STREET ADDRESS</label><br>
-                <input type="text" id="streetAddress" name="streetAddress" value="">
-                <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit"><br>
-                <label for="city">TOWN/CITY</label><br>
-                <input type="text" id="streetAddress" name="streetAddress" value=""><br>
-                <label for="state">STATE</label><br>
-                <input type="text" id="State" name="state" value="">                
-                <input type="text" id="Zip" name="Zip" placeholder="Zip Code"><br>
-                <br>
+            </datalist>
 
-            
-                <h5> Billing Address</h5>
-                <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">
-                <label for="sameAddress">Same as Shipping Address</label><br><br>
+            <input list="Year" name="Year" placeholder = "Year">
+            <datalist id="Year">
+                <option value="21">
+                <option value="22">
+                <option value="23">
+                <option value="24">
+                <option value="25">
+                <option value="26">
+                <option value="27">
+                <option value="28">
+                <option value="29">
+                <option value="30">
+            </datalist>
+
+            <h2>Shipping Address</h2>
+            <label for="fullName"><b>Full Name </b></label><br>
+            <input type="text" id="fullName" name="fullName" placeholder="Code Ninja"><br>
+            <label for="streetAddress"><b>STREET ADDRESS </b></label><br>
+            <input type="text" id="streetAddress" name="streetAddress" value="">
+            <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit"><br>
+            <label for="city"><b>TOWN/CITY</b></label><br>
+            <input type="text" id="streetAddress" name="streetAddress" value=""><br>
+            <label for="state"><b>STATE</b></label><br>
+        <input type="text" id="State" name="state" value="">
+        <input type="text" id="Zip" name="Zip" placeholder="Zip Code"><br>
+        <h5> Billing Address</h5>
+        <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">
+        <label for="sameAddress">Same as Shipping Address</label><br><br>
         </form>
-        <table width="40%">
-            <tr>
-                <td align="right">Subtotal: <b>$24.97</b></td>
-            </tr>
-            <tr>
-                <td align="right">Tax: <b>$1.81</b></td>
-            </tr>
-            <tr>
-                <td align="right">Shipping: <b>$4.99</b></td>
-            </tr>
-            <tr>
-                <td align="right"><b>―――――――――――――――</b></td>
-            </tr>
-            <tr>
-                <td align="right">Total Cart Price: <b>$31.77</b></td>
-            </tr>
-            <tr>
-                <td align="right">
-                    <a href="./confirmation.html">
-                        <input type="submit" value="➤ Purchase">
-                    </form>
-                </td>
-            </tr>
-        </table>
-        <footer>
-            <table>
-                <tr>
-                    <td><a href="./aboutus.html">About us</a></td>
-                    <td><a href="./faq.html">FAQ's</a></td>
-                </tr>
-                <tr>
-                    <td width="100%" align="center"> &copy; 2021 Copyright Codeninjas</td>
-                </tr>
-            </table>
-        </footer>
+
+        <div class = "checkout-billingAddress">
+            <p><img src="../images/product1.png" width="80" height="80"> Mask</p>
+            <select id="product1-quantity" name="product1-quantity">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="product1-quantity">Quantity</label>
+            Product total: 2 * $9.99 = <b>$19.98 <br>
+            <button type="button">Remove</button>
+
+            <p><img src="../images/product2.png" width="80" height="80"> Mask</p>
+            <select id="product2-quantity" name="product2-quantity">
+                <option value="1"selected>1</option>
+                <option value="2" >2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="product2-quantity">Quantity</label>
+            Product total: 1 * $4.99 = <b>$4.99
+            <button type="button">Remove</button>
+
+            <br><br><br><br>
+            Subtotal: <b>$24.97</b><br>
+            Tax: <b>$1.81</b><br>
+            Shipping: <b>$4.99</b><br>
+            <b>―――――――――――――――</b><br>
+            Total Cart Price: <b>$31.77</b><br>
+                <a href="./confirmation.html">
+                    <input type="submit" value="➤ Purchase">
+
+        </div>
+            
+    </div>
+
+
+
+    <!-- Footer, hyperlink is set up, need a return page -->
+    <footer>
+        <div class="footer-nav-container">
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Information</b>
+                <a class="footer-nav-content" href="./aboutus.html">About Us</a>
+                <a class="footer-nav-content" href="./aboutus.html">Locations & Hours</a>
+                <a class="footer-nav-content" href="./tos.html">Terms of Service</a>
+                <a class="footer-nav-content" href="./privacy-policy.html">Privacy Policy</a>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Services</b>
+                <a class="footer-nav-content" href="./faq.html">FAQ</a>
+                <a class="footer-nav-content" href="./shipping.html">Returns</a>
+                <a class="footer-nav-content" href="./shipping.html">Shipping</a>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Contact Us</b>
+                <span class="footer-nav-content">By Phone (Mon-Fri 9am-5pm):</span>
+                <span class="footer-nav-content"><a href="tel:+1555-123-4567">+1 (555) 123-4567</a></span>
+                <span class="footer-nav-content">By Email:</span>
+                <span class="footer-nav-content"><a
+                        href="mailto:pandemic-essentials@example.com">pandemic-essentials@example.com</a></span>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Newsletter</b>
+                <a class="footer-nav-content" href="./faq.html">Subscribe</a>
+                <a class="footer-nav-content" href="./faq.html">Unsubscribe</a>
+            </nav>
+        </div>
+        <hr>
+        <nav class="footer-logo-container">
+            <a href="../index.html">
+                <img src="../images/logo-transparent.png" class="logo">
+            </a>
+        </nav>
+    </footer>
+    <!-- END FOOTER -->
 </body>
 
 </html>
-
-        
