@@ -103,7 +103,9 @@ h3 {
 }
 
 ul {
+    margin-left: 12px;
     padding-left: 8px;
-    list-style: disc inside;
+    list-style: disc outside;
     text-align: left;
+    line-height: 1.2;
 }
