@@ -154,7 +154,7 @@
             <input type="text" id="streetAddress" name="streetAddress" value=""><br>
             <label for="state"><b>STATE</b></label><br>
         <input type="text" id="State" name="state" value="">
-        <input type="text" id="Zip" name="Zip" placeholder="Zip Code"><br>
+        <input type="text" id="Zip" name="Zip" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="5" placeholder="Zip Code"><br>
         <h5> Billing Address</h5>
         <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">
         <label for="sameAddress">Same as Shipping Address</label><br><br>
@@ -170,7 +170,7 @@
                 <option value="5">5</option>
             </select>
             <label for="product1-quantity">Quantity</label>
-            Product total: 2 * $9.99 = <b>$19.98 <br>
+            Product total: 2 * $9.99 = <b>$19.98</b> <br>
             <button type="button">Remove</button>
 
             <p><img src="../images/product2.png" width="80" height="80"> Mask</p>
@@ -182,7 +182,8 @@
                 <option value="5">5</option>
             </select>
             <label for="product2-quantity">Quantity</label>
-            Product total: 1 * $4.99 = <b>$4.99
+            Product total: 1 * $4.99 = <b>$4.99</b>
+            <br>
             <button type="button">Remove</button>
 
             <br><br><br><br>
