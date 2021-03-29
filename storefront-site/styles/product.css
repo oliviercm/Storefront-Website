@@ -18,19 +18,21 @@
   .stars {
       color: orange;
       margin-bottom: 10px;
+      text-align: left;
   }
   
   .stock {
     color: green;
     margin-bottom: 10px;
+    text-align: left;
 }
 
   .other-products {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 10vh;
-    margin-top: 4vh;
+    margin-top: 8vh;
 }
 
 .description {
@@ -38,25 +40,33 @@
     width: 600px;
 }
 
+h2 {
+    text-align: left;
+    margin-top: 6vh;
+    margin-left: 4vh;
+}
+
 h3 {
     text-align: left;
-    margin-top: 10vh;
 }
 
 .price {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .quantity {
     margin-bottom: 10px;
+    text-align: left;
 }
 
 button {
-    background: #4E9CAF;
+    background-image: linear-gradient(#f6db9d, #f0c352);
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    color: white;
+    border-color: none;
+    color: black;
     font-weight: bold;
     line-height: 25px;
     text-decoration: none;
