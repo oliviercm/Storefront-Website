@@ -1,3 +1,66 @@
 .product {
     margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    text-align: center;
+    align-self: end;
+  }
+
+  .stars {
+      color: orange;
+      margin-bottom: 10px;
+  }
+  
+  .stock {
+    color: green;
+    margin-bottom: 10px;
+}
+
+  .other-products {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+    margin-top: 4vh;
+}
+
+.description {
+    text-align: left;
+    width: 600px;
+}
+
+h3 {
+    text-align: left;
+    margin-top: 10vh;
+}
+
+.price {
+    margin-bottom: 20px;
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+button {
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin-bottom: 10px
 }
