@@ -1,22 +1,24 @@
 .meet {
     margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 10vh;
 }
 .team {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
 }
 
 .head-shot {
     height: 200px; 
     width: 200px; 
     margin-left: 60px;
-    background-color: gray;
 }
 
 .what-we-do {
     margin-left: 4vw;
     width: 80vw;
     margin-bottom: 4vh;
+    margin-top: 10vh;
 }

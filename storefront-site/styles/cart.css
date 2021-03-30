@@ -1,38 +1,61 @@
+body {
+    background-color: #F0F0F0;
+}
+
 .main-container {
+    background-color: inherit;
     display: grid;
     grid-template-columns: auto minmax(180px, 18%);
     grid-template-rows: minmax(100px, 5%) minmax(200px, auto);
-    grid-template-areas: "progress progress" "cart subtotal";
+    grid-template-areas: "progress empty" "cart subtotal";
 }
 
 .progress-container {
     grid-area: progress;
-    background-color: #F0F0F0;
 }
 
 .progress-inner-container {
-    width: 50%;
-    margin: auto;
+    width: 400px;
+    height: calc(100% - 16px);
+    margin: 0 16px 0 auto;
     background-color: #FFFFFF;
-    padding: 8px 20px 16px 8px;
+    padding: 8px 8px 8px 8px;
 }
 
 .progress {
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 16px - 16px);
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "progress-cart progress-payment progress-confirmation";
 }
 
 .progress-cart {
     grid-area: progress-cart;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .progress-payment {
     grid-area: progress-payment;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .progress-confirmation {
     grid-area: progress-confirmation;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .progress-step {
@@ -43,12 +66,10 @@
 
 .cart-container {
     grid-area: cart;
-    background-color: #F0F0F0;
 }
 
 .subtotal-container {
     grid-area: subtotal;
-    background-color: #F0F0F0;
 }
 
 .progress {
@@ -56,7 +77,7 @@
 }
 
 .cart {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     margin: 16px;
     padding: 4px 20px 32px 20px;
 }
@@ -110,7 +131,7 @@
     padding: 8px;
     border: 1px solid rgba(128, 128, 128, 0.8);
     border-radius: 6px;
-    background-color: #f0f0f0;
+    background-color: #F0F0F0;
     margin: 8px 0px 8px 0px;
 }
 
@@ -122,7 +143,7 @@
 }
 
 .subtotal {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     margin: 16px;
     margin-left: 0px;
     padding: 16px 20px 32px 20px;
@@ -142,4 +163,8 @@
 .subtotal button:hover {
     cursor: pointer;
     background-image: linear-gradient(#e4c782, #e0b23d);
+}
+
+footer {
+    margin: 0;
 }

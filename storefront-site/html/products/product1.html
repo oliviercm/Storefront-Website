@@ -5,93 +5,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mask</title>
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/google-material-icons.css">
+    <link rel="stylesheet" href="../../styles/header.css">
+    <link rel="stylesheet" href="../../styles/product.css">
+    <link rel="stylesheet" href="../../styles/footer.css">
 </head>
 
-<body topmargin="20">
-    <table>
-        <tr>
-            <th><a href="../../index.html"><img src="../../images/gray-circle.png" width="48"></a></th>
-            <th nowrap>Pandemic Essentials</th>
-            <th width="100%"></th>
-            <th nowrap><a href="../cart.html">🛒 Cart</a></th>
-            <th><a href="../login.html">Login</a></th>
-            <th><a href="../user-preferences.html">Preferences</a></th>
-        </tr>
-    </table>
+<body>
+    <!-- BEGIN HEADER -->
+    <header>
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../../images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
+            </a>
+        </div>
+        <form class="search-form">
+            <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
+        </form>
+        <nav class="header-nav">
+            <a href="../cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart</a>
+            <a href="../user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+                Preferences</a>
+            <div class="header-login-dropdown">
+                <a href="../login.html" class="header-nav-link">Sign In ▼</a>
+                <nav class="header-login-dropdown-content">
+                    <div>
+                        <div class="header-login-dropdown-flex">
+                            <a href="../login.html">Sign In <span class="material-icons"
+                                    style="font-size: 16px;">login</span></a>
+                            <a href="../register.html">Register <span class="material-icons"
+                                    style="font-size: 16px;">person_add</span></a>
+                            <a href="../../index.html">Log Out <span class="material-icons"
+                                    style="font-size: 16px;">logout</span></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
+    <!-- END HEADER -->
     <br>
     <br>
-    <div>
-        <table>
-            <tr>
-                <td rowspan="5"><img src="../../images/product1.png" width="256"></td>
-                <td>Mask</td>
-                <td align="right" width="25%">
-                    <font color="green"><b>In Stock.</b></font>
-                </td>
-                <td width="25%">&nbsp;</td>
-            </tr>
-            <tr>
-                <td>Rating: <font color="orange">★★★★☆</font>
-                </td>
-                <td align="right">
+    <div class="product">
+        <div class="grid-container">
+            <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
+                <img src="../../images/product1.png" style="max-width: 256px; max-height: 256px;">
+            </div>
+            <div class="grid-item">
+                <h3>
+                    <span style="font-size: 1.2em;">Masks (50 ct)</span>
+                    <br>
+                    <br>
+                    <p class="stars">Rating: ★★★★☆</p>
+                    <p class="stock"><b>In Stock</b></p>
                     <label for="product-quantity">Qty: </label>
-                    <select id="product-quantity" name="product-quantity">
+                    <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Price: <font color="brown">$4.99</font>
-                </td>
-                <td align="right"><button type="button">🛒 Add to Cart</button></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="right"><a href="../confirmation.html"><a href="../confirmation.html"><button type="button">➤ Buy Now</button></a></a></td>
-            </tr>
-            <tr>
-                <td>
+                    <p class="price">Price: <span style="color: #b12704;">$18.99</span></p>
                     About this item:
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </td>
-            </tr>
-        </table>
+                </h3>
+                <p class="description">
+                    <div>
+                        <ul>
+                            <li>Suitable for offices, schools, and outdoors.</li>
+                            <li>Made of 3 ply layers and premium non woven fabric, blocking and filtering small particles in the air.</li>
+                            <li>This face mask is designed with an adjustable elastic ear loop.</li>
+                            <li>Breathable, soft and comfortable, gentle to skin.</li>
+                            <li>Disposable masks: 50pc face masks.</li>
+                        </ul>
+                    </div>
+                </p>
+            </div>
+            <div class="grid-item">
+                <button type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
+                <a href="../confirmation.html"><button type="button" class="buy-now-button">Buy Now</button></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h2>Other Products:</h2>
+        <div class="other-products">
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
+        </div>
     </div>
-    <br>
-    <br>
-    <h2>Other Products:</h2>
-    <table>
-        <tr>
-            <td><a href="./product2.html"><img src="../../images/product2.png" width="128"></a></td>
-            <td><a href="./product3.html"><img src="../../images/product3.png" width="128"></a></td>
-            <td><a href="./product4.html"><img src="../../images/product4.png" width="128"></a></td>
-            <td><a href="./product5.html"><img src="../../images/product5.png" width="128"></a></td>
-        </tr>
-    </table>
-    <br>
-    <br>
-    <br>
+    <!-- BEGIN FOOTER -->
     <footer>
-        <table>
-            <tr>
-                <td><a href="../aboutus.html">About us</a></td>
-                <td><a href="../faq.html">FAQ's</a></td>
-            </tr>
-            <tr>
-                <td width="100%" align="center"> &copy; 2021 Copyright Codeninjas</td>
-            </tr>
-        </table>
+        <div class="footer-nav-container">
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Information</b>
+                <a class="footer-nav-content" href="../aboutus.html">About Us</a>
+                <a class="footer-nav-content" href="../locations.html">Locations & Hours</a>
+                <a class="footer-nav-content" href="../tos.html">Terms of Service</a>
+                <a class="footer-nav-content" href="../privacy-policy.html">Privacy Policy</a>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Services</b>
+                <a class="footer-nav-content" href="../faq.html">FAQ</a>
+                <a class="footer-nav-content" href="../returns.html">Returns</a>
+                <a class="footer-nav-content" href="../shipping.html">Shipping</a>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Contact Us</b>
+                <span class="footer-nav-content">By Phone (Mon-Fri 9am-5pm):</span>
+                <span class="footer-nav-content"><a href="tel:+1555-123-4567">+1 (555) 123-4567</a></span>
+                <span class="footer-nav-content">By Email:</span>
+                <span class="footer-nav-content"><a
+                        href="mailto:pandemic-essentials@example.com">pandemic-essentials@example.com</a></span>
+            </nav>
+            <nav class="footer-nav">
+                <b class="footer-nav-header">Newsletter</b>
+                <a class="footer-nav-content" href="../user-preferences-change-email-subscription.html">Subscribe</a>
+                <a class="footer-nav-content" href="../user-preferences-change-email-subscription.html">Unsubscribe</a>
+            </nav>
+        </div>
+        <hr>
+        <nav class="footer-logo-container">
+            <a href="../../index.html">
+                <img src="../../images/logo-transparent.png" class="logo">
+            </a>
+        </nav>
     </footer>
+    <!-- END FOOTER -->
 </body>
 
 </html>
