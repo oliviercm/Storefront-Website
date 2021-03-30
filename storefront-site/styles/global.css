@@ -85,6 +85,9 @@ input[type=checkbox]:before {
     border-radius: 3px;
     background-color: white;
 }
+input[type=checkbox]:hover:before {
+    background-color: #f0f0f0;
+}
 input[type=checkbox]:checked:before {
     border-color: #0075ff;
     background-color: #0075ff;
