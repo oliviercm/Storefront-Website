@@ -1,3 +1,62 @@
-.locations {
-margin-bottom: 15%;
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(180px, 13%) auto 60%;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar main map";
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.sidebar-nav {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 12px;
+}
+
+.sidebar-nav li {
+    line-height: 1.5;
+    font-size: 0.9em;
+}
+
+.main {
+    grid-area: main;
+}
+
+.location-container {
+    margin-bottom: 15%;
+}
+
+.location-container hr {
+    margin: 24px 0 24px 0;
+}
+
+.location .title {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-variant: small-caps;
+    line-height: 2;
+}
+
+.location .address {
+    line-height: 1.2;
+}
+
+.location .hours-today {
+    line-height: 1;
+}
+
+.location .hours {
+    line-height: 1.2;
+}
+
+.location .directions {
+    line-height: 1;
+}
+
+.map-container {
+    grid-area: map;
+    margin: 48px;
 }
