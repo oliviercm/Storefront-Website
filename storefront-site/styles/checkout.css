@@ -1,29 +1,22 @@
 .checkout-main-container {
     display: grid;
-    grid-template-columns: 5fr 5fr;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-row-gap: 10px;
-    column-gap: 20px;
-    padding-bottom:200px;
-    grid-template-areas:'progress  progress'
-                        'info  subtotal'
-                        'info  empty';
-    
+    grid-template-columns: auto minmax(180px, 18%);
+    grid-template-rows: minmax(100px, 5%) minmax(200px, auto);
+    grid-template-areas: "progress empty" "info subtotal";
+    margin-bottom: 5%;
 }
+
 .checkout-info-container {
-    grid-area:info;
-    width: auto;
-    height: 750px auto;
-    margin: 0 0 0 auto;
-    margin-bottom:12px;
+    grid-area: info;
+    margin: 16px 16px 16px auto;
     background-color: #FFFFFF;
-    padding:20px 8px 20px 30px;
+    padding: 20px 23% 20px 30px;
 }
 
 .checkout-form input {
     margin: auto;
     margin-top: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 8px;
     width: 338px;
     padding: 8px;
     border: 1px solid rgba(128, 128, 128, 0.8);
@@ -36,25 +29,56 @@
     outline-color: goldenrod;
 }
 
-.form-spacer {
-    margin-bottom: 12px;
-    margin-top: 12px;
-}
-
-.checkout-small-container{
+.progress-container {
     grid-area: progress;
-    background-color: #FFFFFF;
-    width:auto;
-    margin-bottom: 8px;
-    margin-top: 8px;
 }
 
-.checkout-subtotal-container{
-    grid-area: subtotal;
-    width: 300px;
-    height:20px;
+.progress-inner-container {
+    width: 400px;
+    height: calc(100% - 16px);
+    margin: 0 16px 0 auto;
     background-color: #FFFFFF;
-    margin-bottom: 12px;
-    margin-top: 12px;
+    padding: 8px 8px 8px 8px;
+}
+
+.progress {
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 16px - 16px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "progress-cart progress-payment progress-confirmation";
+}
+
+.progress-cart {
+    grid-area: progress-cart;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-content: center;
+    align-items: center;
+}
+
+.progress-payment {
+    grid-area: progress-payment;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.progress-confirmation {
+    grid-area: progress-confirmation;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../styles/checkout.css">
     <link rel="stylesheet" href="../styles/cart.css">
 </head>
-
 <body>
     <!-- Header, the top bar , hyperlink is set up properly-->
     <header>
@@ -48,22 +47,55 @@
     </header>
     <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
     <!-- END HEADER -->
-
- 
-
     <div class="checkout-main-container">
+        <div class="progress-container">
+            <div class="progress-inner-container">
+                <div class="progress">
+                    <div class="progress-cart">
+                        <div class="progress-step">
+                            <div>
+                                <span class="material-icons" style="color: #007600">check_box</span>
+                            </div>
+                            <div>
+                                <b>Review Cart</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-payment">
+                        <div class="progress-step">
+                            <div>
+                                <span class="material-icons" style="color: black">check_box_outline_blank</span>
+                            </div>
+                            <div>
+                                <b>Check Out</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-confirmation">
+                        <div class="progress-step">
+                            <div>
+                                <span class="material-icons" style="color: #C0C0C0">check_box_outline_blank</span>
+                            </div>
+                            <div>
+                                <b>Confirmation</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <form class="checkout-info-container">
-            <div class = "checkout-form input">
+            <div class="checkout-form">
                 <h2>Card Information</h2>
-                <label for="cardInfo"><b>CARD NUMBER </b></label><br>
+                <label for="cardInfo"><b>CARD NUMBER</b></label><br>
                 <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000">
-                <input type="text" id="cvc" name="CVC" placeholder=CVC maxlength="3" style="width:60px;">
+                <input type="text" id="cvc" name="CVC" placeholder="CVC" maxlength="3" style="width:60px;">
                 <br>
-                <label for="cardName"><b>CARD HOLDER NAME </b></label><br>
+                <label for="cardName"><b>CARD HOLDER NAME</b></label><br>
                 <input type="text" id="cardName" name="cardName" placeholder="John Doe">
                 <br>
-                <label for="expiration"><b>EXPIRATION DATE </b></label><br>
-                <input list="Month" name="Month" placeholder = "Month" style="width:60px;">
+                <label for="expiration"><b>EXPIRATION DATE</b></label><br>
+                <input list="Month" name="Month" placeholder="Month" style="width:60px;">
                 <datalist id="Month">
                     <option value="Jan">
                     <option value="Feb">
@@ -78,25 +110,23 @@
                     <option value="Nov">
                     <option value="Dec">
                 </datalist>
-    
-                <input list="Year" name="Year" placeholder = "Year" style="width:60px;">
+                <input list="Year" name="Year" placeholder="Year" style="width:60px;">
                 <datalist id="Year">
-                    <option value="21">
-                    <option value="22">
-                    <option value="23">
-                    <option value="24">
-                    <option value="25">
-                    <option value="26">
-                    <option value="27">
-                    <option value="28">
-                    <option value="29">
-                    <option value="30">
+                    <option value="2021">
+                    <option value="2022">
+                    <option value="2023">
+                    <option value="2024">
+                    <option value="2025">
+                    <option value="2026">
+                    <option value="2027">
+                    <option value="2028">
+                    <option value="2029">
+                    <option value="2030">
                 </datalist>
-    
                 <h2>Shipping Address</h2>
-                <label for="fullName"><b>Full Name </b></label><br>
+                <label for="fullName"><b>Full Name</b></label><br>
                 <input type="text" id="fullName" name="fullName" placeholder="John Doe"><br>
-                <label for="streetAddress"><b>STREET ADDRESS </b></label><br>
+                <label for="streetAddress"><b>STREET ADDRESS</b></label><br>
                 <input type="text" id="streetAddress" name="streetAddress" value="">
                 <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit" style="width:60px;"><br>
                 <label for="city"><b>TOWN/CITY</b></label><br>
@@ -104,74 +134,27 @@
                 <label for="state"><b>STATE</b></label><br>
             <input type="text" id="State" name="state" value="">
             <input type="text" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
-            <h4> Billing Address</h4>
+            <h4>Billing Address</h4>
                 <div class="div-left">
                     <label for="sameAddress">Same as Shipping Address</label>
-                    <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">                   
-                </div> 
+                    <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">
+                </div>
             </div>
-            
         </form>
-
-        <div class= "checkout-small-container">
-            <div class="progress">
-                <div class="progress-cart">
-                    <div class="progress-step">
-                        <div>
-                            <span class="material-icons" style="color: #C0C0C0">check_circle</span>
-                        </div>
-                        <div>
-                            <b>Cart</b>
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-payment">
-                    <div class="progress-step">
-                        <div>
-                            <span class="material-icons" style="color: #007600">check_circle</span>
-                        </div>
-                        <div>
-                            <b>Payment</b>
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-confirmation">
-                    <div class="progress-step">
-                        <div>
-                            <span class="material-icons" style="color: #C0C0C0">check_circle</span>
-                        </div>
-                        <div>
-                            <b>Confirmation</b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-
-        <div class= "checkout-subtotal-container">
-            <div class="subtotal-container">
-                <div class="subtotal">
-                    <span>Subtotal (2 items): <b>$25.98</b></span><br>
-                    <span>Delivery Fee: </span>
-                    <span style="color: #007600;">Free</span>
-                    <br>
-                    <span>Tax: <b>$2.08</b></span><br><br>
-                    <span style="font-size: 1.2em;">Total: <b>$28.06</b></span>
-                    <a href="./confirmation.html">
-                        <button type="submit" class="submit-button">Purchase</button>
-                    </a>
-                </div>
+        <div class="subtotal-container">
+            <div class="subtotal">
+                <span>Subtotal (2 items): <b>$25.98</b></span><br>
+                <span>Delivery Fee: </span>
+                <span style="color: #007600;"><span class="material-icons" style="font-size: 1em;">check_circle</span> Free</span>
+                <br>
+                <span>Tax: <b>$2.08</b></span><br><br>
+                <span style="font-size: 1.2em;">Total: <b>$28.06</b></span>
+                <a href="./confirmation.html">
+                    <button type="submit" class="submit-button">Purchase</button>
+                </a>
             </div>
         </div>
-            
-
-
-        </div>
-            
     </div>
-
-
-
     <!-- Footer, hyperlink is set up, need a return page -->
     <footer>
         <div class="footer-nav-container">

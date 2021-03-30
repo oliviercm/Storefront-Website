@@ -1,28 +1,72 @@
 .confirmation-main-container {
     display: grid;
-    grid-template-areas:'progress-bar' 'confirmation';
-    grid-template-rows: 1fr 2fr;
-    align-items:center;
-    justify-content: center;
+    grid-template-columns: auto minmax(180px, 18%);
+    grid-template-rows: minmax(100px, 5%) minmax(200px, auto);
+    grid-template-areas: "progress empty" "confirmation confirmation";
+    margin-bottom: 5%;
 }
 
+.progress-container {
+    grid-area: progress;
+}
 
-.confirmation-small-container{
-    grid-area: progress-bar;
+.progress-inner-container {
+    width: 400px;
+    height: calc(100% - 16px);
+    margin: 0 16px 0 auto;
     background-color: #FFFFFF;
-    height: auto;
-    width: auto;
-    margin-bottom: 8px;
-    margin-top: 8px;
-    text-align: center;
-    
+    padding: 8px 8px 8px 8px;
+}
+
+.progress {
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 16px - 16px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "progress-cart progress-payment progress-confirmation";
+}
+
+.progress-cart {
+    grid-area: progress-cart;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.progress-payment {
+    grid-area: progress-payment;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.progress-confirmation {
+    grid-area: progress-confirmation;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .confirmation-confirm-container{
     grid-area: confirmation;
     background-color: #FFFFFF;
     height: auto;
-    width: 800px;
-    margin-top: 10px;
+    width: calc(100vw - 36% - 48px);
+    margin: 16px auto 16px auto;
     text-align: center;
+    padding-top: 24px;
+    line-height: 1.5;
 }
