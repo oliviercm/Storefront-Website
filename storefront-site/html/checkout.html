@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/checkout.css">
+    <link rel="stylesheet" href="../styles/cart.css">
 </head>
 
 <body>
@@ -48,152 +49,122 @@
     <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
     <!-- END HEADER -->
 
-    <table align="right">
-        <tr>
-            <th width="15%">⚪</th>
-            <th width="0%">――――――――</th>
-            <th width="15%">⚫</th>
-            <th width="0%">――――――――</th>
-            <th width="15%">⚪</th>
-        </tr>
-        <tr>
-            <th width="15%">Cart</th>
-            <th width="0%"></th>
-            <th width="15%">Payment</th>
-            <th width="0%"></th>
-            <th width="15%">Complete</th>
-        </tr>
-    </table>
-    <br>
-    <br>
+ 
 
-    <div class="checkout-outer-container">
-        <form class="checkout-billingAddress">
-            <h2>Card Information</h2>
-            <label for="cardInfo"><b>CARD NUMBER </b></label><br>
-            <input type="text" id="cardNumber" name="cardNumber" onkeyup="value=value.replace(/[^\d]/g,'')"
-                maxlength="16" placeholder="0000 0000 0000 0000">
-            <input type="text" id="cvc" name="CVC" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"
-                placeholder=CVC>
-            <br>
-            <label for="cardName"><b>CARD HOLDER NAME </b></label><br>
-            <input type="text" id="cardName" name="cardName" placeholder="Code Ninja">
-            <br>
-            <label for="expiration"><b>EXPIRATION DATE </b></label><br>
-            <input list="Day" name="Day" placeholder = "Day">
-            <datalist id="Day" >
-                <option value="1">
-                <option value="2">
-                <option value="3">
-                <option value="4">
-                <option value="5">
-                <option value="6">
-                <option value="7">
-                <option value="8">
-                <option value="9">
-                <option value="10">
-                <option value="11">
-                <option value="12">
-                <option value="13">
-                <option value="14">
-                <option value="15">
-                <option value="16">
-                <option value="17">
-                <option value="18">
-                <option value="19">
-                <option value="20">
-                <option value="21">
-                <option value="22">
-                <option value="23">
-                <option value="24">
-                <option value="25">
-                <option value="26">
-                <option value="27">
-                <option value="28">
-                <option value="29">
-                <option value="30">
-                <option value="31">
-            </datalist>
-            <input list="Month" name="Month" placeholder = "Month">
-            <datalist id="Month">
-                <option value="Jan">
-                <option value="Feb">
-                <option value="Mar">
-                <option value="Apr">
-                <option value="May">
-                <option value="June">
-                <option value="July">
-                <option value="Aug">
-                <option value="Sept">
-                <option value="Oct">
-                <option value="Nov">
-                <option value="Dec">
-            </datalist>
-
-            <input list="Year" name="Year" placeholder = "Year">
-            <datalist id="Year">
-                <option value="21">
-                <option value="22">
-                <option value="23">
-                <option value="24">
-                <option value="25">
-                <option value="26">
-                <option value="27">
-                <option value="28">
-                <option value="29">
-                <option value="30">
-            </datalist>
-
-            <h2>Shipping Address</h2>
-            <label for="fullName"><b>Full Name </b></label><br>
-            <input type="text" id="fullName" name="fullName" placeholder="Code Ninja"><br>
-            <label for="streetAddress"><b>STREET ADDRESS </b></label><br>
-            <input type="text" id="streetAddress" name="streetAddress" value="">
-            <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit"><br>
-            <label for="city"><b>TOWN/CITY</b></label><br>
-            <input type="text" id="streetAddress" name="streetAddress" value=""><br>
-            <label for="state"><b>STATE</b></label><br>
-        <input type="text" id="State" name="state" value="">
-        <input type="text" id="Zip" name="Zip" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="5" placeholder="Zip Code"><br>
-        <h5> Billing Address</h5>
-        <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">
-        <label for="sameAddress">Same as Shipping Address</label><br><br>
+    <div class="checkout-main-container">
+        <form class="checkout-info-container">
+            <div class = "checkout-form input">
+                <h2>Card Information</h2>
+                <label for="cardInfo"><b>CARD NUMBER </b></label><br>
+                <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000">
+                <input type="text" id="cvc" name="CVC" placeholder=CVC maxlength="3" style="width:60px;">
+                <br>
+                <label for="cardName"><b>CARD HOLDER NAME </b></label><br>
+                <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                <br>
+                <label for="expiration"><b>EXPIRATION DATE </b></label><br>
+                <input list="Month" name="Month" placeholder = "Month" style="width:60px;">
+                <datalist id="Month">
+                    <option value="Jan">
+                    <option value="Feb">
+                    <option value="Mar">
+                    <option value="Apr">
+                    <option value="May">
+                    <option value="June">
+                    <option value="July">
+                    <option value="Aug">
+                    <option value="Sept">
+                    <option value="Oct">
+                    <option value="Nov">
+                    <option value="Dec">
+                </datalist>
+    
+                <input list="Year" name="Year" placeholder = "Year" style="width:60px;">
+                <datalist id="Year">
+                    <option value="21">
+                    <option value="22">
+                    <option value="23">
+                    <option value="24">
+                    <option value="25">
+                    <option value="26">
+                    <option value="27">
+                    <option value="28">
+                    <option value="29">
+                    <option value="30">
+                </datalist>
+    
+                <h2>Shipping Address</h2>
+                <label for="fullName"><b>Full Name </b></label><br>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe"><br>
+                <label for="streetAddress"><b>STREET ADDRESS </b></label><br>
+                <input type="text" id="streetAddress" name="streetAddress" value="">
+                <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit" style="width:60px;"><br>
+                <label for="city"><b>TOWN/CITY</b></label><br>
+                <input type="text" id="streetAddress" name="streetAddress" value="" ><br>
+                <label for="state"><b>STATE</b></label><br>
+            <input type="text" id="State" name="state" value="">
+            <input type="text" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
+            <h4> Billing Address</h4>
+                <div class="div-left">
+                    <label for="sameAddress">Same as Shipping Address</label>
+                    <input type="checkbox" id="sameAddress" name="sameAddress" value="sameAddress">                   
+                </div> 
+            </div>
+            
         </form>
 
-        <div class = "checkout-billingAddress">
-            <p><img src="../images/product1.png" width="80" height="80"> Mask</p>
-            <select id="product1-quantity" name="product1-quantity">
-                <option value="1">1</option>
-                <option value="2" selected>2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <label for="product1-quantity">Quantity</label>
-            Product total: 2 * $9.99 = <b>$19.98</b> <br>
-            <button type="button">Remove</button>
+        <div class= "checkout-small-container">
+            <div class="progress">
+                <div class="progress-cart">
+                    <div class="progress-step">
+                        <div>
+                            <span class="material-icons" style="color: #C0C0C0">check_circle</span>
+                        </div>
+                        <div>
+                            <b>Cart</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-payment">
+                    <div class="progress-step">
+                        <div>
+                            <span class="material-icons" style="color: #007600">check_circle</span>
+                        </div>
+                        <div>
+                            <b>Payment</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-confirmation">
+                    <div class="progress-step">
+                        <div>
+                            <span class="material-icons" style="color: #C0C0C0">check_circle</span>
+                        </div>
+                        <div>
+                            <b>Confirmation</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
 
-            <p><img src="../images/product2.png" width="80" height="80"> Mask</p>
-            <select id="product2-quantity" name="product2-quantity">
-                <option value="1"selected>1</option>
-                <option value="2" >2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <label for="product2-quantity">Quantity</label>
-            Product total: 1 * $4.99 = <b>$4.99</b>
-            <br>
-            <button type="button">Remove</button>
+        <div class= "checkout-subtotal-container">
+            <div class="subtotal-container">
+                <div class="subtotal">
+                    <span>Subtotal (2 items): <b>$25.98</b></span><br>
+                    <span>Delivery Fee: </span>
+                    <span style="color: #007600;">Free</span>
+                    <br>
+                    <span>Tax: <b>$2.08</b></span><br><br>
+                    <span style="font-size: 1.2em;">Total: <b>$28.06</b></span>
+                    <a href="./confirmation.html">
+                        <button type="submit" class="submit-button">Purchase</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+            
 
-            <br><br><br><br>
-            Subtotal: <b>$24.97</b><br>
-            Tax: <b>$1.81</b><br>
-            Shipping: <b>$4.99</b><br>
-            <b>―――――――――――――――</b><br>
-            Total Cart Price: <b>$31.77</b><br>
-                <a href="./confirmation.html">
-                    <input type="submit" value="➤ Purchase">
 
         </div>
             
