@@ -70,3 +70,9 @@
     padding-top: 24px;
     line-height: 1.5;
 }
+
+.other-products {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
