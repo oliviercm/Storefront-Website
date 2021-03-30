@@ -59,4 +59,5 @@
 .map-container {
     grid-area: map;
     margin: 48px;
+    height: 80%;
 }
