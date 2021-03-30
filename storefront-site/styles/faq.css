@@ -23,6 +23,7 @@
 
 .faq {
     grid-area: main;
+    margin-bottom: 10%;
 }
 
 h3 {
