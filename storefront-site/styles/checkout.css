@@ -1,9 +1,14 @@
 .checkout-main-container {
     display: grid;
-    grid-template-columns: auto minmax(180px, 18%);
-    grid-template-rows: minmax(100px, 5%) minmax(200px, auto);
-    grid-template-areas: "progress empty" "info subtotal";
-    margin-bottom: 5%;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-row-gap: 10px;
+    column-gap: 20px;
+    padding-bottom:20px;
+    grid-template-areas:'progress  empty0'
+                        'info  subtotal'
+                        'info  empty1';
+
 }
 
 .checkout-info-container {
@@ -82,3 +87,12 @@
     flex-direction: column;
     align-items: center;
 }
+
+.checkout-subtotal-container{
+    grid-area: subtotal;
+    width: 300px;
+    height:100px;
+    background-color: #FFFFFF;
+    margin-bottom: 12px;
+    margin-top: 12px;
+} 
