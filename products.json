@@ -9,9 +9,11 @@
             "product1.png"
         ],
         "rating": 4,
-        "stock": 20,
+        "stock": 100,
         "price": {
             "usd": 18.99
+        },
+        "discounts": {
         },
         "description": [
             "Suitable for offices, schools, and outdoors.",
@@ -19,6 +21,30 @@
             "This face mask is designed with an adjustable elastic ear loop.",
             "Breathable, soft and comfortable, gentle to skin.",
             "Disposable masks: 50pc face masks."
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Germ-X Hand Sanitizer (8 fl oz.)",
+        "tags": [
+            "Medical"
+        ],
+        "images": [
+            "product1.png"
+        ],
+        "rating": 4,
+        "stock": 15,
+        "price": {
+            "usd": 6.99
+        },
+        "discounts": {
+        },
+        "description": [
+            "Kills 99.99% of many common harmful germs and bacteria in as little as 15 seconds.",
+            "Great alternative when soap and water are not available.",
+            "Moisturizing with Vitamin E.",
+            "Sooths and Moisturizes.",
+            "Subtle and Refreshing Fragrance."
         ]
     }
 ]
