@@ -1,0 +1,24 @@
+[
+    {
+        "id": "1",
+        "name": "Masks (50 ct)",
+        "tags": [
+            "Medical"
+        ],
+        "images": [
+            "product1.png"
+        ],
+        "rating": 4,
+        "stock": 20,
+        "price": {
+            "usd": 18.99
+        },
+        "description": [
+            "Suitable for offices, schools, and outdoors.",
+            "Made of 3 ply layers and premium non woven fabric, blocking and filtering small particles in the air.",
+            "This face mask is designed with an adjustable elastic ear loop.",
+            "Breathable, soft and comfortable, gentle to skin.",
+            "Disposable masks: 50pc face masks."
+        ]
+    }
+]
