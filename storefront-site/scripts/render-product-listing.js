@@ -1,5 +1,7 @@
-// This script loads and displays product data on the product.html page.
-// To load the product data, the product's ID must be provided as a query string parameter with key "id".
+/**
+ * This script loads and displays product data on the product.html page.
+ * To load the product data, the product's ID must be provided as a query string parameter with key "id".
+ */
 (async () => {
     try {
         /**
