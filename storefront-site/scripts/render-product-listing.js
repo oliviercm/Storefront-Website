@@ -1,11 +1,11 @@
-// This script loads and displays product data on product{ID}.html pages.
-// The product page's HTML filename must include the product ID (can be any string) - product123.html will load the product data of the product with ID 123, and productfoo.html will load the product data of product ID foo.
+// This script loads and displays product data on the product.html page.
+// To load the product data, the product's ID must be provided as a query string parameter with key "id".
 (async () => {
     try {
         /**
          * Fetch and find specific product data.
          */
-        const pageProductId = window.location.pathname.split("/").slice(-1).pop().replace(/\D/g, "");
+        const pageProductId = new URLSearchParams(window.location.search).get("id");
         if (typeof pageProductId !== "string") {
             throw Error("Product ID not specified.");
         };
@@ -27,7 +27,7 @@
         document.title = `${currentProduct.name}`;
 
         const productImageElement = document.getElementById("product-listing-image");
-        productImageElement.setAttribute("src", `../../images/${currentProduct.images[0]}`); // In line with the current HTML, this only displays the first image.
+        productImageElement.setAttribute("src", `../../images/${currentProduct.images[0]}`); // Currently, this only displays the first image due to the HTML of the product page.
 
         const productNameElement = document.getElementById("product-listing-name");
         productNameElement.textContent = currentProduct.name;
@@ -37,6 +37,7 @@
 
         const productStockElement = document.getElementById("product-listing-stock");
         const LOW_STOCK_CUTOFF = 20;
+        // If there is low stock, display a different message.
         if (currentProduct.stock > LOW_STOCK_CUTOFF) {
             productStockElement.textContent = `In Stock.`;
         } else {
@@ -50,7 +51,7 @@
         productPriceElement.appendChild(originalPriceSpan);
         // If there is a discounted price, strikethrough the original price and append the discounted price.
         if (currentProduct.discount_price.usd) {
-            originalPriceSpan.style.setProperty("text-decoration", "line-through")
+            originalPriceSpan.style.setProperty("text-decoration", "line-through");
             const discountedPriceSpan = document.createElement("span");
             discountedPriceSpan.appendChild(document.createTextNode(`$${currentProduct.discount_price.usd}`));
             productPriceElement.appendChild(document.createTextNode("\u00A0"));
@@ -71,6 +72,7 @@
 /**
  * Generates a string of 5 stars, with ```filledStars``` stars filled in (solid) and the remainder hollow.
  * @param {Number} filledStars The number of filled stars to generate. Should be between 0 and 5.
+ * @returns {String} A string of length 5 with ```filledStars``` solid stars followed by hollow stars, up to the max length of 5 stars.
  */
 function generateStars(filledStars) {
     const MAX_STARS = 5;
