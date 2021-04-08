@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product11.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Water Purification Tablets</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,17 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$11.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Each Aquatab is 49mg with 16.88% Sodium Dichloroisocyanurate creating 2.6ppm available chlorine. When dissolved in 2 quarts of water the easy to use tablets disinfect the water for safe drinking in as little as 30 minutes. For water that requires filtering and removal of dirt particles, such as water from a stream or river, use 1 tablet for every 0.75 liters of filtered water.</li>
-                            <li>Protect you and your family during outdoor activities, natural disasters and emergency situations where boiling water is not an option. Be sure to read instructions before use.</li>
-                            <li>Aquatabs are conveniently packaged to retain freshness and start with a 5 Year Shelf Life. Each Strip of Aquatabs contains 10 individually sealed tablets.</li>
-                            <li>Tablets are so small that they easily fit into any pocket, pouch, purse, bag, backpack, drawer, emergency preparedness kit, disaster relief pack and more.</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -92,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
-            <div><a href="./product9.html"><img src="../../images/product9.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product10.html"><img src="../../images/product10.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product12.html"><img src="../../images/product12.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product13.html"><img src="../../images/product13.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -136,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>

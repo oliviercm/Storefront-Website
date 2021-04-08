@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product4.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Sanitizer Wipes (3 boxes)</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$11.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Clorox Disinfecting Wipes are proven to kill COVID-19 Virus in 30 seconds; cleans and kills 99.9% of viruses and bacteria with powerful, triple-layered wipe.</li>
-                            <li>New easy to pull flip top pack allows for the easiest way to clean and disinfect: open with 1 hand dispenses 1 wipe at a time.</li>
-                            <li>Germs and messes occur on more than kitchen counters and bathroom surfaces, conveniently tackle any tough surface including finished wood sealed granite and stainless steel.</li>
-                            <li>Easy to stack space saving pack allows you to take Clorox Disinfecting wipes anywhere including on the go.</li>
-                            <li>Disinfect and deodorize with the fresh smell of Clorox disinfecting wipes for a bleach-free, all-in-1 cleaning alternative. Safely wipe down toys, remotes, or clean up car spills with these sanitizing wipes.</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product5.html"><img src="../../images/product5.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product6.html"><img src="../../images/product6.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>

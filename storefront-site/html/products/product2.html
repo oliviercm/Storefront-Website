@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product2.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Germ-X Hand Sanitizer (8 fl oz.)</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock" style="color: #b12704;"><b>Only 15 left in stock - order soon.</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$6.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Kills 99.99% of many common harmful germs and bacteria in as little as 15 seconds.</li>
-                            <li>Great alternative when soap and water are not available.</li>
-                            <li>Moisturizing with Vitamin E.</li>
-                            <li>Sooths and Moisturizes.</li>
-                            <li>Subtle and Refreshing Fragrance.</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product1.html"><img src="../../images/product1.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product4.html"><img src="../../images/product4.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
-    </body>
+    <script src="../../scripts/product.js"></script>
+</body>
 
 </html>

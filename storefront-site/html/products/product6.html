@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product6.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Band-aids Assorted</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$6.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Band-Aid Brand Flexible Fabric Adhesive Bandages for first aid and wound protection of minor wounds, cuts, scrapes and burns.</li>
-                            <li>Made with Memory-Weave fabric for comfort and flexibility, these bandages stretch, bend, and flex with your skin as you move, and include a Quilt-Aid comfort pad designed to cushion painful wounds which may help prevent reinjury.</li>
-                            <li>These Band-Aid Brand Flexible Fabric adhesive bandages stay on for up to 24 hours and feature a unique Hurt-Free Pad that won't stick to the wound as they wick away blood and fluids, allowing for gentle removal.</li>
-                            <li>From the #1 doctor recommended bandage brand, Band-Aid Brand Adhesive Bandages help protect against dirt and germs that may cause infection. Plus, wounds covered with a bandage heal faster than uncovered wounds.</li>
-                            <li>Apply bandage to clean, dry skin for minor wound care and change daily, when wet or as needed. For proper wound care, treat with wound an antiseptic ointment such as Neosporin prior to application.</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
-            <div><a href="./product4.html"><img src="../../images/product4.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product5.html"><img src="../../images/product5.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product7.html"><img src="../../images/product7.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product8.html"><img src="../../images/product8.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>

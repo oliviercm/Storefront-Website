@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product16.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Forehead Thermometer</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$18.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Accurate and fast: This Infrared forehead thermometer is equipped with exceptional microchip and a sensitivity sensor. Infrared senor can precisely detecting the infrared heat given off by the forehead and quickly measuring to get the reading in 1 second</li>
-                            <li>Engineered technology: The non contact infrared body thermometer is design to minimize the errors in the software program by following sound and light enginnering design processes, risk analysis and soft ware validation</li>
-                            <li>No touch forehead 1-5cm: The measuring distance between the thermometer and the forehead must be 1-5 cm. Non-contact thermometer is more convenient than standard thermometer and touch thermometer</li>
-                            <li>50 readings memory storages: Our thermometer can memory 50 readings to continusly track your family member's tempreature. Which can handle it in advance if your family members' temperature is slightly high</li>
-                            <li>Multiple measurement modes: Thermometers can not only measure body temperature, but also measure the temperature of objects. It is suitable for all ages. Press and hold the set button for 3 seconds, then press the "memo" or the "mode" to switch ℃ and ℉</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
-            <div><a href="./product14.html"><img src="../../images/product14.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product1.html"><img src="../../images/product1.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
             <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>

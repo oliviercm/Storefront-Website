@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product8.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Protective Eye Goggles</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$7.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>Polyvinyl Chloride frame</li>
-                            <li>Polycarbonate lens</li>
-                            <li>Anti Fog Lens : The essential goods safety lab glasses are made of clear, highly transparent, wear-resistant PC material. Transparent lenses with anti-fog coating technology can protect the eyes of adults and maintain a clear field of vision from the external environment.</li>
-                            <li>Adjustable Strap: The adjustable black belt is suitable for your head circumference. Comes with soft eye socket and nose pad, one size fits all safety googles for men and women.</li>
-                            <li>Soft Edge Design: Made with a soft, flexible PVC body to ensure proper fit and comfort. The wraparound side shield construction provides a perfect fit and seal.</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
-            <div><a href="./product6.html"><img src="../../images/product6.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product7.html"><img src="../../images/product7.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product9.html"><img src="../../images/product9.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product10.html"><img src="../../images/product10.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>

@@ -52,15 +52,15 @@
     <div class="product">
         <div class="grid-container">
             <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img src="../../images/product10.png" style="max-width: 256px; max-height: 256px;">
+                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
             </div>
             <div class="grid-item">
                 <h3>
-                    <span style="font-size: 1.2em;">Barbicide</span>
+                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
                     <br>
                     <br>
-                    <p class="stars">Rating: ★★★★☆</p>
-                    <p class="stock"><b>In Stock</b></p>
+                    <p class="stars" id="product-listing-rating">Rating:</p>
+                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                     <label for="product-quantity">Qty: </label>
                     <select class="quantity" id="product-quantity" name="product-quantity">
                         <option value="1" selected>1</option>
@@ -69,18 +69,12 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p class="price">Price: <span style="color: #b12704;">$24.99</span></p>
+                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
                     About this item:
                 </h3>
                 <p class="description">
                     <div>
-                        <ul>
-                            <li>It is an easy way for the professional groomer to disinfect comb, brushes, shears, and more</li>
-                            <li>Kills ringworm, HIV virus, staph, bacteria, and other pathogens</li>
-                            <li>Barbicide disinfectant contains a powerful rust inhibitor</li>
-                            <li>Concentrated liquid, 4 ounce makes one gallon of clear blue solution, a 64 ounce bottle makes 16 gallons</li>
-                            <li>Metals can be immersed for hours without rusting, but should be oiled afterward; measures 10-1/2-inch length by 4-1/2-inch width by 4-1/2-inch height</li>
-                        </ul>
+                        <ul id="product-listing-description"></ul>
                     </div>
                 </p>
             </div>
@@ -93,10 +87,10 @@
         <br>
         <h2>Other Products:</h2>
         <div class="other-products">
-            <div><a href="./product8.html"><img src="../../images/product8.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product9.html"><img src="../../images/product9.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product11.html"><img src="../../images/product11.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product12.html"><img src="../../images/product12.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product15.html"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product16.html"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product2.html"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+            <div><a href="./product3.html"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
         </div>
     </div>
     <!-- BEGIN FOOTER -->
@@ -137,6 +131,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../../scripts/product.js"></script>
 </body>
 
 </html>
