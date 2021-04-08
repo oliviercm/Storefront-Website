@@ -1,5 +1,5 @@
-// This script loads and displays product data on product##.html pages.
-// The product page's HTML filename must include the product number - product123.html will load the product data of the product with ID 123.
+// This script loads and displays product data on product{ID}.html pages.
+// The product page's HTML filename must include the product ID (can be any string) - product123.html will load the product data of the product with ID 123, and productfoo.html will load the product data of product ID foo.
 (async () => {
     try {
         /**
