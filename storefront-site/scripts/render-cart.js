@@ -1,4 +1,5 @@
 // Load test data.
+// REMOVE WHEN ADDING TO CART IS IMPLEMENTED!
 sessionStorage.setItem("cart", JSON.stringify([{
     id: "2",
     quantity: 1,
