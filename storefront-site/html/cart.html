@@ -87,7 +87,7 @@
         <div class="cart-container">
             <div class="cart" id="cart">
                 <h1>Shopping Cart</h1>
-                <span class="clickable-text" style="font-size: 0.9em;">Deselect all items</span>
+                <span class="clickable-text" style="font-size: 0.9em;" onclick="handleDeselectAllItems()">Deselect all items</span>
                 <div id="cart-legend-price">Price</div>
                 <hr>
                 <div id="cart-items">
@@ -97,7 +97,7 @@
                     <div class="cart-item">
                         <div class="cart-item-checkbox">
                             <div>
-                                <input type="checkbox" checked>
+                                <input class="cart-item-checkbox-input" type="checkbox" onchange="handleCheckboxChange(event)" checked>
                             </div>
                         </div>
                         <div class="cart-item-image">
