@@ -2,17 +2,17 @@
 sessionStorage.setItem("cart", JSON.stringify([{
     id: "2",
     quantity: 1,
-    checked: true,
+    selected: true,
     isGift: false,
 }, {
     id: "12",
     quantity: 2,
-    checked: true,
+    selected: true,
     isGift: false,
 }, {
     id: "4",
     quantity: 3,
-    checked: false,
+    selected: false,
     isGift: true,
 }]));
 
@@ -50,7 +50,7 @@ async function renderCartItems() {
             cartItemElement.setAttribute("data-product-id", cartItem.id);
 
             const cartItemCheckboxElement = cartItemElement.querySelectorAll(".cart-item-checkbox input[type=checkbox]")[0];
-            cartItemCheckboxElement.checked = cartItem.checked;
+            cartItemCheckboxElement.checked = cartItem.selected;
             cartItemCheckboxElement.setAttribute("data-product-id", cartItem.id);
 
             const cartItemImageElement = cartItemElement.querySelectorAll(".cart-item-image img")[0];
@@ -108,7 +108,7 @@ function calculateTotalCartValues(products, cart) {
     let totalCartPrice = 0;
     let totalItemQuantity = 0;
     for (const cartItem of cart) {
-        if (cartItem.checked) {
+        if (cartItem.selected) {
             const product = products.find(product => {
                 return product.id === cartItem.id;
             });
@@ -185,18 +185,18 @@ function handleDeselectAllItems(event) {
 
     const cart = getCart();
     for (const cartItem of cart) {
-        cartItem.checked = false;
+        cartItem.selected = false;
     };
     setCart(cart);
     renderTotalCartValues();
 };
 
-function handleCheckboxChange(event) {
+function handleSelectedCheckboxChange(event) {
     const cart = getCart();
     const cartItem = cart.find(cartItem => {
         return cartItem.id === event.target.dataset.productId;
     });
-    cartItem.checked = event.target.checked;
+    cartItem.selected = event.target.checked;
     setCart(cart);
     renderTotalCartValues();
 };
