@@ -73,6 +73,7 @@ async function renderCartItems() {
 
             const cartItemIsGiftElement = cartItemElement.querySelectorAll(".cart-item-main .cart-item-gift")[0];
             cartItemIsGiftElement.checked = cartItem.isGift;
+            cartItemIsGiftElement.setAttribute("data-product-id", cartItem.id);
 
             const cartItemPriceElement = cartItemElement.querySelectorAll(".cart-item .cart-item-price")[0];
             const originalPriceSpan = document.createElement("span");
@@ -197,6 +198,34 @@ function handleSelectedCheckboxChange(event) {
         return cartItem.id === event.target.dataset.productId;
     });
     cartItem.selected = event.target.checked;
+    setCart(cart);
+    renderTotalCartValues();
+};
+
+function handleGiftCheckboxChange(event) {
+    const cart = getCart();
+    const cartItem = cart.find(cartItem => {
+        return cartItem.id === event.target.dataset.productId;
+    });
+    cartItem.isGift = event.target.checked;
+    setCart(cart);
+    renderTotalCartValues();
+};
+
+function handleOrderContainsGift(event) {
+    if (event.target.checked) {
+        event.preventDefault();
+        return false;
+    };
+
+    const cart = getCart();
+    for (const cartItem of cart) {
+        cartItem.isGift = false;
+    };
+    const cartItemGiftCheckboxes = Array.from(document.getElementsByClassName("cart-item-gift"));
+    for (const checkbox of cartItemGiftCheckboxes) {
+        checkbox.checked = false;
+    };
     setCart(cart);
     renderTotalCartValues();
 };

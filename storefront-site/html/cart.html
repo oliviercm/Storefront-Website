@@ -110,7 +110,7 @@
                             <br>
                             <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
                             <br>
-                            <input type="checkbox" class="cart-item-gift"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
+                            <input type="checkbox" class="cart-item-gift" onchange="handleGiftCheckboxChange(event)"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
                             <br>
                             <select name="quantity" class="cart-item-quantity" onchange="handleQuantityChange(event)">
                                 <option value="0">Remove</option>
@@ -138,7 +138,7 @@
                 <br>
                 Subtotal (<span class="total-cart-item-quantity"></span> items): <b>$<span class="total-cart-subtotal"></span></b>
                 <br>
-                <input type="checkbox" id="cart-gift"><span style="font-size: 0.9em;"> This order contains a gift
+                <input type="checkbox" id="cart-gift" onclick="handleOrderContainsGift(event)"><span style="font-size: 0.9em;"> This order contains a gift
                 <br>
                 <a href="./checkout.html">
                     <button type="submit" class="submit-button">Proceed to checkout</button>
