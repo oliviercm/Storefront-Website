@@ -130,7 +130,7 @@ body {
     line-height: 1.5;
 }
 
-.cart-item .cart-item-main .quantity {
+.cart-item .cart-item-main .cart-item-quantity {
     width: auto;
     padding: 8px;
     border: 1px solid rgba(128, 128, 128, 0.8);
@@ -144,6 +144,9 @@ body {
     text-align: right;
     font-weight: bold;
     font-size: 1.2em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
 }
 
 .subtotal {

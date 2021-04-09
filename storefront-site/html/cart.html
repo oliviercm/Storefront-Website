@@ -85,94 +85,60 @@
             </div>
         </div>
         <div class="cart-container">
-            <div class="cart">
+            <div class="cart" id="cart">
                 <h1>Shopping Cart</h1>
                 <a href="./cart.html" style="font-size: 0.9em;">Deselect all items</a>
                 <div id="cart-legend-price">Price</div>
                 <hr>
-                <div class="cart-item">
-                    <div class="cart-item-checkbox">
-                        <div>
-                            <input type="checkbox" checked>
-                        </div>
-                    </div>
-                    <div class="cart-item-image">
-                        <img src="../images/product1.png">
-                    </div>
-                    <div class="cart-item-main">
-                        <a href="./products/product.html?id=1" style="font-size: 1.1em;">Masks (50 ct)</a>
-                        <br>
-                        <span style="color: #007600; font-size: 0.9em;">In Stock</span>
-                        <br>
-                        <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
-                        <br>
-                        <input type="checkbox"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
-                        <br>
-                        <select name="quantity" class="quantity">
-                            <option value="0">Remove</option>
-                            <option value="1" selected>Qty: 1</option>
-                            <option value="2">Qty: 2</option>
-                            <option value="3">Qty: 3</option>
-                            <option value="4">Qty: 4</option>
-                            <option value="5">Qty: 5</option>
-                        </select>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Delete</a>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
-                    </div>
-                    <div class="cart-item-price">
-                        $18.99
-                    </div>
+                <div id="cart-items">
+
                 </div>
-                <hr>
-                <div class="cart-item">
-                    <div class="cart-item-checkbox">
-                        <div>
-                            <input type="checkbox" checked>
+                <template id="cart-item-template">
+                    <div class="cart-item">
+                        <div class="cart-item-checkbox">
+                            <div>
+                                <input type="checkbox" checked>
+                            </div>
                         </div>
+                        <div class="cart-item-image">
+                            <img>
+                        </div>
+                        <div class="cart-item-main">
+                            <a class="cart-item-link" href="./products/product.html?id=1" style="font-size: 1.1em;"></a>
+                            <br>
+                            <span class="cart-item-stock" style="font-size: 0.9em;"></span>
+                            <br>
+                            <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
+                            <br>
+                            <input type="checkbox" class="cart-item-gift"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
+                            <br>
+                            <select name="quantity" class="cart-item-quantity">
+                                <option value="0">Remove</option>
+                                <option value="1" selected>Qty: 1</option>
+                                <option value="2">Qty: 2</option>
+                                <option value="3">Qty: 3</option>
+                                <option value="4">Qty: 4</option>
+                                <option value="5">Qty: 5</option>
+                            </select>
+                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Delete</a>
+                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
+                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
+                        </div>
+                        <div class="cart-item-price"></div>
                     </div>
-                    <div class="cart-item-image">
-                        <img src="../images/product2.png">
-                    </div>
-                    <div class="cart-item-main">
-                        <a href="./products/product.html?id=2" style="font-size: 1.1em;">Germ-X Hand Sanitizer (8 fl oz.)</a>
-                        <br>
-                        <span style="color: #b12704; font-size: 0.9em;">Only 15 left in stock - order soon.</span>
-                        <br>
-                        <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
-                        <br>
-                        <input type="checkbox"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
-                        <br>
-                        <select name="quantity" class="quantity">
-                            <option value="0">Remove</option>
-                            <option value="1" selected>Qty: 1</option>
-                            <option value="2">Qty: 2</option>
-                            <option value="3">Qty: 3</option>
-                            <option value="4">Qty: 4</option>
-                            <option value="5">Qty: 5</option>
-                        </select>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Delete</a>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
-                        <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
-                    </div>
-                    <div class="cart-item-price">
-                        $6.99
-                    </div>
-                </div>
-                <hr>
+                </template>
                 <div style="width: 100%; text-align: right; font-size: 1.2em;">
-                    <span>Subtotal (2 items): <b>$25.98</b></span>
+                    Subtotal (<span class="total-cart-item-quantity"></span> items): <b>$<span class="total-cart-subtotal"></span></b>
                 </div>
             </div>
-            
         </div>
         <div class="subtotal-container">
             <div class="subtotal">
                 <span style="color: #007600; font-size: 0.9em;"><span class="material-icons">check_circle</span> Your order qualifies for FREE shipping.</span>
                 <br>
-                <span>Subtotal (2 items): <b>$25.98</b></span>
+                Subtotal (<span class="total-cart-item-quantity"></span> items): <b>$<span class="total-cart-subtotal"></span></b>
                 <br>
-                <input type="checkbox"><span style="font-size: 0.9em;"> This order contains a gift
+                <input type="checkbox" id="cart-gift"><span style="font-size: 0.9em;"> This order contains a gift
                 <br>
                 <a href="./checkout.html">
                     <button type="submit" class="submit-button">Proceed to checkout</button>
@@ -218,6 +184,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../scripts/render-cart.js"></script>
 </body>
 
 </html>
