@@ -174,10 +174,6 @@ async function updateCartItemQuantity(productId) {
     if (cartItemDiscountPriceElement) {
         cartItemDiscountPriceElement.textContent = `$${(product.discount_price.usd * cartItem.quantity).toFixed(2)}`;
     };
-
-    // const cartItemQuantityElement = cartItemElement.querySelectorAll(".cart-item-quantity")[0];
-    // cartItemQuantityElement.value = cartItem.quantity;
-    // cartItemQuantityElement.setAttribute("data-product-id", cartItem.id);
 };
 
 async function getProducts() {
