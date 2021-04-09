@@ -107,13 +107,15 @@ function calculateTotalCartValues(products, cart) {
     let totalCartPrice = 0;
     let totalItemQuantity = 0;
     for (const cartItem of cart) {
-        const product = products.find(product => {
-            return product.id === cartItem.id;
-        });
-        const productPrice = product.discount_price.usd || product.price.usd;
-        const productQuantity = cartItem.quantity;
-        totalCartPrice += productPrice * productQuantity;
-        totalItemQuantity += productQuantity;
+        if (cartItem.checked) {
+            const product = products.find(product => {
+                return product.id === cartItem.id;
+            });
+            const productPrice = product.discount_price.usd || product.price.usd;
+            const productQuantity = cartItem.quantity;
+            totalCartPrice += productPrice * productQuantity;
+            totalItemQuantity += productQuantity;
+        };
     };
     return {
         totalCartPrice,
