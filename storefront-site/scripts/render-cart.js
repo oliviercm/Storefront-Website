@@ -95,10 +95,15 @@ async function renderCartItems() {
             const cartItemQuantityElement = cartItemElement.querySelectorAll(".cart-item-quantity")[0];
             cartItemQuantityElement.value = cartItem.quantity;
             cartItemQuantityElement.setAttribute("data-product-id", cartItem.id);
+
+            const cartItemDeleteElement = cartItemElement.querySelectorAll(".cart-item-delete")[0];
+            cartItemDeleteElement.setAttribute("data-product-id", cartItem.id);
             
             // Insert the cart item and a horizontal rule
             cartItemsElement.appendChild(cartItemElement);
-            cartItemsElement.appendChild(document.createElement("hr")).classList.add("cart-item-hr");
+            const hr = cartItemsElement.appendChild(document.createElement("hr"));
+            hr.classList.add("cart-item-hr");
+            hr.setAttribute("data-product-id", cartItem.id);
         } catch(e) {
             console.error(e);
         };
@@ -228,6 +233,30 @@ function handleOrderContainsGift(event) {
     };
     setCart(cart);
     renderTotalCartValues();
+};
+
+function handleCartItemDelete(event) {
+    const cart = getCart();
+    cart.splice(cart.findIndex(cartItem => {
+        return cartItem.id === event.target.dataset.productId;
+    }), 1);
+    setCart(cart);
+    removeCartItemElement(event.target.dataset.productId);
+    renderTotalCartValues();
+};
+
+function removeCartItemElement(productId) {
+    const cartItemElements = Array.from(document.getElementsByClassName("cart-item"));
+    const cartItemElement = cartItemElements.find(cartItem => {
+        return cartItem.dataset.productId === productId;
+    });
+    cartItemElement.parentNode.removeChild(cartItemElement);
+
+    const cartItemHrElements = Array.from(document.getElementsByClassName("cart-item-hr"));
+    const cartItemHrElement = cartItemHrElements.find(cartItemHr => {
+        return cartItemHr.dataset.productId === productId;
+    });
+    cartItemHrElement.parentNode.removeChild(cartItemHrElement);
 };
 
 async function getProducts() {
