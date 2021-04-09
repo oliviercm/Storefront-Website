@@ -65,6 +65,19 @@ a:focus {
     outline-color: transparent;
 }
 
+.clickable-text {
+    text-decoration: none;
+    color: #0066c0;
+}
+.clickable-text:hover {
+    text-decoration: underline;
+    color: #c75b2d;
+    cursor: pointer;
+}
+.clickable-text:focus {
+    outline-color: transparent;
+}
+
 b {
     font-weight: bold;
 }
