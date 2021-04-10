@@ -88,7 +88,7 @@
             <div class="cart-container">
                 <div class="cart" id="cart">
                     <h1>Shopping Cart</h1>
-                    <span class="clickable-text" style="font-size: 0.9em;" onclick="handleDeselectAllItems()">Deselect all items</span>
+                    <span class="clickable-text deselect-all-button" style="font-size: 0.9em;">Deselect all items</span>
                     <div id="cart-legend-price">Price</div>
                     <hr>
                     <div id="cart-items">
@@ -98,7 +98,7 @@
                         <div class="cart-item">
                             <div class="cart-item-checkbox">
                                 <div>
-                                    <input class="cart-item-checkbox-input" type="checkbox" onchange="handleSelectedCheckboxChange(event)" checked>
+                                    <input class="cart-item-checkbox-input" type="checkbox" checked>
                                 </div>
                             </div>
                             <div class="cart-item-image">
@@ -111,9 +111,9 @@
                                 <br>
                                 <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
                                 <br>
-                                <input type="checkbox" class="cart-item-gift" onchange="handleGiftCheckboxChange(event)"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
+                                <input type="checkbox" class="cart-item-gift"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
                                 <br>
-                                <select name="quantity" class="cart-item-quantity" onchange="handleQuantityChange(event)">
+                                <select name="quantity" class="cart-item-quantity">
                                     <option value="0">Remove</option>
                                     <option value="1" selected>Qty: 1</option>
                                     <option value="2">Qty: 2</option>
@@ -121,7 +121,7 @@
                                     <option value="4">Qty: 4</option>
                                     <option value="5">Qty: 5</option>
                                 </select>
-                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <span class="clickable-text cart-item-delete" style="font-size: 0.8em;" onclick="handleCartItemDelete(event)">Delete</span>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <span class="clickable-text cart-item-delete" style="font-size: 0.8em;">Delete</span>
                                 <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
                                 <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
                             </div>
@@ -139,7 +139,7 @@
                     <br>
                     Subtotal (<span class="total-cart-item-quantity"></span>): <b>$<span class="total-cart-subtotal"></span></b>
                     <br>
-                    <input type="checkbox" id="cart-gift" onclick="handleOrderContainsGift(event)"><span style="font-size: 0.9em;"> This order contains a gift
+                    <input type="checkbox" id="cart-gift"><span style="font-size: 0.9em;"> This order contains a gift
                     <br>
                     <a href="./checkout.html">
                         <button type="submit" class="submit-button">Proceed to checkout</button>
@@ -186,9 +186,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
-    <script src="../scripts/util-products.js"></script>
-    <script src="../scripts/util-cart.js"></script>
-    <script src="../scripts/render-cart.js"></script>
+    <script src="../scripts/render-cart.js" type="module"></script>
 </body>
 
 </html>

@@ -1,3 +1,14 @@
+import {
+    getCart,
+    setCart,
+    getCartItemById,
+    calculateTotalCartValues,
+} from "./util-cart.js";
+import {
+    getProducts,
+    getProductById,
+} from "./util-products.js";
+
 // Load test data.
 // REMOVE WHEN ADDING TO CART IS IMPLEMENTED!
 sessionStorage.setItem("cart", JSON.stringify([{
@@ -29,11 +40,21 @@ sessionStorage.setItem("cart", JSON.stringify([{
 async function renderCart() {
     await renderCartItems();
     await renderTotalCartValues();
+    await renderOrderContainsGift();
 };
 
 async function renderCartItems() {
     const cart = getCart();
     const products = await getProducts();
+
+    // Add event listeners
+    const deselectAllItemsButtons = document.getElementsByClassName("deselect-all-button");
+    for (const button of deselectAllItemsButtons) {
+        button.addEventListener("click", handleDeselectAllItems);
+    };
+
+    const orderContainsGiftCheckbox = document.getElementById("cart-gift");
+    orderContainsGiftCheckbox.addEventListener("click", handleOrderContainsGift);
 
     // Render cart items using template.
     const cartItemsElement = document.getElementById("cart-items");
@@ -53,6 +74,7 @@ async function renderCartItems() {
             const cartItemCheckboxElement = cartItemElement.querySelectorAll(".cart-item-checkbox input[type=checkbox]")[0];
             cartItemCheckboxElement.checked = cartItem.selected;
             cartItemCheckboxElement.setAttribute("data-product-id", cartItem.id);
+            cartItemCheckboxElement.addEventListener("change", handleSelectedCheckboxChange);
 
             const cartItemImageElement = cartItemElement.querySelectorAll(".cart-item-image img")[0];
             cartItemImageElement.setAttribute("src", `../images/${item.images[0]}`);
@@ -75,6 +97,7 @@ async function renderCartItems() {
             const cartItemIsGiftElement = cartItemElement.querySelectorAll(".cart-item-main .cart-item-gift")[0];
             cartItemIsGiftElement.checked = cartItem.isGift;
             cartItemIsGiftElement.setAttribute("data-product-id", cartItem.id);
+            cartItemIsGiftElement.addEventListener("change", handleGiftCheckboxChange);
 
             const cartItemPriceElement = cartItemElement.querySelectorAll(".cart-item .cart-item-price")[0];
             const originalPriceSpan = document.createElement("span");
@@ -96,9 +119,11 @@ async function renderCartItems() {
             const cartItemQuantityElement = cartItemElement.querySelectorAll(".cart-item-quantity")[0];
             cartItemQuantityElement.value = cartItem.quantity;
             cartItemQuantityElement.setAttribute("data-product-id", cartItem.id);
+            cartItemQuantityElement.addEventListener("change", handleQuantityChange);
 
             const cartItemDeleteElement = cartItemElement.querySelectorAll(".cart-item-delete")[0];
             cartItemDeleteElement.setAttribute("data-product-id", cartItem.id);
+            cartItemDeleteElement.addEventListener("click", handleCartItemDelete);
             
             // Insert the cart item and a horizontal rule
             cartItemsElement.appendChild(cartItemElement);
@@ -112,14 +137,11 @@ async function renderCartItems() {
 };
 
 async function renderTotalCartValues() {
-    const cart = getCart();
-    const products = await getProducts();
-
     // Calculate and set subtotal text (total quantity, total price)
     const {
         totalCartPrice,
         totalItemQuantity,
-    } = calculateTotalCartValues(products, cart);
+    } = await calculateTotalCartValues();
     const cartSubtotalItemQuantityElements = document.getElementsByClassName("total-cart-item-quantity");
     for (const itemQuantityElement of cartSubtotalItemQuantityElements) {
         itemQuantityElement.textContent = `${totalItemQuantity} ${totalItemQuantity === 1 ? "item" : "items"}`;
@@ -128,23 +150,15 @@ async function renderTotalCartValues() {
     for (const itemSubtotalElement of cartSubtotalTotalPriceElements) {
         itemSubtotalElement.textContent = totalCartPrice.toFixed(2);
     };
+};
 
+function renderOrderContainsGift() {
+    const cart = getCart();
     // Check the "This order contains a gift" checkbox if necessary
     const cartContainsGiftElement = document.getElementById("cart-gift");
     cartContainsGiftElement.checked = cart.some(cartItem => {
         return cartItem.isGift;
     });
-};
-
-function handleQuantityChange(event) {
-    const cart = getCart();
-    const changedCartItem = cart.find(cartItem => {
-        return cartItem.id === event.target.dataset.productId;
-    });
-    changedCartItem.quantity = Number(event.target.value);
-    setCart(cart);
-    rerenderCartItem(changedCartItem.id);
-    renderTotalCartValues();
 };
 
 async function rerenderCartItem(productId) {
@@ -164,6 +178,17 @@ async function rerenderCartItem(productId) {
     };
 };
 
+function handleQuantityChange(event) {
+    const cart = getCart();
+    const changedCartItem = cart.find(cartItem => {
+        return cartItem.id === event.target.dataset.productId;
+    });
+    changedCartItem.quantity = Number(event.target.value);
+    setCart(cart);
+    rerenderCartItem(changedCartItem.id);
+    renderTotalCartValues();
+};
+
 function handleDeselectAllItems(event) {
     const cartItemCheckboxes = Array.from(document.getElementsByClassName("cart-item-checkbox-input"));
     for (const checkbox of cartItemCheckboxes) {
@@ -176,6 +201,7 @@ function handleDeselectAllItems(event) {
     };
     setCart(cart);
     renderTotalCartValues();
+    renderOrderContainsGift();
 };
 
 function handleSelectedCheckboxChange(event) {
@@ -186,6 +212,7 @@ function handleSelectedCheckboxChange(event) {
     cartItem.selected = event.target.checked;
     setCart(cart);
     renderTotalCartValues();
+    renderOrderContainsGift();
 };
 
 function handleGiftCheckboxChange(event) {
@@ -195,7 +222,7 @@ function handleGiftCheckboxChange(event) {
     });
     cartItem.isGift = event.target.checked;
     setCart(cart);
-    renderTotalCartValues();
+    renderOrderContainsGift();
 };
 
 function handleOrderContainsGift(event) {

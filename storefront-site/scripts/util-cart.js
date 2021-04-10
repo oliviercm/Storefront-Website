@@ -1,3 +1,7 @@
+import {
+    getProducts,
+} from "./util-products.js";
+
 function getCart() {
     return JSON.parse(sessionStorage.getItem("cart") || "[]");
 };
@@ -13,7 +17,10 @@ function getCartItemById(id) {
     });
 };
 
-function calculateTotalCartValues(products, cart) {
+async function calculateTotalCartValues() {
+    const cart = getCart();
+    const products = await getProducts();
+
     let totalCartPrice = 0;
     let totalItemQuantity = 0;
     for (const cartItem of cart) {
@@ -31,4 +38,11 @@ function calculateTotalCartValues(products, cart) {
         totalCartPrice,
         totalItemQuantity,
     };
+};
+
+export {
+    getCart,
+    setCart,
+    getCartItemById,
+    calculateTotalCartValues,
 };

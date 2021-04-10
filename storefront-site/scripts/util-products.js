@@ -13,3 +13,8 @@ async function getProductById(id) {
         return product.id === id;
     });
 };
+
+export {
+    getProducts,
+    getProductById,
+};
