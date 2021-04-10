@@ -1,0 +1,34 @@
+function getCart() {
+    return JSON.parse(sessionStorage.getItem("cart") || "[]");
+};
+
+function setCart(cart) {
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+};
+
+function getCartItemById(id) {
+    const cart = getCart();
+    return cart.find(cartItem => {
+        return cartItem.id === id;
+    });
+};
+
+function calculateTotalCartValues(products, cart) {
+    let totalCartPrice = 0;
+    let totalItemQuantity = 0;
+    for (const cartItem of cart) {
+        if (cartItem.selected) {
+            const product = products.find(product => {
+                return product.id === cartItem.id;
+            });
+            const productPrice = product.discount_price.usd || product.price.usd;
+            const productQuantity = cartItem.quantity;
+            totalCartPrice += productPrice * productQuantity;
+            totalItemQuantity += productQuantity;
+        };
+    };
+    return {
+        totalCartPrice,
+        totalItemQuantity,
+    };
+};

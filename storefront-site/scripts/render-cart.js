@@ -111,26 +111,6 @@ async function renderCartItems() {
     };
 };
 
-function calculateTotalCartValues(products, cart) {
-    let totalCartPrice = 0;
-    let totalItemQuantity = 0;
-    for (const cartItem of cart) {
-        if (cartItem.selected) {
-            const product = products.find(product => {
-                return product.id === cartItem.id;
-            });
-            const productPrice = product.discount_price.usd || product.price.usd;
-            const productQuantity = cartItem.quantity;
-            totalCartPrice += productPrice * productQuantity;
-            totalItemQuantity += productQuantity;
-        };
-    };
-    return {
-        totalCartPrice,
-        totalItemQuantity,
-    };
-};
-
 async function renderTotalCartValues() {
     const cart = getCart();
     const products = await getProducts();
@@ -163,11 +143,11 @@ function handleQuantityChange(event) {
     });
     changedCartItem.quantity = Number(event.target.value);
     setCart(cart);
-    updateCartItem(changedCartItem.id);
+    rerenderCartItem(changedCartItem.id);
     renderTotalCartValues();
 };
 
-async function updateCartItem(productId) {
+async function rerenderCartItem(productId) {
     const product = await getProductById(productId);
     const cartItem = getCartItemById(productId);
 
@@ -258,35 +238,4 @@ function removeCartItemElement(productId) {
         return cartItemHr.dataset.productId === productId;
     });
     cartItemHrElement.parentNode.removeChild(cartItemHrElement);
-};
-
-async function getProducts() {
-    const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.
-    if (response.status < 200 || response.status >= 300) {
-        throw Error(response.statusText);
-    };
-    const products = await response.json();
-    return products;
-};
-
-async function getProductById(id) {
-    const products = await getProducts();
-    return products.find(product => {
-        return product.id === id;
-    });
-};
-
-function getCart() {
-    return JSON.parse(sessionStorage.getItem("cart") || "[]");
-};
-
-function setCart(cart) {
-    sessionStorage.setItem("cart", JSON.stringify(cart));
-};
-
-function getCartItemById(id) {
-    const cart = getCart();
-    return cart.find(cartItem => {
-        return cartItem.id === id;
-    });
 };
