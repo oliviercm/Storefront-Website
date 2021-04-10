@@ -14,7 +14,7 @@ sessionStorage.setItem("cart", JSON.stringify([{
     id: "4",
     quantity: 3,
     selected: false,
-    isGift: true,
+    isGift: false,
 }]));
 
 // This function handles the initial render of the cart page.
@@ -142,7 +142,7 @@ async function renderTotalCartValues() {
     } = calculateTotalCartValues(products, cart);
     const cartSubtotalItemQuantityElements = document.getElementsByClassName("total-cart-item-quantity");
     for (const itemQuantityElement of cartSubtotalItemQuantityElements) {
-        itemQuantityElement.textContent = totalItemQuantity;
+        itemQuantityElement.textContent = `${totalItemQuantity} ${totalItemQuantity === 1 ? "item" : "items"}`;
     };
     const cartSubtotalTotalPriceElements = document.getElementsByClassName("total-cart-subtotal");
     for (const itemSubtotalElement of cartSubtotalTotalPriceElements) {
