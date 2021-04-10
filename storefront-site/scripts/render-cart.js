@@ -277,7 +277,7 @@ async function getProductById(id) {
 };
 
 function getCart() {
-    return JSON.parse(sessionStorage.getItem("cart"));
+    return JSON.parse(sessionStorage.getItem("cart") || "[]");
 };
 
 function setCart(cart) {
