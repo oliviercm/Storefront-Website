@@ -66,10 +66,26 @@
             li.appendChild(document.createTextNode(desc));
             productDescriptionListElement.appendChild(li);
         };
+
+        displayOtherProducts(currentProduct.id);
     } catch(e) {
         console.error(e);
     };
 })();
+
+async function displayOtherProducts(currentProductId) {
+    const otherProducts = await findAdjacentProducts(currentProductId);
+    for (const otherProduct of otherProducts) {
+        const otherProductTemplate = document.getElementById("other-product-template");
+        const otherProductElement = otherProductTemplate.content.firstElementChild.cloneNode(true);
+
+        otherProductElement.querySelectorAll("img")[0].setAttribute("src", `../../images/${otherProduct.images[0]}`);
+        otherProductElement.querySelectorAll("a")[0].setAttribute("href", `./product.html?id=${otherProduct.id}`);
+
+        const otherProductsDiv = document.getElementById("other-products");
+        otherProductsDiv.appendChild(otherProductElement);
+    };
+};
 
 /**
  * Generates a string of 5 stars, with ```filledStars``` stars filled in (solid) and the remainder hollow.
@@ -83,4 +99,26 @@ function generateStars(filledStars) {
 
     filledStars = Math.min(Math.max(0, Math.trunc(filledStars || 0)), MAX_STARS);
     return `${filledStarChar.repeat(filledStars)}${emptyStarChar.repeat(MAX_STARS - filledStars)}`;
+};
+
+/**
+ * Returns the 4 products adjacent to the passed product ID (2 behind, 2 ahead).
+ * @param {String} productId The current product ID to grab adjacent products around.
+ * @returns {Array} An array of 4 adjacent products.
+ */
+async function findAdjacentProducts(productId) {
+    const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.
+    if (response.status < 200 || response.status >= 300) {
+        throw Error(response.statusText);
+    };
+    const products = await response.json();
+
+    const index = products.findIndex(product => {
+        return product.id === productId;
+    });
+
+    const offsets = [-2, -1, 1, 2];
+    return offsets.map(offset => {
+        return products[(index + products.length + offset) % products.length];
+    });
 };
