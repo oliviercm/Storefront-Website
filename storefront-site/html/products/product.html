@@ -47,52 +47,52 @@
     </header>
     <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
     <!-- END HEADER -->
-    <br>
-    <br>
-    <div class="product">
-        <div class="grid-container">
-            <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
-                <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
+    <main>
+        <div class="product">
+            <div class="grid-container">
+                <div class="grid-item" style="width: 256px; height: 256px; align-self: start;">
+                    <img style="max-width: 256px; max-height: 256px;" id="product-listing-image">
+                </div>
+                <div class="grid-item">
+                    <h3>
+                        <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
+                        <br>
+                        <br>
+                        <p class="stars" id="product-listing-rating">Rating:</p>
+                        <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
+                        <label for="product-quantity">Qty: </label>
+                        <select class="quantity" id="product-quantity" name="product-quantity">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
+                        About this item:
+                    </h3>
+                    <p class="description">
+                        <div>
+                            <ul id="product-listing-description"></ul>
+                        </div>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <button type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
+                    <a href="../confirmation.html"><button type="button" class="buy-now-button">Buy Now</button></a>
+                </div>
             </div>
-            <div class="grid-item">
-                <h3>
-                    <span style="font-size: 1.2em;" id="product-listing-name">&ZeroWidthSpace;</span>
-                    <br>
-                    <br>
-                    <p class="stars" id="product-listing-rating">Rating:</p>
-                    <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
-                    <label for="product-quantity">Qty: </label>
-                    <select class="quantity" id="product-quantity" name="product-quantity">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <p class="price">Price: <span style="color: #b12704;" id="product-listing-price"></span></p>
-                    About this item:
-                </h3>
-                <p class="description">
-                    <div>
-                        <ul id="product-listing-description"></ul>
-                    </div>
-                </p>
-            </div>
-            <div class="grid-item">
-                <button type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
-                <a href="../confirmation.html"><button type="button" class="buy-now-button">Buy Now</button></a>
+            <br>
+            <br>
+            <h2>Other Products:</h2>
+            <div class="other-products">
+                <div><a href="./product.html?id=15"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
+                <div><a href="./product.html?id=16"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
+                <div><a href="./product.html?id=2"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
+                <div><a href="./product.html?id=3"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
             </div>
         </div>
-        <br>
-        <br>
-        <h2>Other Products:</h2>
-        <div class="other-products">
-            <div><a href="./product.html?id=15"><img src="../../images/product15.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product.html?id=16"><img src="../../images/product16.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product.html?id=2"><img src="../../images/product2.png" style="max-width: 128px; max-height: 128px;"></a></div>
-            <div><a href="./product.html?id=3"><img src="../../images/product3.png" style="max-width: 128px; max-height: 128px;"></a></div>
-        </div>
-    </div>
+    </main>
     <!-- BEGIN FOOTER -->
     <footer>
         <div class="footer-nav-container">

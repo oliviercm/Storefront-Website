@@ -3,11 +3,11 @@
     margin-right: 4vw;
     margin-top: 10vh;
 }
+
 .team {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-bottom: 20vh;
 }
 
 .head-shot {
