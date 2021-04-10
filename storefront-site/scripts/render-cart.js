@@ -14,7 +14,7 @@ sessionStorage.setItem("cart", JSON.stringify([{
     id: "4",
     quantity: 3,
     selected: false,
-    isGift: false,
+    isGift: true,
 }]));
 
 // This function handles the initial render of the cart page.
