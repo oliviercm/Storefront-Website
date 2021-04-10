@@ -53,6 +53,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+    min-height: 80vh;
+}
+
 a {
     text-decoration: none;
     color: #0066c0;

@@ -47,105 +47,107 @@
     </header>
     <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5); background-color: #F0F0F0;">
     <!-- END HEADER -->
-    <div class="main-container">
-        <div class="progress-container">
-            <div class="progress-inner-container">
-                <div class="progress">
-                    <div class="progress-cart">
-                        <div class="progress-step">
-                            <div>
-                                <span class="material-icons" style="color: #007600">check_box</span>
-                            </div>
-                            <div>
-                                <b>Review Cart</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-payment">
-                        <div class="progress-step">
-                            <div>
-                                <span class="material-icons" style="color: #C0C0C0">check_box_outline_blank</span>
-                            </div>
-                            <div>
-                                <b>Checkout</b>
+    <main>
+        <div class="main-container">
+            <div class="progress-container">
+                <div class="progress-inner-container">
+                    <div class="progress">
+                        <div class="progress-cart">
+                            <div class="progress-step">
+                                <div>
+                                    <span class="material-icons" style="color: #007600">check_box</span>
+                                </div>
+                                <div>
+                                    <b>Review Cart</b>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="progress-confirmation">
-                        <div class="progress-step">
-                            <div>
-                                <span class="material-icons" style="color: #C0C0C0">check_box_outline_blank</span>
+                        <div class="progress-payment">
+                            <div class="progress-step">
+                                <div>
+                                    <span class="material-icons" style="color: #C0C0C0">check_box_outline_blank</span>
+                                </div>
+                                <div>
+                                    <b>Checkout</b>
+                                </div>
                             </div>
-                            <div>
-                                <b>Confirmation</b>
+                        </div>
+                        <div class="progress-confirmation">
+                            <div class="progress-step">
+                                <div>
+                                    <span class="material-icons" style="color: #C0C0C0">check_box_outline_blank</span>
+                                </div>
+                                <div>
+                                    <b>Confirmation</b>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="cart-container">
-            <div class="cart" id="cart">
-                <h1>Shopping Cart</h1>
-                <span class="clickable-text" style="font-size: 0.9em;" onclick="handleDeselectAllItems()">Deselect all items</span>
-                <div id="cart-legend-price">Price</div>
-                <hr>
-                <div id="cart-items">
-
-                </div>
-                <template id="cart-item-template">
-                    <div class="cart-item">
-                        <div class="cart-item-checkbox">
-                            <div>
-                                <input class="cart-item-checkbox-input" type="checkbox" onchange="handleSelectedCheckboxChange(event)" checked>
-                            </div>
-                        </div>
-                        <div class="cart-item-image">
-                            <img>
-                        </div>
-                        <div class="cart-item-main">
-                            <a class="cart-item-link" href="./products/product.html?id=1" style="font-size: 1.1em;"></a>
-                            <br>
-                            <span class="cart-item-stock" style="font-size: 0.9em;"></span>
-                            <br>
-                            <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
-                            <br>
-                            <input type="checkbox" class="cart-item-gift" onchange="handleGiftCheckboxChange(event)"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
-                            <br>
-                            <select name="quantity" class="cart-item-quantity" onchange="handleQuantityChange(event)">
-                                <option value="0">Remove</option>
-                                <option value="1" selected>Qty: 1</option>
-                                <option value="2">Qty: 2</option>
-                                <option value="3">Qty: 3</option>
-                                <option value="4">Qty: 4</option>
-                                <option value="5">Qty: 5</option>
-                            </select>
-                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <span class="clickable-text cart-item-delete" style="font-size: 0.8em;" onclick="handleCartItemDelete(event)">Delete</span>
-                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
-                            <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
-                        </div>
-                        <div class="cart-item-price"></div>
+            <div class="cart-container">
+                <div class="cart" id="cart">
+                    <h1>Shopping Cart</h1>
+                    <span class="clickable-text" style="font-size: 0.9em;" onclick="handleDeselectAllItems()">Deselect all items</span>
+                    <div id="cart-legend-price">Price</div>
+                    <hr>
+                    <div id="cart-items">
+    
                     </div>
-                </template>
-                <div style="width: 100%; text-align: right; font-size: 1.2em;">
+                    <template id="cart-item-template">
+                        <div class="cart-item">
+                            <div class="cart-item-checkbox">
+                                <div>
+                                    <input class="cart-item-checkbox-input" type="checkbox" onchange="handleSelectedCheckboxChange(event)" checked>
+                                </div>
+                            </div>
+                            <div class="cart-item-image">
+                                <img>
+                            </div>
+                            <div class="cart-item-main">
+                                <a class="cart-item-link" href="./products/product.html?id=1" style="font-size: 1.1em;"></a>
+                                <br>
+                                <span class="cart-item-stock" style="font-size: 0.9em;"></span>
+                                <br>
+                                <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
+                                <br>
+                                <input type="checkbox" class="cart-item-gift" onchange="handleGiftCheckboxChange(event)"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
+                                <br>
+                                <select name="quantity" class="cart-item-quantity" onchange="handleQuantityChange(event)">
+                                    <option value="0">Remove</option>
+                                    <option value="1" selected>Qty: 1</option>
+                                    <option value="2">Qty: 2</option>
+                                    <option value="3">Qty: 3</option>
+                                    <option value="4">Qty: 4</option>
+                                    <option value="5">Qty: 5</option>
+                                </select>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <span class="clickable-text cart-item-delete" style="font-size: 0.8em;" onclick="handleCartItemDelete(event)">Delete</span>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
+                            </div>
+                            <div class="cart-item-price"></div>
+                        </div>
+                    </template>
+                    <div style="width: 100%; text-align: right; font-size: 1.2em;">
+                        Subtotal (<span class="total-cart-item-quantity"></span>): <b>$<span class="total-cart-subtotal"></span></b>
+                    </div>
+                </div>
+            </div>
+            <div class="subtotal-container">
+                <div class="subtotal">
+                    <span style="color: #007600; font-size: 0.9em;"><span class="material-icons">check_circle</span> Your order qualifies for FREE shipping.</span>
+                    <br>
                     Subtotal (<span class="total-cart-item-quantity"></span>): <b>$<span class="total-cart-subtotal"></span></b>
+                    <br>
+                    <input type="checkbox" id="cart-gift" onclick="handleOrderContainsGift(event)"><span style="font-size: 0.9em;"> This order contains a gift
+                    <br>
+                    <a href="./checkout.html">
+                        <button type="submit" class="submit-button">Proceed to checkout</button>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="subtotal-container">
-            <div class="subtotal">
-                <span style="color: #007600; font-size: 0.9em;"><span class="material-icons">check_circle</span> Your order qualifies for FREE shipping.</span>
-                <br>
-                Subtotal (<span class="total-cart-item-quantity"></span>): <b>$<span class="total-cart-subtotal"></span></b>
-                <br>
-                <input type="checkbox" id="cart-gift" onclick="handleOrderContainsGift(event)"><span style="font-size: 0.9em;"> This order contains a gift
-                <br>
-                <a href="./checkout.html">
-                    <button type="submit" class="submit-button">Proceed to checkout</button>
-                </a>
-            </div>
-        </div>
-    </div>
+    </main>
     <!-- BEGIN FOOTER -->
     <footer>
         <div class="footer-nav-container">
