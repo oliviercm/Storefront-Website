@@ -28,7 +28,7 @@
     margin: auto;
     margin-top: 2px;
     margin-bottom: 8px;
-    width: 338px;
+    width: min(calc(100% - 20px), 338px);
     padding: 8px;
     border: 1px solid rgba(128, 128, 128, 0.8);
     border-radius: 4px;
@@ -42,8 +42,8 @@
 .preferences-form-section {
     margin-top: 16px;
     margin-bottom: 32px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     line-height: 1.5;
     font-size: 0.9em;
 }
