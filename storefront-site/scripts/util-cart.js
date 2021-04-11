@@ -32,10 +32,10 @@ async function calculateCartValues() {
             const productQuantity = cartItem.quantity;
             cartSubtotal += productPrice * productQuantity;
             cartItemQuantity += productQuantity;
-            if(cartItemQuantity == 0){
-                const button = cart.getElementById('submit')
-                button.disabled = true 
-            }
+            if(cartItemQuantity = 0){
+                const button = document.getElementById('button')
+                button.disabled = true ;
+            };
         };
     };
     const SALES_TAX_RATE = 0.0725;
