@@ -145,13 +145,13 @@
             </form>
             <div class="subtotal-container">
                 <div class="subtotal">
-                    <span>Subtotal (2 items): <b>$25.98</b></span><br>
+                    <span>Subtotal (<span class="total-cart-item-quantity"></span>): <b>$<span class="total-cart-subtotal"></span></b></span><br>
                     <span>Delivery Fee: </span>
                     <span style="color: #007600;"><span class="material-icons" style="font-size: 1em;">check_circle</span> Free</span>
                     <br>
-                    <span>Tax: <b>$2.08</b></span><br>
+                    <span>Tax: <b>$<span class="total-cart-tax"></span></b></span><br>
                     <div style="margin: 30px 8px 20px 6px;border-top:1px dotted #C0C0C0;"></div>
-                    <span style="font-size: 1.2em;">Total: <b>$28.06</b></span>
+                    <span style="font-size: 1.2em;">Total: <b>$<span class="total-cart-total"></span></b></span>
                     <a href="./confirmation.html">
                         <button type="submit" class="submit-button">Purchase</button>
                     </a>
@@ -197,6 +197,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../scripts/render-checkout.js" type="module"></script>
 </body>
 
 </html>

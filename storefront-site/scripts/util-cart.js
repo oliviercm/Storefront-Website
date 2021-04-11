@@ -21,7 +21,7 @@ async function calculateTotalCartValues() {
     const cart = getCart();
     const products = await getProducts();
 
-    let totalCartPrice = 0;
+    let totalCartSubtotal = 0;
     let totalItemQuantity = 0;
     for (const cartItem of cart) {
         if (cartItem.selected) {
@@ -30,12 +30,12 @@ async function calculateTotalCartValues() {
             });
             const productPrice = product.discount_price.usd || product.price.usd;
             const productQuantity = cartItem.quantity;
-            totalCartPrice += productPrice * productQuantity;
+            totalCartSubtotal += productPrice * productQuantity;
             totalItemQuantity += productQuantity;
         };
     };
     return {
-        totalCartPrice,
+        totalCartSubtotal,
         totalItemQuantity,
     };
 };
