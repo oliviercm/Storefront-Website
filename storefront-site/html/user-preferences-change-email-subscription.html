@@ -57,7 +57,7 @@
                 <b>Change Email Subscriptions</b>
             </nav>
             <h1>Change Email Subscriptions</h1>
-            <form class="preferences-form" action="./user-preferences.html">
+            <form id="user-subscriptions-form" class="preferences-form" action="./user-preferences.html">
                 <div class="preferences-form-section">
                     Use the form below to change the email subscriptions for your account.
                     <br>
@@ -79,7 +79,7 @@
                     </a>
                     <br>
                     <br>
-                    <a href="./user-preferences-change-email-subscription.html">Unsubscribe from all</a>
+                    <span id="user-unsubscribe-all-button" class="clickable-text" href="./user-preferences-change-email-subscription.html">Unsubscribe from all</span>
                 </div>
             </form>
         </div>
@@ -123,6 +123,7 @@
     </footer>
     <!-- END FOOTER -->
     <script src="../scripts/render-user-details.js" type="module"></script>
+    <script src="../scripts/handle-user-preferences.js" type="module"></script>
 </body>
 
 </html>

@@ -57,7 +57,7 @@
                 <b>Change Name</b>
             </nav>
             <h1>Change Name</h1>
-            <form class="preferences-form" action="./user-preferences.html">
+            <form id="user-name-form" class="preferences-form" action="./user-preferences.html">
                 <div class="preferences-form-section">
                     Use the form below to change the name for your account.
                     <br>
@@ -67,7 +67,7 @@
                     <input class="user-name-input" type="text" name="name" required autofocus>
                     <br>
                     <a href="../index.html">
-                        <button type="submit" class="submit-button">Save Changes</button>
+                        <button id="user-name-input-submit" type="submit" class="submit-button">Save Changes</button>
                     </a>
                 </div>
             </form>
@@ -112,6 +112,7 @@
     </footer>
     <!-- END FOOTER -->
     <script src="../scripts/render-user-details.js" type="module"></script>
+    <script src="../scripts/handle-user-preferences.js" type="module"></script>
 </body>
 
 </html>

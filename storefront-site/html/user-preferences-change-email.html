@@ -57,7 +57,7 @@
                 <b>Change Email</b>
             </nav>
             <h1>Change Email</h1>
-            <form class="preferences-form" action="./user-preferences.html">
+            <form id="user-email-form" class="preferences-form" action="./user-preferences.html">
                 <div class="preferences-form-section">
                     Use the form below to change the email for your account.
                     <br>
@@ -67,7 +67,7 @@
                     <input class="user-email-input" type="email" name="email" required autofocus>
                     <br>
                     <a href="../index.html">
-                        <button type="submit" class="submit-button">Save Changes</button>
+                        <button id="user-email-input-submit" type="submit" class="submit-button">Save Changes</button>
                     </a>
                 </div>
             </form>
@@ -111,6 +111,8 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="../scripts/render-user-details.js" type="module"></script>
+    <script src="../scripts/handle-user-preferences.js" type="module"></script>
 </body>
 
 </html>
