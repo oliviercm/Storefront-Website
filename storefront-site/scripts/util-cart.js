@@ -32,8 +32,8 @@ async function calculateCartValues() {
             const productQuantity = cartItem.quantity;
             cartSubtotal += productPrice * productQuantity;
             cartItemQuantity += productQuantity;
-            if(cartItemQuantity = 0){
-                const button = document.getElementById('button')
+            if (cartItemQuantity = 0){
+                const button = document.getElementById("button");
                 button.disabled = true ;
             };
         };
