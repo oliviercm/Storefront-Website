@@ -36,6 +36,12 @@
     margin-top: 8vh;
 }
 
+.other-products > * {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .description {
     text-align: left;
     width: 600px;
