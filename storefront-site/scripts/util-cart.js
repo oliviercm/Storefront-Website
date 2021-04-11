@@ -34,9 +34,15 @@ async function calculateCartValues() {
             cartItemQuantity += productQuantity;
         };
     };
+    const SALES_TAX_RATE = 0.0725;
+    const cartTax = cartSubtotal * SALES_TAX_RATE;
+    const cartTotal = cartSubtotal + cartTax;
+
     return {
         cartSubtotal,
         cartItemQuantity,
+        cartTax,
+        cartTotal,
     };
 };
 
