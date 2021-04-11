@@ -17,7 +17,7 @@ function getCartItemById(id) {
     });
 };
 
-async function calculateTotalCartValues() {
+async function calculateCartValues() {
     const cart = getCart();
     const products = await getProducts();
 
@@ -44,5 +44,5 @@ export {
     getCart,
     setCart,
     getCartItemById,
-    calculateTotalCartValues,
+    calculateCartValues,
 };

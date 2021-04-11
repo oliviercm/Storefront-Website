@@ -1,5 +1,5 @@
 import {
-    calculateTotalCartValues,
+    calculateCartValues,
 } from "./util-cart.js";
 
 // This function handles the initial render.
@@ -15,7 +15,7 @@ async function renderCheckout() {
     const {
         cartSubtotal,
         cartItemQuantity,
-    } = await calculateTotalCartValues();
+    } = await calculateCartValues();
     const cartQuantityElements = document.getElementsByClassName("cart-total-item-quantity");
     for (const cartQuantityElement of cartQuantityElements) {
         cartQuantityElement.textContent = `${cartItemQuantity} ${cartItemQuantity === 1 ? "item" : "items"}`;

@@ -2,7 +2,7 @@ import {
     getCart,
     setCart,
     getCartItemById,
-    calculateTotalCartValues,
+    calculateCartValues,
 } from "./util-cart.js";
 import {
     getProducts,
@@ -141,7 +141,7 @@ async function renderTotalCartValues() {
     const {
         cartSubtotal,
         cartItemQuantity,
-    } = await calculateTotalCartValues();
+    } = await calculateCartValues();
     const cartQuantityElements = document.getElementsByClassName("cart-total-item-quantity");
     for (const cartQuantityElement of cartQuantityElements) {
         cartQuantityElement.textContent = `${cartItemQuantity} ${cartItemQuantity === 1 ? "item" : "items"}`;
