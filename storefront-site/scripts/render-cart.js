@@ -139,16 +139,16 @@ async function renderCartItems() {
 async function renderTotalCartValues() {
     // Calculate and set subtotal text (total quantity, total price)
     const {
-        totalCartSubtotal,
-        totalItemQuantity,
+        cartSubtotal,
+        cartItemQuantity,
     } = await calculateTotalCartValues();
-    const cartSubtotalItemQuantityElements = document.getElementsByClassName("total-cart-item-quantity");
-    for (const itemQuantityElement of cartSubtotalItemQuantityElements) {
-        itemQuantityElement.textContent = `${totalItemQuantity} ${totalItemQuantity === 1 ? "item" : "items"}`;
+    const cartQuantityElements = document.getElementsByClassName("cart-total-item-quantity");
+    for (const cartQuantityElement of cartQuantityElements) {
+        cartQuantityElement.textContent = `${cartItemQuantity} ${cartItemQuantity === 1 ? "item" : "items"}`;
     };
-    const cartSubtotalTotalPriceElements = document.getElementsByClassName("total-cart-subtotal");
-    for (const itemSubtotalElement of cartSubtotalTotalPriceElements) {
-        itemSubtotalElement.textContent = totalCartSubtotal.toFixed(2);
+    const cartSubtotalElements = document.getElementsByClassName("cart-subtotal");
+    for (const cartSubtotalElement of cartSubtotalElements) {
+        cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
     };
 };
 

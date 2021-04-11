@@ -13,26 +13,26 @@ import {
 
 async function renderCheckout() {
     const {
-        totalCartSubtotal,
-        totalItemQuantity,
+        cartSubtotal,
+        cartItemQuantity,
     } = await calculateTotalCartValues();
-    const cartSubtotalItemQuantityElements = document.getElementsByClassName("total-cart-item-quantity");
-    for (const itemQuantityElement of cartSubtotalItemQuantityElements) {
-        itemQuantityElement.textContent = `${totalItemQuantity} ${totalItemQuantity === 1 ? "item" : "items"}`;
+    const cartQuantityElements = document.getElementsByClassName("cart-total-item-quantity");
+    for (const cartQuantityElement of cartQuantityElements) {
+        cartQuantityElement.textContent = `${cartItemQuantity} ${cartItemQuantity === 1 ? "item" : "items"}`;
     };
-    const cartSubtotalTotalPriceElements = document.getElementsByClassName("total-cart-subtotal");
-    for (const itemSubtotalElement of cartSubtotalTotalPriceElements) {
-        itemSubtotalElement.textContent = totalCartSubtotal.toFixed(2);
+    const cartSubtotalElements = document.getElementsByClassName("cart-subtotal");
+    for (const cartSubtotalElement of cartSubtotalElements) {
+        cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
     };
     const SALES_TAX_RATE = 0.0725;
-    const totalCartTax = totalCartSubtotal * SALES_TAX_RATE;
-    const cartTotalTaxElements = document.getElementsByClassName("total-cart-tax");
-    for (const totalTaxElement of cartTotalTaxElements) {
-        totalTaxElement.textContent = totalCartTax.toFixed(2);
+    const cartTax = cartSubtotal * SALES_TAX_RATE;
+    const cartTaxElements = document.getElementsByClassName("total-cart-tax");
+    for (const taxElement of cartTaxElements) {
+        taxElement.textContent = cartTax.toFixed(2);
     };
-    const totalCartTotal = totalCartSubtotal + totalCartTax;
+    const cartTotal = cartSubtotal + cartTax;
     const cartTotalElements = document.getElementsByClassName("total-cart-total");
     for (const cartTotalElement of cartTotalElements) {
-        cartTotalElement.textContent = totalCartTotal.toFixed(2);
+        cartTotalElement.textContent = cartTotal.toFixed(2);
     };
 };
