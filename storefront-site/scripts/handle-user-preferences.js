@@ -78,47 +78,40 @@ function handleUserPasswordSubmit(event) {
         event.preventDefault();
         document.getElementById("error-message-container-1").style.display = "block";
         document.getElementById("error-message-1").textContent = "Enter your password.";
-        document.getElementById("current-password").style.borderColor = "red";
-        document.getElementById("current-password").style.boxShadow = "inset 0 0 3px red";
+        document.getElementById("current-password").classList.add("invalid");
         errors.current = true;
     };
     if (formData.get("new-password").length === 0) {
         event.preventDefault();
         document.getElementById("error-message-container-2").style.display = "block";
         document.getElementById("error-message-2").textContent = "Enter new password.";
-        document.getElementById("new-password").style.borderColor = "red";
-        document.getElementById("new-password").style.boxShadow = "inset 0 0 3px red";
+        document.getElementById("new-password").classList.add("invalid");
         errors.new = true;
     };
     if (formData.get("new-password").length < 6) {
         event.preventDefault();
         document.getElementById("error-message-container-2").style.display = "block";
         document.getElementById("error-message-2").textContent = "New password must be at least 6 characters.";
-        document.getElementById("new-password").style.borderColor = "red";
-        document.getElementById("new-password").style.boxShadow = "inset 0 0 3px red";
+        document.getElementById("new-password").classList.add("invalid");
         errors.new = true;
     };
     if (formData.get("new-password") !== formData.get("repeat-password")) {
         event.preventDefault();
         document.getElementById("error-message-container-3").style.display = "block";
         document.getElementById("error-message-3").textContent = "Passwords do not match.";
-        document.getElementById("repeat-password").style.borderColor = "red";
-        document.getElementById("repeat-password").style.boxShadow = "inset 0 0 3px red";
+        document.getElementById("repeat-password").classList.add("invalid");
         errors.repeat = true;
     };
     if (!errors.current) {
         document.getElementById("error-message-container-1").style.display = "none";
-        document.getElementById("current-password").style.borderColor = "";
-        document.getElementById("current-password").style.boxShadow = "";
+        document.getElementById("current-password").classList.remove("invalid");
     };
     if (!errors.new) {
         document.getElementById("error-message-container-2").style.display = "none";
-        document.getElementById("new-password").style.borderColor = "";
-        document.getElementById("new-password").style.boxShadow = "";
+        document.getElementById("new-password").classList.remove("invalid");
     };
     if (!errors.repeat) {
         document.getElementById("error-message-container-3").style.display = "none";
-        document.getElementById("repeat-password").style.borderColor = "";
-        document.getElementById("repeat-password").style.boxShadow = "";
+        document.getElementById("repeat-password").classList.remove("invalid");
     };
 };
