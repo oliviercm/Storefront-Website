@@ -35,8 +35,9 @@
 }
 
 .preferences-form input:focus {
-    outline-width: 2;
-    outline-color: goldenrod;
+    outline: none;
+    border: 1px solid goldenrod;
+    box-shadow: 0 0 0 1px goldenrod;
 }
 
 .preferences-form-section {
