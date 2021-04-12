@@ -134,9 +134,6 @@ async function renderCartItems() {
             const hr = cartItemsElement.appendChild(document.createElement("hr"));
             hr.classList.add("cart-item-hr");
             hr.setAttribute("data-product-id", cartItem.id);
-
-            
-
         } catch(e) {
             console.error(e);
         };
