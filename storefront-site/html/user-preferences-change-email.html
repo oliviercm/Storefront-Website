@@ -63,9 +63,11 @@
                     <br>
                     <br>
                     <label for="email"><b>New email</b></label>
-                    <br>
-                    <input class="user-email-input" type="email" name="email" required autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
-                    <br>
+                    <input id="user-email-input" class="user-email-input" type="text" name="email" autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
+                    <div id="error-message-container-1" style="display: none; color: #c41829;">
+                        <span class="material-icons" style="font-size: 16px;">error</span>
+                        <span id="error-message-1"></span>
+                    </div>
                     <a href="../index.html">
                         <button id="user-email-input-submit" type="submit" class="submit-button">Save Changes</button>
                     </a>

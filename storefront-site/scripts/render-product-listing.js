@@ -79,8 +79,8 @@ async function displayOtherProducts(currentProductId) {
         const otherProductTemplate = document.getElementById("other-product-template");
         const otherProductElement = otherProductTemplate.content.firstElementChild.cloneNode(true);
 
-        otherProductElement.querySelectorAll("img")[0].setAttribute("src", `../../images/${otherProduct.images[0]}`);
-        otherProductElement.querySelectorAll("a")[0].setAttribute("href", `./product.html?id=${otherProduct.id}`);
+        otherProductElement.querySelector("img").setAttribute("src", `../../images/${otherProduct.images[0]}`);
+        otherProductElement.querySelector("a").setAttribute("href", `./product.html?id=${otherProduct.id}`);
 
         const otherProductsDiv = document.getElementById("other-products");
         otherProductsDiv.appendChild(otherProductElement);

@@ -75,19 +75,19 @@ async function renderCartItems() {
             const cartItemElement = cartItemTemplate.content.firstElementChild.cloneNode(true);
             cartItemElement.setAttribute("data-product-id", cartItem.id);
 
-            const cartItemCheckboxElement = cartItemElement.querySelectorAll(".cart-item-checkbox input[type=checkbox]")[0];
+            const cartItemCheckboxElement = cartItemElement.querySelector(".cart-item-checkbox input[type=checkbox]");
             cartItemCheckboxElement.checked = cartItem.selected;
             cartItemCheckboxElement.setAttribute("data-product-id", cartItem.id);
             cartItemCheckboxElement.addEventListener("change", handleSelectedCheckboxChange);
 
-            const cartItemImageElement = cartItemElement.querySelectorAll(".cart-item-image img")[0];
+            const cartItemImageElement = cartItemElement.querySelector(".cart-item-image img");
             cartItemImageElement.setAttribute("src", `../images/${item.images[0]}`);
 
-            const cartItemLinkElement = cartItemElement.querySelectorAll(".cart-item-main .cart-item-link")[0];
+            const cartItemLinkElement = cartItemElement.querySelector(".cart-item-main .cart-item-link");
             cartItemLinkElement.textContent = item.name;
             cartItemLinkElement.setAttribute("href", `./products/product.html?id=${item.id}`);
 
-            const cartItemStockElement = cartItemElement.querySelectorAll(".cart-item-main .cart-item-stock")[0];
+            const cartItemStockElement = cartItemElement.querySelector(".cart-item-main .cart-item-stock");
             const LOW_STOCK_CUTOFF = 20;
             // If there is low stock, display a different message.
             if (item.stock > LOW_STOCK_CUTOFF) {
@@ -98,12 +98,12 @@ async function renderCartItems() {
                 cartItemStockElement.style.color = `#b12704`;
             };
 
-            const cartItemIsGiftElement = cartItemElement.querySelectorAll(".cart-item-main .cart-item-gift")[0];
+            const cartItemIsGiftElement = cartItemElement.querySelector(".cart-item-main .cart-item-gift");
             cartItemIsGiftElement.checked = cartItem.isGift;
             cartItemIsGiftElement.setAttribute("data-product-id", cartItem.id);
             cartItemIsGiftElement.addEventListener("change", handleGiftCheckboxChange);
 
-            const cartItemPriceElement = cartItemElement.querySelectorAll(".cart-item .cart-item-price")[0];
+            const cartItemPriceElement = cartItemElement.querySelector(".cart-item .cart-item-price");
             const originalPriceSpan = document.createElement("span");
             originalPriceSpan.classList.add("cart-item-price-original");
             originalPriceSpan.setAttribute("data-product-id", cartItem.id);
@@ -120,12 +120,12 @@ async function renderCartItems() {
                 cartItemPriceElement.appendChild(discountedPriceSpan);
             };
 
-            const cartItemQuantityElement = cartItemElement.querySelectorAll(".cart-item-quantity")[0];
+            const cartItemQuantityElement = cartItemElement.querySelector(".cart-item-quantity");
             cartItemQuantityElement.value = cartItem.quantity;
             cartItemQuantityElement.setAttribute("data-product-id", cartItem.id);
             cartItemQuantityElement.addEventListener("change", handleQuantityChange);
 
-            const cartItemDeleteElement = cartItemElement.querySelectorAll(".cart-item-delete")[0];
+            const cartItemDeleteElement = cartItemElement.querySelector(".cart-item-delete");
             cartItemDeleteElement.setAttribute("data-product-id", cartItem.id);
             cartItemDeleteElement.addEventListener("click", handleCartItemDelete);
             

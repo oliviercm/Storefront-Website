@@ -49,8 +49,9 @@
 }
 
 .login-form input:focus {
-    outline-width: 2;
-    outline-color: goldenrod;
+    outline: none;
+    border-color: goldenrod;
+    box-shadow: inset 0 0 3px goldenrod;
 }
 
 .form-spacer {
