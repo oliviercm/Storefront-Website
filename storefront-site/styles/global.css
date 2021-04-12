@@ -86,6 +86,10 @@ b {
     font-weight: bold;
 }
 
+input:invalid {
+    box-shadow: none;
+}
+
 h1 {
     display: block;
     font-size: 2em;
