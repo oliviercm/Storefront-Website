@@ -11,6 +11,7 @@ import {
 
 // Load test data.
 // REMOVE WHEN ADDING TO CART IS IMPLEMENTED!
+
 sessionStorage.setItem("cart", JSON.stringify([{
     id: "2",
     quantity: 1,
@@ -38,6 +39,7 @@ sessionStorage.setItem("cart", JSON.stringify([{
 })();
 
 async function renderCart() {
+    document.addEventListener("cartChange", checkCart);
     await renderCartItems();
     await renderTotalCartValues();
     await renderOrderContainsGift();
@@ -55,6 +57,9 @@ async function renderCartItems() {
 
     const orderContainsGiftCheckbox = document.getElementById("cart-gift");
     orderContainsGiftCheckbox.addEventListener("click", handleOrderContainsGift);
+
+    // checks if cart is empty and disables proceed to checkout
+    checkCart();
 
     // Render cart items using template.
     const cartItemsElement = document.getElementById("cart-items");
@@ -131,7 +136,8 @@ async function renderCartItems() {
             hr.classList.add("cart-item-hr");
             hr.setAttribute("data-product-id", cartItem.id);
 
-            checkCart();
+            
+
         } catch(e) {
             console.error(e);
         };
@@ -189,6 +195,7 @@ function handleQuantityChange(event) {
     setCart(cart);
     rerenderCartItem(changedCartItem.id);
     renderTotalCartValues();
+    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleDeselectAllItems(event) {
@@ -204,6 +211,7 @@ function handleDeselectAllItems(event) {
     setCart(cart);
     renderTotalCartValues();
     renderOrderContainsGift();
+    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleSelectedCheckboxChange(event) {
@@ -215,6 +223,7 @@ function handleSelectedCheckboxChange(event) {
     setCart(cart);
     renderTotalCartValues();
     renderOrderContainsGift();
+    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleGiftCheckboxChange(event) {
@@ -253,6 +262,7 @@ function handleCartItemDelete(event) {
     setCart(cart);
     removeCartItemElement(event.target.dataset.productId);
     renderTotalCartValues();
+    document.dispatchEvent(new Event("cartChange"));
 };
 
 function removeCartItemElement(productId) {
@@ -269,11 +279,20 @@ function removeCartItemElement(productId) {
     cartItemHrElement.parentNode.removeChild(cartItemHrElement);
 };
 
-function checkCart(event){
+// for disabling proceed to checkout
+async function checkCart(event){
+    
+    let {cartItemQuantity} = await calculateCartValues(); 
     
     if (cartItemQuantity === 0){
         const button = document.getElementById("button");
         return button.disabled = true ;
-    };
-    renderTotalCartValues();
-}
+    } 
+    else{
+        const button = document.getElementById("button");
+        return button.disabled = false ;
+
+    }
+
+   
+};
