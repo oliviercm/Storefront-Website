@@ -24,8 +24,12 @@
     margin: 0.75em 0;
 }
 
+.preferences-form label {
+    display: block;
+}
+
 .preferences-form input {
-    margin: auto;
+    display: block;
     margin-top: 2px;
     margin-bottom: 8px;
     width: min(calc(100% - 20px), 338px);
