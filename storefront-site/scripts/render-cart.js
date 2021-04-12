@@ -290,5 +290,5 @@ async function handleCheckoutButton(event){
     } else {
         const button = document.getElementById("button");
         return button.disabled = false;
-    }
+    };
 };
