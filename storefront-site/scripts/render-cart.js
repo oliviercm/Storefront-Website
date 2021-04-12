@@ -285,10 +285,10 @@ async function handleCheckoutButton(event){
     } = await calculateCartValues(); 
     
     if (cartItemQuantity === 0) {
-        const button = document.getElementById("button");
+        const button = document.getElementById("checkout-button");
         return button.disabled = true;
     } else {
-        const button = document.getElementById("button");
+        const button = document.getElementById("checkout-button");
         return button.disabled = false;
     };
 };
