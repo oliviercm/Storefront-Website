@@ -90,7 +90,7 @@ input:invalid {
     box-shadow: none;
 }
 
-input[type="text"].invalid, input[type="password"].invalid {
+input[type="text"].invalid, input[type="password"].invalid, input[type="email"].invalid {
     border-color: red;
     box-shadow: inset 0 0 3px red;
 }

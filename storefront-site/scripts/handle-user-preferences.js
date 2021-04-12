@@ -53,6 +53,21 @@ function handleUserNameSubmit(event) {
 };
 
 function handleUserEmailSubmit(event) {
+    const formData = new FormData(event.target);
+    if (formData.get("email").length === 0) {
+        event.preventDefault();
+        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-1").textContent = "Enter your email.";
+        document.getElementById("user-email-input").classList.add("invalid");
+        return;
+    };
+    if (!/^.+@.+$/.test(formData.get("email"))) {
+        event.preventDefault();
+        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-1").textContent = "Enter a valid email.";
+        document.getElementById("user-email-input").classList.add("invalid");
+        return;
+    };
     const user = getUser();
     user.email = new FormData(event.target).get("email");
     setUser(user);
