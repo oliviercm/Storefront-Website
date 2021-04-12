@@ -194,7 +194,6 @@ function handleQuantityChange(event) {
     setCart(cart);
     rerenderCartItem(changedCartItem.id);
     renderTotalCartValues();
-    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleDeselectAllItems(event) {
@@ -210,7 +209,6 @@ function handleDeselectAllItems(event) {
     setCart(cart);
     renderTotalCartValues();
     renderOrderContainsGift();
-    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleSelectedCheckboxChange(event) {
@@ -222,7 +220,6 @@ function handleSelectedCheckboxChange(event) {
     setCart(cart);
     renderTotalCartValues();
     renderOrderContainsGift();
-    document.dispatchEvent(new Event("cartChange"));
 };
 
 function handleGiftCheckboxChange(event) {
@@ -261,7 +258,6 @@ function handleCartItemDelete(event) {
     setCart(cart);
     removeCartItemElement(event.target.dataset.productId);
     renderTotalCartValues();
-    document.dispatchEvent(new Event("cartChange"));
 };
 
 function removeCartItemElement(productId) {

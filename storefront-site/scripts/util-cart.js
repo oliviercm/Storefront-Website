@@ -8,6 +8,7 @@ function getCart() {
 
 function setCart(cart) {
     sessionStorage.setItem("cart", JSON.stringify(cart));
+    document.dispatchEvent(new Event("cartChange"));
 };
 
 function getCartItemById(id) {
