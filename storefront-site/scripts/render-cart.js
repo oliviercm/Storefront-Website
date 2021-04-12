@@ -130,6 +130,8 @@ async function renderCartItems() {
             const hr = cartItemsElement.appendChild(document.createElement("hr"));
             hr.classList.add("cart-item-hr");
             hr.setAttribute("data-product-id", cartItem.id);
+
+            checkCart();
         } catch(e) {
             console.error(e);
         };
@@ -266,3 +268,12 @@ function removeCartItemElement(productId) {
     });
     cartItemHrElement.parentNode.removeChild(cartItemHrElement);
 };
+
+function checkCart(event){
+    
+    if (cartItemQuantity === 0){
+        const button = document.getElementById("button");
+        return button.disabled = true ;
+    };
+    renderTotalCartValues();
+}
