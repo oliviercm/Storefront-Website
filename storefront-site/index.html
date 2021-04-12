@@ -100,89 +100,18 @@
         </div>
         <div class="outer-grid-product-listings">
             <h2>Browse our full selection of products</h2>
-            <div class="inner-grid-product-listings">
-                <a href="./html/products/product.html?id=1">
-                    <div class="product-listing">
-                        <img src="./images/product1.png" alt="Product Image">
+            <div class="inner-grid-product-listings" id="product-grid"> 
+                <template id="product-template">
+                    <div>
+                        <a>
+                            <div class="product-listing">
+                                <img alt="Product Image">
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="./html/products/product.html?id=2">
-                    <div class="product-listing">
-                        <img src="./images/product2.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=3">
-                    <div class="product-listing">
-                        <img src="./images/product3.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=4">
-                    <div class="product-listing">
-                        <img src="./images/product4.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=5">
-                    <div class="product-listing">
-                        <img src="./images/product5.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=6">
-                    <div class="product-listing">
-                        <img src="./images/product6.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=7">
-                    <div class="product-listing">
-                        <img src="./images/product7.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=8">
-                    <div class="product-listing">
-                        <img src="./images/product8.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=9">
-                    <div class="product-listing">
-                        <img src="./images/product9.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=10">
-                    <div class="product-listing">
-                        <img src="./images/product10.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=11">
-                    <div class="product-listing">
-                        <img src="./images/product11.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=12">
-                    <div class="product-listing">
-                        <img src="./images/product12.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=13">
-                    <div class="product-listing">
-                        <img src="./images/product13.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=14">
-                    <div class="product-listing">
-                        <img src="./images/product14.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=15">
-                    <div class="product-listing">
-                        <img src="./images/product15.png" alt="Product Image">
-                    </div>
-                </a>
-                <a href="./html/products/product.html?id=16">
-                    <div class="product-listing">
-                        <img src="./images/product16.png" alt="Product Image">
-                    </div>
-                </a>
+                </template>
             </div>
-        </div>
+        </div>  
     </main>
     <!-- BEGIN FOOTER -->
     <footer>
@@ -221,6 +150,7 @@
         </nav>
     </footer>
     <!-- END FOOTER -->
+    <script src="./scripts/render-home.js" type="module"></script>
 </body>
 
 </html>
