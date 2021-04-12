@@ -279,10 +279,10 @@ function removeCartItemElement(productId) {
 };
 
 // for disabling proceed to checkout
-async function handleCheckoutButton(event){
+async function handleCheckoutButton(event) {
     const {
-        cartItemQuantity
-    } = await calculateCartValues(); 
+        cartItemQuantity,
+    } = await calculateCartValues();
     
     if (cartItemQuantity === 0) {
         const button = document.getElementById("checkout-button");
