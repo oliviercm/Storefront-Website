@@ -11,7 +11,6 @@ import {
 
 // Load test data.
 // REMOVE WHEN ADDING TO CART IS IMPLEMENTED!
-
 sessionStorage.setItem("cart", JSON.stringify([{
     id: "2",
     quantity: 1,
@@ -39,7 +38,7 @@ sessionStorage.setItem("cart", JSON.stringify([{
 })();
 
 async function renderCart() {
-    document.addEventListener("cartChange", checkCart);
+    document.addEventListener("cartChange", handleCheckoutButton);
     await renderCartItems();
     await renderTotalCartValues();
     await renderOrderContainsGift();
@@ -59,7 +58,7 @@ async function renderCartItems() {
     orderContainsGiftCheckbox.addEventListener("click", handleOrderContainsGift);
 
     // checks if cart is empty and disables proceed to checkout
-    checkCart();
+    handleCheckoutButton();
 
     // Render cart items using template.
     const cartItemsElement = document.getElementById("cart-items");
@@ -280,19 +279,16 @@ function removeCartItemElement(productId) {
 };
 
 // for disabling proceed to checkout
-async function checkCart(event){
+async function handleCheckoutButton(event){
+    const {
+        cartItemQuantity
+    } = await calculateCartValues(); 
     
-    let {cartItemQuantity} = await calculateCartValues(); 
-    
-    if (cartItemQuantity === 0){
+    if (cartItemQuantity === 0) {
         const button = document.getElementById("button");
-        return button.disabled = true ;
-    } 
-    else{
+        return button.disabled = true;
+    } else {
         const button = document.getElementById("button");
-        return button.disabled = false ;
-
+        return button.disabled = false;
     }
-
-   
 };
