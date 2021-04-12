@@ -74,6 +74,8 @@ function handleUserPasswordSubmit(event) {
         document.getElementById("error-message-container").style.display = "block";
         document.getElementById("error-message").textContent = "Passwords do not match.";
         document.getElementById("new-password").style.borderColor = "red";
+        document.getElementById("new-password").style.boxShadow = "inset 0 0 3px red";
         document.getElementById("repeat-password").style.borderColor = "red";
+        document.getElementById("repeat-password").style.boxShadow = "inset 0 0 3px red";
     };
 };
