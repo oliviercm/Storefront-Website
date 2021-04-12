@@ -39,6 +39,14 @@ function addUserPreferencesHandlers() {
 };
 
 function handleUserNameSubmit(event) {
+    const formData = new FormData(event.target);
+    if (formData.get("name").length === 0) {
+        event.preventDefault();
+        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-1").textContent = "Enter your name.";
+        document.getElementById("user-name-input").classList.add("invalid");
+        return;
+    };
     const user = getUser();
     user.full_name = new FormData(event.target).get("name");
     setUser(user);
