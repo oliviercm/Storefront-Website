@@ -23,7 +23,6 @@ async function calculateCartValues() {
 
     let cartSubtotal = 0;
     let cartItemQuantity = 0;
-      
     for (const cartItem of cart) {
         if (cartItem.selected) {
             const product = products.find(product => {
@@ -33,7 +32,6 @@ async function calculateCartValues() {
             const productQuantity = cartItem.quantity;
             cartSubtotal += productPrice * productQuantity;
             cartItemQuantity += productQuantity;
-          
         };
     };
     const SALES_TAX_RATE = 0.0725;
