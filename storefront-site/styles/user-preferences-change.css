@@ -26,12 +26,13 @@
 
 .preferences-form label {
     display: block;
+    margin-top: 6px;
 }
 
 .preferences-form input {
     display: block;
     margin-top: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     width: min(calc(100% - 20px), 338px);
     padding: 8px;
     border: 1px solid rgba(128, 128, 128, 0.8);
