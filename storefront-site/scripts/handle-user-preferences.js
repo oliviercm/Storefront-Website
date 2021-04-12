@@ -72,7 +72,7 @@ function handleUserPasswordSubmit(event) {
     if (formData.get("new-password") !== formData.get("repeat-password")) {
         event.preventDefault();
         document.getElementById("error-message-container").style.display = "block";
-        document.getElementById("error-message").textContent = "Passwords must match.";
+        document.getElementById("error-message").textContent = "Passwords do not match.";
         document.getElementById("new-password").style.borderColor = "red";
         document.getElementById("repeat-password").style.borderColor = "red";
     };
