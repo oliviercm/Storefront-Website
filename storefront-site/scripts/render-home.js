@@ -1,19 +1,28 @@
-import {
-    getProducts,
-} from "./util-products.js";
+
+//Pulls data from JSON
+async function getProducts() {
+    const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.  t   `
+    if (response.status < 200 || response.status >= 300) {     
+        throw Error(response.statusText);
+    };
+    const products = await response.json();
+    return products;
+};
 
 const productData = await getProducts();
-const productGrid = document.querySelector(".inner-grid-product-listings");
+
+//gets the product-grid
+const productGrid = document.querySelector(".inner-grid-product-listings")
+
+
+//gets the template 
 const productTemplate = document.getElementById("product-template");
 const popularProductTemplate = document.getElementById("popular-product-template");
 
 
-// Loops all products to create product listings and append to the product grid
+//loops through to create copies and append to the DOM
 for (const product of productData) {
-    const productElement = productTemplate.content.firstElementChild.cloneNode(true);
-    productElement.setAttribute("product-id", product.id);
 
-<<<<<<< HEAD
         const productElement = productTemplate.content.firstElementChild.cloneNode(true);
         productElement.setAttribute("product-id", product.id);
         // console.log(productElement);
@@ -25,16 +34,9 @@ for (const product of productData) {
         const productLinkElement = productElement.querySelector("a");
         productLinkElement.setAttribute("href", `./html/products/product.html?id=${product.id}`);
         // console.log(productLinkElement);  
-=======
-    const productImageElement = productElement.querySelector("img");
-    productImageElement.setAttribute("src", `./images/${product.images[0]}`);
-    productImageElement.setAttribute("alt", product.name);
->>>>>>> 057b347aa967b05fea811b89dd977203e83e338d
 
-    const productLinkElement = productElement.querySelector("a");
-    productLinkElement.setAttribute("href", `./html/products/product.html?id=${product.id}`);
+        productGrid.appendChild(productElement);
 
-<<<<<<< HEAD
         };
 
 
@@ -42,20 +44,37 @@ for (const product of productData) {
 const randomPopular = productData[Math.floor(Math.random() * productData.length)];
 console.log(randomPopular);
 
-const popularProductElement = popularProductTemplate.content.firstElementChild.cloneNode(true);
-const popularProductImage = popularProductElement.querySelector("img");
+const popularProductImage = document.getElementById("random-popular-product");
 popularProductImage.setAttribute("src", `./images/${randomPopular.images}`);
-const popularProductLink = popularProductElement.querySelector(".popular-product-link");
+const popularProductLink = document.getElementById("popular-product-link");
 popularProductLink.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
-const seePopularProducts = popularProductElement.querySelector(".see-popular-products");
-popularProductLink.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
-
-
-console.log(popularProductElement);
-popularProductTemplate.appendChild(popularProductElement);
+const seePopularProducts = document.getElementById("see-popular-products");
+seePopularProducts.textContent = "See More";
+seePopularProducts.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
 
 
 
+//Display on sale product
+
+const filterItems = productData.filter(sale => sale.discount_price.usd === true); 
+console.log(filterItems);
+
+// function filterSale(productData) {
+//     if(productData.discount_price.usd) {
+//         const filterdItems = productData.filter()
+//     }
+// }
+
+
+// if (item.discount_price.usd) {
+//     originalPriceSpan.style.setProperty("text-decoration", "line-through");
+//     const discountedPriceSpan = document.createElement("span");
+//     discountedPriceSpan.classList.add("cart-item-price-discount");
+//     discountedPriceSpan.setAttribute("data-product-id", cartItem.id);
+//     discountedPriceSpan.appendChild(document.createTextNode(`$${(item.discount_price.usd * cartItem.quantity).toFixed(2)}`));
+//     cartItemPriceElement.appendChild(document.createTextNode("\u00A0"));
+//     cartItemPriceElement.appendChild(discountedPriceSpan);
+// };
 // console.log(popularProductImage); 
 
 // popularProductTemplate.appendChild(popularProductElement);
@@ -94,7 +113,3 @@ popularProductTemplate.appendChild(popularProductElement);
 
 //     var colors = ["red","blue","green","yellow"];
 // var randColor = colors[Math.floor(Math.random() * colors.length)];
-=======
-    productGrid.appendChild(productElement);
-};
->>>>>>> 057b347aa967b05fea811b89dd977203e83e338d
