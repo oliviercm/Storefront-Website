@@ -61,7 +61,7 @@
                         <p class="stars" id="product-listing-rating">Rating:</p>
                         <p class="stock" id="product-listing-stock">&ZeroWidthSpace;</p>
                         <label for="product-quantity">Qty: </label>
-                        <select class="quantity" id="product-quantity" name="product-quantity">
+                        <select id="product-quantity" class="quantity" id="product-quantity" name="product-quantity">
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -78,12 +78,8 @@
                     </p>
                 </div>
                 <div class="grid-item">
-                    <a href = "../cart.html"><button type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button></a>
+                    <button id="add-to-cart-button" type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
                     <a href="../confirmation.html"><button type="button" class="buy-now-button">Buy Now</button></a>
-
-                    <button id="add-to-cart-button">Add to Cart!</button>
-                    <p id="add-to-cart"></p>
-                    
                 </div>
             </div>
             <br>
@@ -135,6 +131,7 @@
     </template>
     <script src="../../scripts/render-product-listing.js"></script>
     <script src="../../scripts/render-cart-quantity.js" type="module"></script>
+    <script src="../../scripts/handle-add-to-cart.js" type="module"></script>
 </body>
 
 </html>
