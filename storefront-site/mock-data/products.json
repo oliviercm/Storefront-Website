@@ -99,7 +99,7 @@
         "images": [
             "product5.png"
         ],
-        "rating": 4,
+        "rating": 5,
         "stock": 100,
         "price": {
             "usd": 9.99
@@ -149,6 +149,7 @@
             "usd": 11.99
         },
         "discount_price": {
+            "usd": 9.99
         },
         "description": [
             "Efficient and Effective: Our white gauze wrap rolls have been designed to secure the wound dressings effectively in place, efficiently reducing the risk of infections. The Stretch formula ensures gentle pressure over the wound while providing adequate breathability for its fast-paced recovery.",
@@ -279,7 +280,7 @@
         "images": [
             "product13.png"
         ],
-        "rating": 4,
+        "rating": 3,
         "stock": 100,
         "price": {
             "usd": 21.99
@@ -308,6 +309,7 @@
             "usd": 9.99
         },
         "discount_price": {
+            "usd": 7.99
         },
         "description": [
             "Tylenol Extra Strength Caplets with 500mg of acetaminophen to provide temporary relief of minor aches and pains and help reduce fever",
@@ -325,7 +327,7 @@
         "images": [
             "product15.png"
         ],
-        "rating": 4,
+        "rating": 3,
         "stock": 100,
         "price": {
             "usd": 6.99
@@ -348,7 +350,7 @@
         "images": [
             "product16.png"
         ],
-        "rating": 4,
+        "rating": 3,
         "stock": 100,
         "price": {
             "usd": 18.99
