@@ -22,21 +22,15 @@ function handleLoginSubmit(event) {
     };
 
     if (formData.get("email").length === 0) {
+        invalid.email = true;
         document.getElementById("error-message-1").textContent = "Enter your email.";
-        invalid.email = true;
     } else if (!/^.+@.+$/.test(formData.get("email"))) {
-        document.getElementById("error-message-1").textContent = "Enter a valid email.";
         invalid.email = true;
+        document.getElementById("error-message-1").textContent = "Enter a valid email.";
     };
     if (formData.get("password").length === 0) {
-        document.getElementById("error-message-2").textContent = "Enter your password.";
         invalid.password = true;
-    };
-
-    for (const field in invalid) {
-        if (invalid[field]) {
-            event.preventDefault();
-        };
+        document.getElementById("error-message-2").textContent = "Enter your password.";
     };
 
     if (invalid.email) {
@@ -52,5 +46,17 @@ function handleLoginSubmit(event) {
     } else {
         document.getElementById("error-message-container-2").style.display = "none";
         document.getElementById("login-password-input").classList.remove("invalid");
+    };
+
+    let hasError = false;
+    for (const field in invalid) {
+        if (invalid[field]) {
+            hasError = true;
+        };
+    };
+    if (hasError) {
+        event.preventDefault();
+    } else {
+        // Send login request
     };
 };
