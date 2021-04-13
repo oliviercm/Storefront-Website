@@ -3,7 +3,7 @@ import {
     setUser,
 } from "./util-user.js";
 
-(async () => {
+(() => {
     try {
         addUserPreferencesHandlers();
     } catch(e) {
