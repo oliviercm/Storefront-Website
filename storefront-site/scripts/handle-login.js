@@ -9,7 +9,6 @@
 function addLoginHandlers() {
     const loginFormElement = document.getElementById("login-form");
     if (loginFormElement) {
-        console.log("foo")
         loginFormElement.addEventListener("submit", handleLoginSubmit, false);
     };
 };
