@@ -23,4 +23,4 @@ async function renderCartQuantity() {
     };
 };
 
-async function renderCartHeader(){
+
