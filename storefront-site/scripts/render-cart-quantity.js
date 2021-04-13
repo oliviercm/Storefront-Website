@@ -22,5 +22,3 @@ async function renderCartQuantity() {
         cartItemTotal.textContent = cartItemQuantity;
     };
 };
-
-
