@@ -17,30 +17,38 @@
         <a href="../index.html" class="logo">
             <img src="../images/logo-black.png" class="logo">
         </a>
-        <form class="register-form">
+        <form id="register-form" class="register-form" action="../index.html">
             <h1>Create Account</h1>
             <label for="name"><b>Your name</b></label>
-            <br>
-            <input type="text" name="name" required autofocus>
-            <br>
+            <input id="register-name-input" type="text" name="name" autofocus>
+            <div id="error-message-container-name" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-name" style="font-size: 0.8em;"></span>
+            </div>
             <div class="form-spacer"></div>
             <label for="email"><b>Email</b></label>
-            <br>
-            <input type="email" name="email" required spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
-            <br>
+            <input id="register-email-input" type="text" name="email" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
+            <div id="error-message-container-email" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-email" style="font-size: 0.8em;"></span>
+            </div>
             <div class="form-spacer"></div>
             <label for="password"><b>Password</b></label>
-            <br>
-            <input type="password" placeholder="At least 6 characters" name="password" required spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
-            <br>
+            <input id="register-password-input" type="password" placeholder="At least 6 characters" name="password" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
             <div id="password-requirement">
                 <span class="material-icons" style="font-size: 16px;">info</span> Passwords must be at least 6 characters.
             </div>
+            <div id="error-message-container-password" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-password" style="font-size: 0.8em;"></span>
+            </div>
             <br>
             <label for="password-repeat"><b>Re-enter password</b></label>
-            <br>
-            <input type="password" name="password-repeat" required spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
-            <br>
+            <input id="register-password-repeat-input" type="password" name="password-repeat" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
+            <div id="error-message-container-password-repeat" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-password-repeat" style="font-size: 0.8em;"></span>
+            </div>
             <div class="form-spacer"></div>
             <button type="submit" class="create-account-button">Create your account</button>
             <br>
@@ -64,6 +72,7 @@
             </div>
         </div>
     </footer>
+    <script src="../scripts/handle-register.js" type="module"></script>
 </body>
 
 </html>
