@@ -7,8 +7,9 @@ function getCart() {
 };
 
 function setCart(cart) {
+    const MAX_QUANTITY = 20;
     for (const cartItem of cart) {
-        cartItem.quantity = Number(cartItem.quantity);
+        cartItem.quantity = Math.min(Number(cartItem.quantity), MAX_QUANTITY);
     };
     sessionStorage.setItem("cart", JSON.stringify(cart));
     document.dispatchEvent(new Event("cartChange"));
