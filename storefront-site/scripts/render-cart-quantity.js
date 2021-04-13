@@ -23,6 +23,3 @@ async function renderCartQuantity() {
 };
 
 async function renderCartHeader(){
-    element.addEventListener("cartChange", renderCartQuantity);
-     await renderCartQuantity();
-    };
