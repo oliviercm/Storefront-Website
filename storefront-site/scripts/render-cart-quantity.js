@@ -21,3 +21,8 @@ async function renderCartQuantity() {
         cartItemTotal.textContent = cartItemQuantity;
     };
 };
+
+async function renderCartHeader(){
+    element.addEventListener("cartChange", renderCartQuantity);
+     await renderCartQuantity();
+    };
