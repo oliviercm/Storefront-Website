@@ -11,22 +11,15 @@ async function getProducts() {
 
 const productData = await getProducts();
 
-//gets the product-grid
-const productGrid = document.querySelector(".inner-grid-product-listings")
-
-
-//gets the template 
-const productTemplate = document.getElementById("product-template");
-const popularProductTemplate = document.getElementById("popular-product-template");
-
-
 //loops through to create copies and append to the DOM
+const productGrid = document.querySelector(".inner-grid-product-listings")
+const productTemplate = document.getElementById("product-template");
+
 for (const product of productData) {
 
         const productElement = productTemplate.content.firstElementChild.cloneNode(true);
         productElement.setAttribute("product-id", product.id);
         // console.log(productElement);
-
         const productImageElement = productElement.querySelector("img");
         productImageElement.setAttribute("src", `./images/${product.images[0]}`);
         // console.log(productImageElement); 
@@ -38,12 +31,10 @@ for (const product of productData) {
         productGrid.appendChild(productElement);
 
         };
-
+        
 
 //Display popular product
 const randomPopular = productData[Math.floor(Math.random() * productData.length)];
-console.log(randomPopular);
-
 const popularProductImage = document.getElementById("random-popular-product");
 popularProductImage.setAttribute("src", `./images/${randomPopular.images}`);
 const popularProductLink = document.getElementById("popular-product-link");
@@ -54,62 +45,57 @@ seePopularProducts.setAttribute("href", `./html/products/product.html?id=${rando
 
 
 
-//Display on sale product
+//Display product under $20 
+const cheaperProducts = [];
 
-const filterItems = productData.filter(sale => sale.discount_price.usd === true); 
-console.log(filterItems);
+for (const cheapProduct of productData) {
+    if(cheapProduct.price.usd < 20) {
+        cheaperProducts.push(cheapProduct);
+    }
+}
 
-// function filterSale(productData) {
-//     if(productData.discount_price.usd) {
-//         const filterdItems = productData.filter()
-//     }
-// }
-
-
-// if (item.discount_price.usd) {
-//     originalPriceSpan.style.setProperty("text-decoration", "line-through");
-//     const discountedPriceSpan = document.createElement("span");
-//     discountedPriceSpan.classList.add("cart-item-price-discount");
-//     discountedPriceSpan.setAttribute("data-product-id", cartItem.id);
-//     discountedPriceSpan.appendChild(document.createTextNode(`$${(item.discount_price.usd * cartItem.quantity).toFixed(2)}`));
-//     cartItemPriceElement.appendChild(document.createTextNode("\u00A0"));
-//     cartItemPriceElement.appendChild(discountedPriceSpan);
-// };
-// console.log(popularProductImage); 
-
-// popularProductTemplate.appendChild(popularProductElement);
-//Display currently popular product
-
-// well, actually I guess it depends on which category we are doing
-// for highest rated, it would be sort then pick the first element
-// on sale, filter then pick random
-// same for under $20
-// currently popular, just pick a random product from the entire set, doesn't matter
-
-// const sorted = products.sort((a, b) => {
-//     return a.rating - b.rating;
-//   });
-//   const highestRating = sorted[0];
+const cheapItem = cheaperProducts[Math.floor(Math.random() * cheaperProducts.length)];
+const cheapProductImage = document.getElementById("random-cheap-product");
+cheapProductImage.setAttribute("src", `./images/${cheapItem.images}`);
+const cheapProductLink = document.getElementById("cheap-product-link");
+cheapProductLink.setAttribute("href", `./html/products/product.html?id=${cheapItem.id}`);
+const seeCheapProducts = document.getElementById("see-cheaper-products");
+seeCheapProducts.textContent = "Shop Under $20";
+seeCheapProducts.setAttribute("href", `./html/products/product.html?id=${cheapItem.id}`);
 
 
-// const randomPopular = productData[Math.floor(Math.random() * productData.length)];
-// console.log(randomPopular);
+
+//Random product for Discount
+const saleProducts = [];
+
+for (const discountedProduct of productData) {
+    if(discountedProduct.discount_price.usd) {
+        saleProducts.push(discountedProduct);
+    }
+}
+
+const saleItem = saleProducts[Math.floor(Math.random() * saleProducts.length)];
+
+const saleProductImage = document.getElementById("random-sale-product");
+saleProductImage.setAttribute("src", `./images/${saleItem.images}`);
+const saleProductLink = document.getElementById("sale-product-link");
+saleProductLink.setAttribute("href", `./html/products/product.html?id=${saleItem.id}`);
+const seeSaleProducts = document.getElementById("see-sale-products");
+seeSaleProducts.textContent = "View Sale";
+seeSaleProducts.setAttribute("href", `./html/products/product.html?id=${saleItem.id}`);
 
 
-//     const popularProductElement = popularProductTemplate.content.firstElementChild.cloneNode(true);
-//     popularProductElement.setAttribute("product-id", product.id);
-//     console.log(productElement);
+//Sort by Rating and display the first one
+const sorted = productData.sort((a, b) => {
+    return b.rating - a.rating;
+  });
+  
+const highRating = sorted[0];
 
-//     const productImageElement = productElement.querySelector("img");
-//     productImageElement.setAttribute("src", `./images/${product.images[0]}`);
-//     console.log(productImageElement); 
-
-//     const productLinkElement = productElement.querySelector("a");
-//     productLinkElement.setAttribute("href", `./html/products/product.html?id=${product.id}`);
-//     console.log(productLinkElement);  
-
-//     productGrid.appendChild(productElement);
-
-
-//     var colors = ["red","blue","green","yellow"];
-// var randColor = colors[Math.floor(Math.random() * colors.length)];
+const highRatedImage = document.getElementById("high-rated-product");
+highRatedImage.setAttribute("src", `./images/${highRating.images}`);
+const highRatedLink = document.getElementById("high-rated-product-link");
+highRatedLink.setAttribute("href", `./html/products/product.html?id=${highRating.id}`);
+const highRatedProducts = document.getElementById("see-high-rated-products");
+highRatedProducts.textContent = "Highest Rated";
+highRatedProducts.setAttribute("href", `./html/products/product.html?id=${highRating.id}`);
