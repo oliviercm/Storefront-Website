@@ -89,8 +89,8 @@
                 <div class="checkout-form">
                     <h2>Card Information</h2>
                     <label for="cardInfo"><b>CARD NUMBER</b></label><br>
-                    <input type="text" id="cardNumber" name="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000">
-                    <input type="text" id="cvc" name="CVC" placeholder="CVC" maxlength="3" style="width:60px;">
+                    <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="cardNumber" name="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000">
+                    <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="cvc" name="CVC" placeholder="CVC" maxlength="3" style="width:60px;">
                     <br>
                     <label for="cardName"><b>CARD HOLDER NAME</b></label><br>
                     <input type="text" id="cardName" name="cardName" placeholder="John Doe">
@@ -135,7 +135,7 @@
                     <input type="text" id="streetAddress" name="streetAddress" value="" ><br>
                     <label for="state"><b>STATE</b></label><br>
                 <input type="text" id="State" name="state" value="">
-                <input type="text" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
+                <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
                 <h4>Billing Address</h4>
                     <div class="div-left">
                         <label for="sameAddress">Same as Shipping Address</label>
