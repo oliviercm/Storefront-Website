@@ -22,28 +22,28 @@ function handleLoginSubmit(event) {
 
     if (formData.get("email").length === 0) {
         invalid.email = true;
-        document.getElementById("error-message-1").textContent = "Enter your email.";
+        document.getElementById("error-message-email").textContent = "Enter your email.";
     } else if (!/^.+@.+$/.test(formData.get("email"))) {
         invalid.email = true;
-        document.getElementById("error-message-1").textContent = "Enter a valid email.";
+        document.getElementById("error-message-email").textContent = "Enter a valid email.";
     };
     if (formData.get("password").length === 0) {
         invalid.password = true;
-        document.getElementById("error-message-2").textContent = "Enter your password.";
+        document.getElementById("error-message-password").textContent = "Enter your password.";
     };
 
     if (invalid.email) {
-        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-container-email").style.display = "block";
         document.getElementById("login-email-input").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-1").style.display = "none";
+        document.getElementById("error-message-container-email").style.display = "none";
         document.getElementById("login-email-input").classList.remove("invalid");
     };
     if (invalid.password) {
-        document.getElementById("error-message-container-2").style.display = "block";
+        document.getElementById("error-message-container-password").style.display = "block";
         document.getElementById("login-password-input").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-2").style.display = "none";
+        document.getElementById("error-message-container-password").style.display = "none";
         document.getElementById("login-password-input").classList.remove("invalid");
     };
 

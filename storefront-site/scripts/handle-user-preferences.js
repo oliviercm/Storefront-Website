@@ -46,14 +46,14 @@ function handleUserNameSubmit(event) {
 
     if (formData.get("name").length === 0) {
         invalid.name = true;
-        document.getElementById("error-message-1").textContent = "Enter your name.";
+        document.getElementById("error-message-name").textContent = "Enter your name.";
     };
 
     if (invalid.name) {
-        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-container-name").style.display = "block";
         document.getElementById("user-name-input").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-1").style.display = "none";
+        document.getElementById("error-message-container-name").style.display = "none";
         document.getElementById("user-name-input").classList.remove("invalid");
     };
 
@@ -80,17 +80,17 @@ function handleUserEmailSubmit(event) {
 
     if (formData.get("email").length === 0) {
         invalid.email = true;
-        document.getElementById("error-message-1").textContent = "Enter your email.";
+        document.getElementById("error-message-email").textContent = "Enter your email.";
     } else if (!/^.+@.+$/.test(formData.get("email"))) {
         invalid.email = true;
-        document.getElementById("error-message-1").textContent = "Enter a valid email.";
+        document.getElementById("error-message-email").textContent = "Enter a valid email.";
     };
 
     if (invalid.email) {
-        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-container-email").style.display = "block";
         document.getElementById("user-email-input").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-1").style.display = "none";
+        document.getElementById("error-message-container-email").style.display = "none";
         document.getElementById("user-email-input").classList.remove("invalid");
     };
 
@@ -119,39 +119,39 @@ function handleUserPasswordSubmit(event) {
 
     if (formData.get("current-password").length === 0) {
         invalid.current = true;
-        document.getElementById("error-message-1").textContent = "Enter your password.";
+        document.getElementById("error-message-password").textContent = "Enter your password.";
     };
     if (formData.get("new-password").length === 0) {
         invalid.new = true;
-        document.getElementById("error-message-2").textContent = "Enter new password.";
+        document.getElementById("error-message-new").textContent = "Enter new password.";
     } else if (formData.get("new-password").length < 6) {
         invalid.new = true;
-        document.getElementById("error-message-2").textContent = "New password must be at least 6 characters.";
+        document.getElementById("error-message-new").textContent = "New password must be at least 6 characters.";
     };
     if (formData.get("repeat-password") !== formData.get("new-password")) {
         invalid.repeat = true;
-        document.getElementById("error-message-3").textContent = "Passwords do not match.";
+        document.getElementById("error-message-repeat").textContent = "Passwords do not match.";
     };
 
     if (invalid.current) {
-        document.getElementById("error-message-container-1").style.display = "block";
+        document.getElementById("error-message-container-password").style.display = "block";
         document.getElementById("current-password").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-1").style.display = "none";
+        document.getElementById("error-message-container-password").style.display = "none";
         document.getElementById("current-password").classList.remove("invalid");
     };
     if (invalid.new) {
-        document.getElementById("error-message-container-2").style.display = "block";
+        document.getElementById("error-message-container-new").style.display = "block";
         document.getElementById("new-password").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-2").style.display = "none";
+        document.getElementById("error-message-container-new").style.display = "none";
         document.getElementById("new-password").classList.remove("invalid");
     };
     if (invalid.repeat) {
-        document.getElementById("error-message-container-3").style.display = "block";
+        document.getElementById("error-message-container-repeat").style.display = "block";
         document.getElementById("repeat-password").classList.add("invalid");
     } else {
-        document.getElementById("error-message-container-3").style.display = "none";
+        document.getElementById("error-message-container-repeat").style.display = "none";
         document.getElementById("repeat-password").classList.remove("invalid");
     };
 
