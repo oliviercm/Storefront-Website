@@ -52,10 +52,29 @@ const seePopularProducts = document.getElementById("see-popular-products");
 seePopularProducts.textContent = "See More";
 seePopularProducts.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
 
-console.log(randomPopular);
 
 
+//Display on sale product
 
+const filterItems = productData.filter(sale => sale.discount_price.usd === true); 
+console.log(filterItems);
+
+// function filterSale(productData) {
+//     if(productData.discount_price.usd) {
+//         const filterdItems = productData.filter()
+//     }
+// }
+
+
+// if (item.discount_price.usd) {
+//     originalPriceSpan.style.setProperty("text-decoration", "line-through");
+//     const discountedPriceSpan = document.createElement("span");
+//     discountedPriceSpan.classList.add("cart-item-price-discount");
+//     discountedPriceSpan.setAttribute("data-product-id", cartItem.id);
+//     discountedPriceSpan.appendChild(document.createTextNode(`$${(item.discount_price.usd * cartItem.quantity).toFixed(2)}`));
+//     cartItemPriceElement.appendChild(document.createTextNode("\u00A0"));
+//     cartItemPriceElement.appendChild(discountedPriceSpan);
+// };
 // console.log(popularProductImage); 
 
 // popularProductTemplate.appendChild(popularProductElement);
