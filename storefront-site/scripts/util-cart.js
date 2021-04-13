@@ -27,7 +27,7 @@ function addToCart(productId, quantity) {
         return cartItem.id === productId;
     });
 
-    if (productIndex != -1) {
+    if (productIndex !== -1) {
         cart[productIndex].quantity = Number(cart[productIndex].quantity) + Number(quantity);
     } else {
         cart.push({
