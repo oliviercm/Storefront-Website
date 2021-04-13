@@ -40,11 +40,13 @@ import {
 })();
 
 async function renderCart() {
-    document.addEventListener("cartChange", handleCheckoutButton);
+    document.addEventListener("cartChange", renderCheckoutButton);
+    document.addEventListener("cartChange", renderTotalCartValues);
+    document.addEventListener("cartChange", renderOrderContainsGift);
     await renderCartItems();
     await renderTotalCartValues();
     await renderOrderContainsGift();
-    
+    await renderCheckoutButton();
 };
 
 async function renderCartItems() {
@@ -60,11 +62,6 @@ async function renderCartItems() {
 
     const orderContainsGiftCheckbox = document.getElementById("cart-gift");
     orderContainsGiftCheckbox.addEventListener("click", handleOrderContainsGift);
-
-
-
-    // checks if cart is empty and disables proceed to checkout
-    handleCheckoutButton();
 
     // Render cart items using template.
     const cartItemsElement = document.getElementById("cart-items");
@@ -170,7 +167,7 @@ function renderOrderContainsGift() {
     // Check the "This order contains a gift" checkbox if necessary
     const cartContainsGiftElement = document.getElementById("cart-gift");
     cartContainsGiftElement.checked = cart.some(cartItem => {
-        return cartItem.isGift;
+        return cartItem.isGift && cartItem.selected && cartItem.quantity > 0;
     });
 };
 
@@ -199,7 +196,6 @@ function handleQuantityChange(event) {
     changedCartItem.quantity = Number(event.target.value);
     setCart(cart);
     rerenderCartItem(changedCartItem.id);
-    renderTotalCartValues();
 };
 
 
@@ -214,8 +210,6 @@ function handleDeselectAllItems(event) {
         cartItem.selected = false;
     };
     setCart(cart);
-    renderTotalCartValues();
-    renderOrderContainsGift();
 };
 
 function handleSelectedCheckboxChange(event) {
@@ -225,8 +219,6 @@ function handleSelectedCheckboxChange(event) {
     });
     cartItem.selected = event.target.checked;
     setCart(cart);
-    renderTotalCartValues();
-    renderOrderContainsGift();
 };
 
 function handleGiftCheckboxChange(event) {
@@ -236,7 +228,6 @@ function handleGiftCheckboxChange(event) {
     });
     cartItem.isGift = event.target.checked;
     setCart(cart);
-    renderOrderContainsGift();
 };
 
 function handleOrderContainsGift(event) {
@@ -254,7 +245,6 @@ function handleOrderContainsGift(event) {
         checkbox.checked = false;
     };
     setCart(cart);
-    renderTotalCartValues();
 };
 
 function handleCartItemDelete(event) {
@@ -264,7 +254,6 @@ function handleCartItemDelete(event) {
     }), 1);
     setCart(cart);
     removeCartItemElement(event.target.dataset.productId);
-    renderTotalCartValues();
 };
 
 function removeCartItemElement(productId) {
@@ -282,7 +271,7 @@ function removeCartItemElement(productId) {
 };
 
 // for disabling proceed to checkout
-async function handleCheckoutButton(event) {
+async function renderCheckoutButton(event) {
     const {
         cartItemQuantity,
     } = await calculateCartValues();
