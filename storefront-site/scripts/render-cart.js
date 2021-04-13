@@ -9,27 +9,6 @@ import {
     getProductById,
 } from "./util-products.js";
 
-
-
-// Load test data.
-//REMOVE WHEN ADDING TO CART IS IMPLEMENTED!
-/*sessionStorage.setItem("cart", JSON.stringify([{
-    id: "2",
-    quantity: 1,
-    selected: true,
-    isGift: false,
-}, {
-    id: "12",
-    quantity: 2,
-    selected: true,
-    isGift: false,
-}, {
-    id: "4",
-    quantity: 3,
-    selected: false,
-    isGift: true,
-}])); */
-
 // This function handles the initial render of the cart page.
 (async () => {
     try {
@@ -58,7 +37,6 @@ async function renderCartItems() {
     for (const button of deselectAllItemsButtons) {
         button.addEventListener("click", handleDeselectAllItems);
     };
-
 
     const orderContainsGiftCheckbox = document.getElementById("cart-gift");
     orderContainsGiftCheckbox.addEventListener("click", handleOrderContainsGift);
@@ -137,9 +115,6 @@ async function renderCartItems() {
             const hr = cartItemsElement.appendChild(document.createElement("hr"));
             hr.classList.add("cart-item-hr");
             hr.setAttribute("data-product-id", cartItem.id);
-
-           
-
         } catch(e) {
             console.error(e);
         };
@@ -197,7 +172,6 @@ function handleQuantityChange(event) {
     setCart(cart);
     rerenderCartItem(changedCartItem.id);
 };
-
 
 function handleDeselectAllItems(event) {
     const cartItemCheckboxes = Array.from(document.getElementsByClassName("cart-item-checkbox-input"));
