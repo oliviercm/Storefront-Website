@@ -4,6 +4,7 @@ import {
 
 (async () => {
     try {
+        element.addEventListener("cartChange", renderCartQuantity);
         await renderCartQuantity();
     } catch (e) {
         console.error(e);
