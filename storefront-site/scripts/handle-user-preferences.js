@@ -182,5 +182,5 @@ function handleUnsubscribeFromAll(event) {
     user.email_subscriptions.promotions = false;
     user.email_subscriptions.reminders = false;
     setUser(user);
-    window.location.href = "./user-preferences.html";
+    window.location.href = "./user-preferences.php";
 };

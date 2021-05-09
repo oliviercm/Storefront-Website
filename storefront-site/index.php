@@ -22,7 +22,7 @@
     <!-- BEGIN HEADER -->
     <header>
         <div class="logo-container">
-            <a href="./index.html">
+            <a href="./index.php">
                 <img src="./images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
             </a>
         </div>
@@ -30,20 +30,20 @@
             <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
         </form>
         <nav class="header-nav">
-            <a href="./html/cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart
+            <a href="./html/cart.php" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart
                 (<span class="cart-total"></span>)</a>
-            <a href="./html/user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+            <a href="./html/user-preferences.php" class="header-nav-link"><span class="material-icons">settings</span>
                 Preferences</a>
             <div class="header-login-dropdown">
-                <a href="./html/login.html" class="header-nav-link">Sign In ▼</a>
+                <a href="./html/login.php" class="header-nav-link">Sign In ▼</a>
                 <nav class="header-login-dropdown-content">
                     <div>
                         <div class="header-login-dropdown-flex">
-                            <a href="./html/login.html">Sign In <span class="material-icons"
+                            <a href="./html/login.php">Sign In <span class="material-icons"
                                     style="font-size: 16px;">login</span></a>
-                            <a href="./html/register.html">Register <span class="material-icons"
+                            <a href="./html/register.php">Register <span class="material-icons"
                                     style="font-size: 16px;">person_add</span></a>
-                            <a href="./index.html">Log Out <span class="material-icons"
+                            <a href="./index.php">Log Out <span class="material-icons"
                                     style="font-size: 16px;">logout</span></a>
                         </div>
                     </div>
@@ -133,16 +133,16 @@
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <b class="footer-nav-header">Information</b>
-                <a class="footer-nav-content" href="./html/aboutus.html">About Us</a>
-                <a class="footer-nav-content" href="./html/locations.html">Locations & Hours</a>
-                <a class="footer-nav-content" href="./html/tos.html">Terms of Service</a>
-                <a class="footer-nav-content" href="./html/privacy-policy.html">Privacy Policy</a>
+                <a class="footer-nav-content" href="./html/aboutus.php">About Us</a>
+                <a class="footer-nav-content" href="./html/locations.php">Locations & Hours</a>
+                <a class="footer-nav-content" href="./html/tos.php">Terms of Service</a>
+                <a class="footer-nav-content" href="./html/privacy-policy.php">Privacy Policy</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Services</b>
-                <a class="footer-nav-content" href="./html/faq.html">FAQ</a>
-                <a class="footer-nav-content" href="./html/returns.html">Returns</a>
-                <a class="footer-nav-content" href="./html/shipping.html">Shipping</a>
+                <a class="footer-nav-content" href="./html/faq.php">FAQ</a>
+                <a class="footer-nav-content" href="./html/returns.php">Returns</a>
+                <a class="footer-nav-content" href="./html/shipping.php">Shipping</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Contact Us</b>
@@ -155,14 +155,14 @@
             <nav class="footer-nav">
                 <b class="footer-nav-header">Newsletter</b>
                 <a class="footer-nav-content"
-                    href="./html/user-preferences-change-email-subscription.html">Subscribe</a>
+                    href="./html/user-preferences-change-email-subscription.php">Subscribe</a>
                 <a class="footer-nav-content"
-                    href="./html/user-preferences-change-email-subscription.html">Unsubscribe</a>
+                    href="./html/user-preferences-change-email-subscription.php">Unsubscribe</a>
             </nav>
         </div>
         <hr>
         <nav class="footer-logo-container">
-            <a href="./index.html">
+            <a href="./index.php">
                 <img src="./images/logo-transparent.png" class="logo">
             </a>
         </nav>

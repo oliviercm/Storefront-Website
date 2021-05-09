@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping</title>
+    <title>Returns</title>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/google-material-icons.css">
     <link rel="stylesheet" href="../styles/header.css">
@@ -16,7 +16,7 @@
     <!-- BEGIN HEADER -->
     <header>
         <div class="logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
             </a>
         </div>
@@ -24,19 +24,19 @@
             <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
         </form>
         <nav class="header-nav">
-            <a href="./cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
-            <a href="./user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+            <a href="./cart.php" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
+            <a href="./user-preferences.php" class="header-nav-link"><span class="material-icons">settings</span>
                 Preferences</a>
             <div class="header-login-dropdown">
-                <a href="./login.html" class="header-nav-link">Sign In ▼</a>
+                <a href="./login.php" class="header-nav-link">Sign In ▼</a>
                 <nav class="header-login-dropdown-content">
                     <div>
                         <div class="header-login-dropdown-flex">
-                            <a href="./login.html">Sign In <span class="material-icons"
+                            <a href="./login.php">Sign In <span class="material-icons"
                                     style="font-size: 16px;">login</span></a>
-                            <a href="./register.html">Register <span class="material-icons"
+                            <a href="./register.php">Register <span class="material-icons"
                                     style="font-size: 16px;">person_add</span></a>
-                            <a href="../index.html">Log Out <span class="material-icons"
+                            <a href="../index.php">Log Out <span class="material-icons"
                                     style="font-size: 16px;">logout</span></a>
                         </div>
                     </div>
@@ -54,29 +54,32 @@
                     <hr>
                     <ul>
                         <li>
-                            <a href="./faq.html">FAQ</a>
+                            <a href="./faq.php">FAQ</a>
                         </li>
                         <li>
-                            <a href="./locations.html">Locations and Hours</a>
+                            <a href="./locations.php">Locations and Hours</a>
                         </li>
                         <li>
-                            <a href="./returns.html">Return Policy</a>
+                            <b>Return Policy</b>
                         </li>
                         <li>
-                            <b>Shipping</b>
+                            <a href="./shipping.php">Shipping</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div class="shipping">
+            <div class="returns">
                 <div>
-                    <h1>Shipping</h1>
+                    <h1>Return Policy</h1>
                     <br>
-                    <p>For all orders over $50 or more please enjoy complimentary free shipping for domestic orders.</p>
-                    <h2>What if I need it soon?</h2>
-                    <p>Next Day Air shipping can be included through UPS for an additional $40.</p>
-                    <h3>International Orders</h3>
-                    <p>Please call and we will be able to assist you.</p>
+                    <p>Thank for shopping at Pandemic Essentials. If you are not 100% satisfied with your purchase we can
+                        help.</p>
+                    <h2>Returns</h2>
+                    <p>You have 30 days to return an unopen and unused item from the date you received it. It must be in the
+                        original packaging with the receipt.</p>
+                    <p>You are responsible for the cost of shipping. All shipping costs are non refundable.</p>
+                    <h3>Refunds</h3>
+                    <p>We will notify you upon receiving the order. If approved, you will receive credit.</p>
                 </div>
             </div>
         </div>
@@ -86,16 +89,16 @@
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <b class="footer-nav-header">Information</b>
-                <a class="footer-nav-content" href="./aboutus.html">About Us</a>
-                <a class="footer-nav-content" href="./locations.html">Locations & Hours</a>
-                <a class="footer-nav-content" href="./tos.html">Terms of Service</a>
-                <a class="footer-nav-content" href="./privacy-policy.html">Privacy Policy</a>
+                <a class="footer-nav-content" href="./aboutus.php">About Us</a>
+                <a class="footer-nav-content" href="./locations.php">Locations & Hours</a>
+                <a class="footer-nav-content" href="./tos.php">Terms of Service</a>
+                <a class="footer-nav-content" href="./privacy-policy.php">Privacy Policy</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Services</b>
-                <a class="footer-nav-content" href="./faq.html">FAQ</a>
-                <a class="footer-nav-content" href="./returns.html">Returns</a>
-                <a class="footer-nav-content" href="./shipping.html">Shipping</a>
+                <a class="footer-nav-content" href="./faq.php">FAQ</a>
+                <a class="footer-nav-content" href="./returns.php">Returns</a>
+                <a class="footer-nav-content" href="./shipping.php">Shipping</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Contact Us</b>
@@ -107,13 +110,13 @@
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Newsletter</b>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Subscribe</a>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Unsubscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Subscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Unsubscribe</a>
             </nav>
         </div>
         <hr>
         <nav class="footer-logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo">
             </a>
         </nav>

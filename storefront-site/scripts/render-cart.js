@@ -66,7 +66,7 @@ async function renderCartItems() {
 
             const cartItemLinkElement = cartItemElement.querySelector(".cart-item-main .cart-item-link");
             cartItemLinkElement.textContent = item.name;
-            cartItemLinkElement.setAttribute("href", `./products/product.html?id=${item.id}`);
+            cartItemLinkElement.setAttribute("href", `./products/product.php?id=${item.id}`);
 
             const cartItemStockElement = cartItemElement.querySelector(".cart-item-main .cart-item-stock");
             const LOW_STOCK_CUTOFF = 20;

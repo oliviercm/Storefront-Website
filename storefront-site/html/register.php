@@ -14,10 +14,10 @@
 
 <body>
     <div class="register-outer-container">
-        <a href="../index.html" class="logo">
+        <a href="../index.php" class="logo">
             <img src="../images/logo-black.png" class="logo">
         </a>
-        <form id="register-form" class="register-form" action="../index.html">
+        <form id="register-form" class="register-form" action="../index.php">
             <h1>Create Account</h1>
             <label for="name"><b>Your name</b></label>
             <input id="register-name-input" type="text" name="name" autofocus>
@@ -52,9 +52,9 @@
             <div class="form-spacer"></div>
             <button type="submit" class="create-account-button">Create your account</button>
             <br>
-            <span id="disclaimer">By creating an account, you agree to our <a href="./tos.html">Terms of Service</a> and <a href="./privacy-policy.html">Privacy Policy</a>.</span>
+            <span id="disclaimer">By creating an account, you agree to our <a href="./tos.php">Terms of Service</a> and <a href="./privacy-policy.php">Privacy Policy</a>.</span>
             <hr>
-            <span id="already-registered">Already have an account? <a href="./login.html">Sign In</a></span>
+            <span id="already-registered">Already have an account? <a href="./login.php">Sign In</a></span>
         </form>
     </div>
     <footer id="footer">
@@ -62,9 +62,9 @@
         <div class="mini-footer-container">
             <div class="mini-footer-content">
                 <nav>
-                    <a href="./tos.html">Terms of Service</a>
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                    <a href="./faq.html">Help</a>
+                    <a href="./tos.php">Terms of Service</a>
+                    <a href="./privacy-policy.php">Privacy Policy</a>
+                    <a href="./faq.php">Help</a>
                 </nav>
                 <span>
                     &copy; 2021, PandemicEssentials.com or its affiliates

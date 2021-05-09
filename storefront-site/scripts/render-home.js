@@ -19,7 +19,7 @@ import {
         productImageElement.setAttribute("src", `./images/${product.images[0]}`);
 
         const productLinkElement = productElement.querySelector("a");
-        productLinkElement.setAttribute("href", `./html/products/product.html?id=${product.id}`);
+        productLinkElement.setAttribute("href", `./html/products/product.php?id=${product.id}`);
 
         productGrid.appendChild(productElement);
     };
@@ -29,10 +29,10 @@ import {
     const popularProductImage = document.getElementById("random-popular-product");
     popularProductImage.setAttribute("src", `./images/${randomPopular.images}`);
     const popularProductLink = document.getElementById("popular-product-link");
-    popularProductLink.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
+    popularProductLink.setAttribute("href", `./html/products/product.php?id=${randomPopular.id}`);
     const seePopularProducts = document.getElementById("see-popular-products");
     seePopularProducts.textContent = "See More";
-    seePopularProducts.setAttribute("href", `./html/products/product.html?id=${randomPopular.id}`);
+    seePopularProducts.setAttribute("href", `./html/products/product.php?id=${randomPopular.id}`);
 
     //Display product under $20 
     const cheaperProducts = [];
@@ -47,10 +47,10 @@ import {
     const cheapProductImage = document.getElementById("random-cheap-product");
     cheapProductImage.setAttribute("src", `./images/${cheapItem.images}`);
     const cheapProductLink = document.getElementById("cheap-product-link");
-    cheapProductLink.setAttribute("href", `./html/products/product.html?id=${cheapItem.id}`);
+    cheapProductLink.setAttribute("href", `./html/products/product.php?id=${cheapItem.id}`);
     const seeCheapProducts = document.getElementById("see-cheaper-products");
     seeCheapProducts.textContent = "Shop Under $20";
-    seeCheapProducts.setAttribute("href", `./html/products/product.html?id=${cheapItem.id}`);
+    seeCheapProducts.setAttribute("href", `./html/products/product.php?id=${cheapItem.id}`);
 
     //Random product for Discount
     const saleProducts = [];
@@ -66,10 +66,10 @@ import {
     const saleProductImage = document.getElementById("random-sale-product");
     saleProductImage.setAttribute("src", `./images/${saleItem.images}`);
     const saleProductLink = document.getElementById("sale-product-link");
-    saleProductLink.setAttribute("href", `./html/products/product.html?id=${saleItem.id}`);
+    saleProductLink.setAttribute("href", `./html/products/product.php?id=${saleItem.id}`);
     const seeSaleProducts = document.getElementById("see-sale-products");
     seeSaleProducts.textContent = "View Sale";
-    seeSaleProducts.setAttribute("href", `./html/products/product.html?id=${saleItem.id}`);
+    seeSaleProducts.setAttribute("href", `./html/products/product.php?id=${saleItem.id}`);
 
     //Sort by Rating and display the first one
     const sorted = productData.sort((a, b) => {
@@ -81,8 +81,8 @@ import {
     const highRatedImage = document.getElementById("high-rated-product");
     highRatedImage.setAttribute("src", `./images/${highRating.images}`);
     const highRatedLink = document.getElementById("high-rated-product-link");
-    highRatedLink.setAttribute("href", `./html/products/product.html?id=${highRating.id}`);
+    highRatedLink.setAttribute("href", `./html/products/product.php?id=${highRating.id}`);
     const highRatedProducts = document.getElementById("see-high-rated-products");
     highRatedProducts.textContent = "Highest Rated";
-    highRatedProducts.setAttribute("href", `./html/products/product.html?id=${highRating.id}`);
+    highRatedProducts.setAttribute("href", `./html/products/product.php?id=${highRating.id}`);
 })();

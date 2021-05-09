@@ -17,7 +17,7 @@
     <!-- BEGIN HEADER -->
     <header>
         <div class="logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
             </a>
         </div>
@@ -25,19 +25,19 @@
             <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
         </form>
         <nav class="header-nav">
-            <a href="./cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
-            <a href="./user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+            <a href="./cart.php" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
+            <a href="./user-preferences.php" class="header-nav-link"><span class="material-icons">settings</span>
                 Preferences</a>
             <div class="header-login-dropdown">
-                <a href="./login.html" class="header-nav-link">Sign In ▼</a>
+                <a href="./login.php" class="header-nav-link">Sign In ▼</a>
                 <nav class="header-login-dropdown-content">
                     <div>
                         <div class="header-login-dropdown-flex">
-                            <a href="./login.html">Sign In <span class="material-icons"
+                            <a href="./login.php">Sign In <span class="material-icons"
                                     style="font-size: 16px;">login</span></a>
-                            <a href="./register.html">Register <span class="material-icons"
+                            <a href="./register.php">Register <span class="material-icons"
                                     style="font-size: 16px;">person_add</span></a>
-                            <a href="../index.html">Log Out <span class="material-icons"
+                            <a href="../index.php">Log Out <span class="material-icons"
                                     style="font-size: 16px;">logout</span></a>
                         </div>
                     </div>
@@ -105,13 +105,13 @@
                                 <img>
                             </div>
                             <div class="cart-item-main">
-                                <a class="cart-item-link" href="./products/product.html?id=1" style="font-size: 1.1em;"></a>
+                                <a class="cart-item-link" href="./products/product.php?id=1" style="font-size: 1.1em;"></a>
                                 <br>
                                 <span class="cart-item-stock" style="font-size: 0.9em;"></span>
                                 <br>
-                                <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.html">FREE returns</a></span>
+                                <span style="color: #707070; font-size: 0.8em;">Elligible for FREE shipping & <a href="./returns.php">FREE returns</a></span>
                                 <br>
-                                <input type="checkbox" class="cart-item-gift"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.html" style="font-size: 0.7em;">Learn more</a>
+                                <input type="checkbox" class="cart-item-gift"><span style="font-size: 0.9em;">This is a gift </span><a href="./faq.php" style="font-size: 0.7em;">Learn more</a>
                                 <br>
                                 <select name="quantity" class="cart-item-quantity">
                                     <option value="0">Remove</option>
@@ -137,8 +137,8 @@
                                     <option value="20">Qty: 20</option>
                                 </select>
                                 <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <span class="clickable-text cart-item-delete" style="font-size: 0.8em;">Delete</span>
-                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Save for later</a>
-                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.html" style="font-size: 0.8em;">Compare with similar items</a>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.php" style="font-size: 0.8em;">Save for later</a>
+                                <span style="color: #d0d0d0;">&nbsp;|&nbsp;</span> <a href="./cart.php" style="font-size: 0.8em;">Compare with similar items</a>
                             </div>
                             <div class="cart-item-price"></div>
                         </div>
@@ -156,7 +156,7 @@
                     <br>
                     <input type="checkbox" id="cart-gift"><span style="font-size: 0.9em;"> This order contains a gift
                     <br>
-                    <a href="./checkout.html">
+                    <a href="./checkout.php">
                         <button id="checkout-button" type="submit" class="submit-button">Proceed to checkout</button>
                     </a>
                 </div>
@@ -168,16 +168,16 @@
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <b class="footer-nav-header">Information</b>
-                <a class="footer-nav-content" href="./aboutus.html">About Us</a>
-                <a class="footer-nav-content" href="./locations.html">Locations & Hours</a>
-                <a class="footer-nav-content" href="./tos.html">Terms of Service</a>
-                <a class="footer-nav-content" href="./privacy-policy.html">Privacy Policy</a>
+                <a class="footer-nav-content" href="./aboutus.php">About Us</a>
+                <a class="footer-nav-content" href="./locations.php">Locations & Hours</a>
+                <a class="footer-nav-content" href="./tos.php">Terms of Service</a>
+                <a class="footer-nav-content" href="./privacy-policy.php">Privacy Policy</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Services</b>
-                <a class="footer-nav-content" href="./faq.html">FAQ</a>
-                <a class="footer-nav-content" href="./returns.html">Returns</a>
-                <a class="footer-nav-content" href="./shipping.html">Shipping</a>
+                <a class="footer-nav-content" href="./faq.php">FAQ</a>
+                <a class="footer-nav-content" href="./returns.php">Returns</a>
+                <a class="footer-nav-content" href="./shipping.php">Shipping</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Contact Us</b>
@@ -189,13 +189,13 @@
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Newsletter</b>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Subscribe</a>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Unsubscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Subscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Unsubscribe</a>
             </nav>
         </div>
         <hr>
         <nav class="footer-logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo">
             </a>
         </nav>

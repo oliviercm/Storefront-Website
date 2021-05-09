@@ -1,5 +1,5 @@
 /**
- * This script loads and displays product data on the product.html page.
+ * This script loads and displays product data on the product.php page.
  * To load the product data, the product's ID must be provided as a query string parameter with key "id".
  */
 (async () => {
@@ -80,7 +80,7 @@ async function displayOtherProducts(currentProductId) {
         const otherProductElement = otherProductTemplate.content.firstElementChild.cloneNode(true);
 
         otherProductElement.querySelector("img").setAttribute("src", `../../images/${otherProduct.images[0]}`);
-        otherProductElement.querySelector("a").setAttribute("href", `./product.html?id=${otherProduct.id}`);
+        otherProductElement.querySelector("a").setAttribute("href", `./product.php?id=${otherProduct.id}`);
 
         const otherProductsDiv = document.getElementById("other-products");
         otherProductsDiv.appendChild(otherProductElement);

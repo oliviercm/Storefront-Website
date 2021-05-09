@@ -14,10 +14,10 @@
 
 <body>
     <div class="login-outer-container">
-        <a href="../index.html" class="logo">
+        <a href="../index.php" class="logo">
             <img src="../images/logo-black.png" class="logo">
         </a>
-        <form id="login-form" class="login-form" action="../index.html">
+        <form id="login-form" class="login-form" action="../index.php">
             <h1>Sign-In</h1>
             <label for="email"><b>Email</b></label>
             <input id="login-email-input" type="text" name="email" autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -35,14 +35,14 @@
             <div class="form-spacer"></div>
             <button type="submit" class="sign-in-button">Continue</button>
             <br>
-            <span id="disclaimer">By continuing, you agree to our <a href="./tos.html">Terms of Service</a> and <a href="./privacy-policy.html">Privacy Policy</a>.</span>
+            <span id="disclaimer">By continuing, you agree to our <a href="./tos.php">Terms of Service</a> and <a href="./privacy-policy.php">Privacy Policy</a>.</span>
             <br>
             <div class="form-spacer"></div>
-            <a href="./faq.html" id="need-help">Need help?</a>
+            <a href="./faq.php" id="need-help">Need help?</a>
         </form>
         <div class="create-account-container">
             <span>New to PandemicEssentials?</span>
-            <a href="./register.html">
+            <a href="./register.php">
                 <button type="button" class="create-account-link">Create your PandemicEssentials Account</button>
             </a>
         </div>
@@ -52,9 +52,9 @@
         <div class="mini-footer-container">
             <div class="mini-footer-content">
                 <nav>
-                    <a href="./tos.html">Terms of Service</a>
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                    <a href="./faq.html">Help</a>
+                    <a href="./tos.php">Terms of Service</a>
+                    <a href="./privacy-policy.php">Privacy Policy</a>
+                    <a href="./faq.php">Help</a>
                 </nav>
                 <span>
                     &copy; 2021, PandemicEssentials.com or its affiliates

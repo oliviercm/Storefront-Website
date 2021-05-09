@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Name</title>
+    <title>Change Email</title>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/google-material-icons.css">
     <link rel="stylesheet" href="../styles/header.css">
@@ -17,7 +17,7 @@
     <!-- BEGIN HEADER -->
     <header>
         <div class="logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
             </a>
         </div>
@@ -25,19 +25,19 @@
             <input type="search" class="search-field" autocomplete="off" placeholder="Search...">
         </form>
         <nav class="header-nav">
-            <a href="./cart.html" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
-            <a href="./user-preferences.html" class="header-nav-link"><span class="material-icons">settings</span>
+            <a href="./cart.php" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart (<span class="cart-total"></span>)</a>
+            <a href="./user-preferences.php" class="header-nav-link"><span class="material-icons">settings</span>
                 Preferences</a>
             <div class="header-login-dropdown">
-                <a href="./login.html" class="header-nav-link">Sign In ▼</a>
+                <a href="./login.php" class="header-nav-link">Sign In ▼</a>
                 <nav class="header-login-dropdown-content">
                     <div>
                         <div class="header-login-dropdown-flex">
-                            <a href="./login.html">Sign In <span class="material-icons"
+                            <a href="./login.php">Sign In <span class="material-icons"
                                     style="font-size: 16px;">login</span></a>
-                            <a href="./register.html">Register <span class="material-icons"
+                            <a href="./register.php">Register <span class="material-icons"
                                     style="font-size: 16px;">person_add</span></a>
-                            <a href="../index.html">Log Out <span class="material-icons"
+                            <a href="../index.php">Log Out <span class="material-icons"
                                     style="font-size: 16px;">logout</span></a>
                         </div>
                     </div>
@@ -50,26 +50,26 @@
     <main>
         <div class="preferences-outer-container">
             <nav class="hierarchical-nav">
-                <a href="./user-preferences.html">Your Account</a>
+                <a href="./user-preferences.php">Your Account</a>
                 &nbsp;>&nbsp;
-                <a href="./user-preferences.html">Preferences</a>
+                <a href="./user-preferences.php">Preferences</a>
                 &nbsp;>&nbsp;
-                <b>Change Name</b>
+                <b>Change Email</b>
             </nav>
-            <h1>Change Name</h1>
-            <form id="user-name-form" class="preferences-form" action="./user-preferences.html">
+            <h1>Change Email</h1>
+            <form id="user-email-form" class="preferences-form" action="./user-preferences.php">
                 <div class="preferences-form-section">
-                    Use the form below to change the name for your account.
+                    Use the form below to change the email for your account.
                     <br>
                     <br>
-                    <label for="name"><b>New name</b></label>
-                    <input id="user-name-input" class="user-name-input" type="text" name="name" autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
-                    <div id="error-message-container-name" style="display: none; color: #c41829;">
+                    <label for="email"><b>New email</b></label>
+                    <input id="user-email-input" class="user-email-input" type="text" name="email" autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
+                    <div id="error-message-container-email" style="display: none; color: #c41829;">
                         <span class="material-icons" style="font-size: 16px;">error</span>
-                        <span id="error-message-name"></span>
+                        <span id="error-message-email"></span>
                     </div>
-                    <a href="../index.html">
-                        <button id="user-name-input-submit" type="submit" class="submit-button">Save Changes</button>
+                    <a href="../index.php">
+                        <button id="user-email-input-submit" type="submit" class="submit-button">Save Changes</button>
                     </a>
                 </div>
             </form>
@@ -80,16 +80,16 @@
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <b class="footer-nav-header">Information</b>
-                <a class="footer-nav-content" href="./aboutus.html">About Us</a>
-                <a class="footer-nav-content" href="./locations.html">Locations & Hours</a>
-                <a class="footer-nav-content" href="./tos.html">Terms of Service</a>
-                <a class="footer-nav-content" href="./privacy-policy.html">Privacy Policy</a>
+                <a class="footer-nav-content" href="./aboutus.php">About Us</a>
+                <a class="footer-nav-content" href="./locations.php">Locations & Hours</a>
+                <a class="footer-nav-content" href="./tos.php">Terms of Service</a>
+                <a class="footer-nav-content" href="./privacy-policy.php">Privacy Policy</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Services</b>
-                <a class="footer-nav-content" href="./faq.html">FAQ</a>
-                <a class="footer-nav-content" href="./returns.html">Returns</a>
-                <a class="footer-nav-content" href="./shipping.html">Shipping</a>
+                <a class="footer-nav-content" href="./faq.php">FAQ</a>
+                <a class="footer-nav-content" href="./returns.php">Returns</a>
+                <a class="footer-nav-content" href="./shipping.php">Shipping</a>
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Contact Us</b>
@@ -101,13 +101,13 @@
             </nav>
             <nav class="footer-nav">
                 <b class="footer-nav-header">Newsletter</b>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Subscribe</a>
-                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.html">Unsubscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Subscribe</a>
+                <a class="footer-nav-content" href="./user-preferences-change-email-subscription.php">Unsubscribe</a>
             </nav>
         </div>
         <hr>
         <nav class="footer-logo-container">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="../images/logo-transparent.png" class="logo">
             </a>
         </nav>
