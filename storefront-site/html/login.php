@@ -47,20 +47,6 @@
             </a>
         </div>
     </div>
-    <footer id="footer">
-        <hr>
-        <div class="mini-footer-container">
-            <div class="mini-footer-content">
-                <nav>
-                    <a href="./tos.php">Terms of Service</a>
-                    <a href="./privacy-policy.php">Privacy Policy</a>
-                    <a href="./faq.php">Help</a>
-                </nav>
-                <span>
-                    &copy; 2021, PandemicEssentials.com or its affiliates
-                </span>
-            </div>
-        </div>
-    </footer>
+    <?php include $_SERVER['DOCUMENT_ROOT']."/html/mini-footer.php";?>
     <script src="../scripts/handle-login.js" type="module"></script>
 </body>
