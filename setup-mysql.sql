@@ -1,22 +1,23 @@
--- WARNING: This script is destructive! Running this script will destroy and recreate databases and tables for the storefront app.
-CREATE DATABASE IF NOT EXISTS storefront;
+-- WARNING: This script is destructive! Running this script will destroy and recreate the database for the storefront app.
+DROP DATABASE IF EXISTS storefront;
+CREATE DATABASE storefront;
 USE storefront;
-DROP TABLE IF EXISTS products;
-CREATE TABLE products(
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE product(
+    id INT NOT NULL AUTO_INCREMENT,
     name NVARCHAR(255) NOT NULL,
-    images JSON NOT NULL,
+    image VARCHAR(2048) NOT NULL,
     rating INT NOT NULL,
     stock INT NOT NULL,
     price INT NOT NULL,
     discount_price INT,
-    description JSON NOT NULL
+    description JSON NOT NULL,
+    PRIMARY KEY (id)
 );
-INSERT INTO products VALUES
+INSERT INTO product VALUES
     (
-        default,
+        1,
         'Masks (50 ct)',
-        '["product1.png"]',
+        'product1.png',
         4,
         100,
         1899,
@@ -32,7 +33,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Germ-X Hand Sanitizer (8 fl oz.)',
-        '["product2.png"]',
+        'product2.png',
         4,
         15,
         699,
@@ -48,7 +49,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Nitrile Gloves (100 ct)',
-        '["product3.png"]',
+        'product3.png',
         4,
         100,
         2699,
@@ -64,7 +65,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Sanitizer Wipes (3 boxes)',
-        '["product4.png"]',
+        'product4.png',
         4,
         100,
         1199,
@@ -80,7 +81,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Ivory Soap (4 pc)',
-        '["product5.png"]',
+        'product5.png',
         5,
         100,
         999,
@@ -94,7 +95,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Band-aids Assorted',
-        '["product6.png"]',
+        'product6.png',
         4,
         100,
         699,
@@ -110,7 +111,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Gauze Rolls',
-        '["product7.png"]',
+        'product7.png',
         4,
         100,
         1199,
@@ -126,7 +127,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Protective Eye Goggles',
-        '["product8.png"]',
+        'product8.png',
         4,
         100,
         2799,
@@ -142,7 +143,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Isopropyl Alcohol',
-        '["product9.png"]',
+        'product9.png',
         4,
         100,
         2999,
@@ -158,7 +159,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Barbicide',
-        '["product10.png"]',
+        'product10.png',
         4,
         100,
         2499,
@@ -174,7 +175,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Water Purification Tablets',
-        '["product11.png"]',
+        'product11.png',
         4,
         100,
         1199,
@@ -189,7 +190,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Glowsticks (6 ct)',
-        '["product12.png"]',
+        'product12.png',
         4,
         100,
         399,
@@ -203,7 +204,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Vitafusion Vitamins',
-        '["product13.png"]',
+        'product13.png',
         3,
         100,
         2199,
@@ -219,7 +220,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Tylenol Extra Strength',
-        '["product14.png"]',
+        'product14.png',
         5,
         100,
         999,
@@ -235,7 +236,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Advil Tablets',
-        '["product15.png"]',
+        'product15.png',
         3,
         100,
         699,
@@ -251,7 +252,7 @@ INSERT INTO products VALUES
     (
         default, 
         'Forehead Thermometer',
-        '["product16.png"]',
+        'product16.png',
         3,
         100,
         1899,
