@@ -13,7 +13,9 @@ function addRegisterHandlers() {
     };
 };
 
-function handleRegisterSubmit(event) {
+async function handleRegisterSubmit(event) {
+    event.preventDefault();
+
     const formData = new FormData(event.target);
     const invalid = {
         name: false,
@@ -84,9 +86,30 @@ function handleRegisterSubmit(event) {
             hasError = true;
         };
     };
-    if (hasError) {
-        event.preventDefault();
-    } else {
-        // Send register request
+    if (!hasError) {
+        try {
+            const response = await fetch("/php/register.php", {
+                method: "POST",
+                body: formData,
+            });
+            if (200 <= response.status && response.status < 300) {
+                window.location.replace("/html/register-success.php");
+            } else if (400 <= response.status && response.status < 500) {
+                const responseText = await response.text();
+                if (responseText === "This email is already taken.") { // HACK: An improvement would be to make the backend return JSON objects instead of plaintext, so that additional metadata can be sent to determine error types.
+                    document.getElementById("error-message-email").textContent = responseText;
+                    document.getElementById("error-message-container-email").style.display = "block";
+                    document.getElementById("register-email-input").classList.add("invalid");
+                } else {
+                    document.getElementById("error-message-general").textContent = responseText;
+                    document.getElementById("error-message-container-general").style.display = "block";
+                };
+            } else {
+                throw Error();
+            };
+        } catch(e) {
+            document.getElementById("error-message-general").textContent = "Unknown error. Please try again later.";
+            document.getElementById("error-message-container-general").style.display = "block";
+        };
     };
 };

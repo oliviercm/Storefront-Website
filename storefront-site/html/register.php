@@ -17,7 +17,7 @@
         <a href="../index.php" class="logo">
             <img src="../images/logo-black.png" class="logo">
         </a>
-        <form id="register-form" class="register-form" action="../index.php">
+        <form id="register-form" class="register-form">
             <h1>Create Account</h1>
             <label for="name"><b>Your name</b></label>
             <input id="register-name-input" type="text" name="name" autofocus>
@@ -51,6 +51,10 @@
             </div>
             <div class="form-spacer"></div>
             <button type="submit" class="create-account-button">Create your account</button>
+            <div id="error-message-container-general" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-general" style="font-size: 0.8em;"></span>
+            </div>
             <br>
             <span id="disclaimer">By creating an account, you agree to our <a href="./tos.php">Terms of Service</a> and <a href="./privacy-policy.php">Privacy Policy</a>.</span>
             <hr>
