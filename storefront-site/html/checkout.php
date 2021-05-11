@@ -113,13 +113,13 @@
             </form>
             <div class="subtotal-container">
                 <div class="subtotal">
-                    <span>Subtotal (<span class="cart-total-item-quantity"></span>): <b>$<span class="cart-subtotal"></span></b></span><br>
+                    <span>Subtotal (<span class="cart-total-item-quantity"></span>): <b><span class="cart-subtotal"></span></b></span><br>
                     <span>Delivery Fee: </span>
                     <span style="color: #007600;"><span class="material-icons" style="font-size: 1em;">check_circle</span> Free</span>
                     <br>
-                    <span>Tax: <b>$<span class="total-cart-tax"></span></b></span><br>
+                    <span>Tax: <b><span class="total-cart-tax"></span></b></span><br>
                     <div style="margin: 30px 8px 20px 6px;border-top:1px dotted #C0C0C0;"></div>
-                    <span style="font-size: 1.2em;">Total: <b>$<span class="total-cart-total"></span></b></span>
+                    <span style="font-size: 1.2em;">Total: <b><span class="total-cart-total"></span></b></span>
                     <a href="./confirmation.php">
                         <button type="submit" class="submit-button">Purchase</button>
                     </a>

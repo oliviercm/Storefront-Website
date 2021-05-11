@@ -24,14 +24,14 @@ async function renderCheckout() {
     };
     const cartSubtotalElements = document.getElementsByClassName("cart-subtotal");
     for (const cartSubtotalElement of cartSubtotalElements) {
-        cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
+        cartSubtotalElement.textContent = (cartSubtotal / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
     const cartTaxElements = document.getElementsByClassName("total-cart-tax");
     for (const taxElement of cartTaxElements) {
-        taxElement.textContent = cartTax.toFixed(2);
+        taxElement.textContent = (cartTax / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
     const cartTotalElements = document.getElementsByClassName("total-cart-total");
     for (const cartTotalElement of cartTotalElements) {
-        cartTotalElement.textContent = cartTotal.toFixed(2);
+        cartTotalElement.textContent = (cartTotal / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
 };
