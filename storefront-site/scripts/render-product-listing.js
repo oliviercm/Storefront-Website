@@ -1,4 +1,5 @@
 import {
+    getProducts,
     getProductById,
 } from "./util-products.js";
 
@@ -73,7 +74,7 @@ async function displayOtherProducts(currentProductId) {
         const otherProductTemplate = document.getElementById("other-product-template");
         const otherProductElement = otherProductTemplate.content.firstElementChild.cloneNode(true);
 
-        otherProductElement.querySelector("img").setAttribute("src", `../../images/${otherProduct.images[0]}`);
+        otherProductElement.querySelector("img").setAttribute("src", `../../images/${otherProduct.image}`);
         otherProductElement.querySelector("a").setAttribute("href", `./product.php?id=${otherProduct.id}`);
 
         const otherProductsDiv = document.getElementById("other-products");
@@ -101,11 +102,7 @@ function generateStars(filledStars) {
  * @returns {Array} An array of 4 adjacent products.
  */
 async function findAdjacentProducts(productId) {
-    const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.
-    if (response.status < 200 || response.status >= 300) {
-        throw Error(response.statusText);
-    };
-    const products = await response.json();
+    const products = await getProducts();
 
     const index = products.findIndex(product => {
         return product.id === productId;
