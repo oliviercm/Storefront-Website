@@ -16,12 +16,35 @@ class MySQL {
         $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
+    public function getAllProducts() {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM product");
+            $stmt->execute();
+            $products = $stmt->fetchAll();
+            foreach ($products as &$product) {
+                $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
+            }
+            return $products;
+        } catch (\Throwable $e) {
+            throw $e;
+        } 
+    }
+
+    public function getAllProductsJson() {
+        try {
+            $products = $this->getAllProducts();
+            return json_encode($products);
+        } catch (\Throwable $e) {
+            throw $e;
+        } 
+    }
+
     public function getProductById(int $id) {
         try {
             $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
             $stmt->execute([$id]);
             $product = $stmt->fetch();
-            $product["description"] = json_decode($product["description"]);
+            $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
             return $product;
         } catch (\Throwable $e) {
             throw $e;
