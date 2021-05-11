@@ -36,5 +36,9 @@ class DotEnv {
     }
 }
 
-(new DotEnv($_SERVER['DOCUMENT_ROOT'].'/.env'))->load();
+try {
+    (new DotEnv($_SERVER['DOCUMENT_ROOT'].'/.env'))->load();
+} catch (\Exception $e) {
+    header("HTTP/1.1 500 Internal Server Error");
+}
 ?>
