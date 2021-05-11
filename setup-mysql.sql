@@ -2,6 +2,28 @@
 DROP DATABASE IF EXISTS storefront;
 CREATE DATABASE storefront;
 USE storefront;
+CREATE TABLE user(
+    id INT NOT NULL AUTO_INCREMENT,
+    email NVARCHAR(255) NOT NULL,
+    name NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+CREATE TABLE user_password(
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    hash NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE user_preference(
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    email_newsletter_subscribed BOOLEAN NOT NULL,
+    email_promotions_subscribed BOOLEAN NOT NULL,
+    email_reminders_subscribed BOOLEAN NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
 CREATE TABLE product(
     id INT NOT NULL AUTO_INCREMENT,
     name NVARCHAR(255) NOT NULL,
