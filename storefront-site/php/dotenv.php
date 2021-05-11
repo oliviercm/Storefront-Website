@@ -36,7 +36,7 @@ class DotEnv {
 
 try {
     (new DotEnv($_SERVER['DOCUMENT_ROOT'].'/.env'))->load();
-} catch (\Exception $e) {
+} catch (\Throwable $e) {
     http_response_code(500);
 }
 ?>

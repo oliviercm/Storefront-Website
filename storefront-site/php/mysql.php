@@ -17,15 +17,23 @@ class MySQL {
     }
 
     public function getProductById(int $id) {
-        $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
-        $stmt->execute([$id]);
-        return $stmt->fetch();
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
+            $stmt->execute([$id]);
+            return $stmt->fetch();
+        } catch (\Throwable $e) {
+            throw $e;
+        }
     }
 
     public function getProductJsonById(int $id) {
-        $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
-        $stmt->execute([$id]);
-        return json_encode($stmt->fetch());
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
+            $stmt->execute([$id]);
+            return json_encode($stmt->fetch());
+        } catch (\Throwable $e) {
+            throw $e;
+        }
     }
 }
 ?>
