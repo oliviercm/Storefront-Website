@@ -63,5 +63,39 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function getUserByEmail(string $email) {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM user WHERE email=?");
+            $stmt->execute([$email]);
+            $user = $stmt->fetch();
+            return $user;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+
+    public function createUser(string $email, string $name, string $password) {
+        try {
+            $this->conn->beginTransaction();
+
+            $user_stmt = $this->conn->prepare("INSERT INTO `storefront`.`user` (`email`, `name`) VALUES (?, ?)");
+            $user_stmt->execute([$email, $name]);
+
+            $user_id = $this->conn->lastInsertId();
+
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $user_password_stmt = $this->conn->prepare("INSERT INTO `storefront`.`user_password` (`user_id`, `hash`) VALUES (?, ?)");
+            $user_password_stmt->execute([$user_id, $password_hash]);
+
+            $user_preference_stmt = $this->conn->prepare("INSERT INTO `storefront`.`user_preference` (`user_id`) VALUES (?)");
+            $user_preference_stmt->execute([$user_id]);
+
+            $this->conn->commit();
+        } catch (\Throwable $e) {
+            $this->conn->rollBack();
+            throw $e;
+        }
+    }
 }
 ?>
