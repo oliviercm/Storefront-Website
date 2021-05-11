@@ -22,7 +22,9 @@ class MySQL {
             $stmt->execute();
             $products = $stmt->fetchAll();
             foreach ($products as &$product) {
-                $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
+                if (!empty($product)) {
+                    $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
+                }
             }
             return $products;
         } catch (\Throwable $e) {
@@ -44,7 +46,9 @@ class MySQL {
             $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
             $stmt->execute([$id]);
             $product = $stmt->fetch();
-            $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
+            if (!empty($product)) {
+                $product["description"] = json_decode($product["description"]); // Description column is stored as JSON string in DB
+            }
             return $product;
         } catch (\Throwable $e) {
             throw $e;
