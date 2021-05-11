@@ -6,7 +6,7 @@ CREATE TABLE user(
     id INT NOT NULL AUTO_INCREMENT,
     email NVARCHAR(255) NOT NULL UNIQUE,
     name NVARCHAR(255) NOT NULL,
-    created_at NOT NULL DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 CREATE TABLE user_password(
@@ -19,9 +19,9 @@ CREATE TABLE user_password(
 CREATE TABLE user_preference(
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
-    email_newsletter_subscribed BOOLEAN NOT NULL,
-    email_promotions_subscribed BOOLEAN NOT NULL,
-    email_reminders_subscribed BOOLEAN NOT NULL,
+    email_newsletter_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
+    email_promotions_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
+    email_reminders_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
