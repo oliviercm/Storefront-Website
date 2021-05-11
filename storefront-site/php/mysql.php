@@ -15,8 +15,10 @@ class MySQL {
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public function getConnection() {
-        return $this->conn;
+    public function getProductById(int $id) {
+        $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
     }
 }
 ?>
