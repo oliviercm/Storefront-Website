@@ -21,7 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     } catch (\Throwable $e) {
         http_response_code(500);
-        echo("Internal Server Error");
+        echo("Internal Server Error.");
+        return;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo("Error: Invalid email.");
         return;
     }
     if (strlen($password) < 6) {
