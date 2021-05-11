@@ -60,7 +60,7 @@
     <template id="other-product-template">
         <div id="other-product-2"><a><img style="max-width: 128px; max-height: 128px;"></a></div>
     </template>
-    <script src="../../scripts/render-product-listing.js"></script>
+    <script src="../../scripts/render-product-listing.js" type="module"></script>
     <script src="../../scripts/render-cart-quantity.js" type="module"></script>
     <script src="../../scripts/handle-add-to-cart.js" type="module"></script>
 </body>

@@ -1,5 +1,5 @@
 async function getProducts() {
-    const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.
+    const response = await fetch("/php/products.php");
     if (response.status < 200 || response.status >= 300) {
         throw Error(response.statusText);
     };
@@ -8,10 +8,15 @@ async function getProducts() {
 };
 
 async function getProductById(id) {
-    const products = await getProducts();
-    return products.find(product => {
-        return product.id === id;
-    });
+    if (!id) {
+        throw Error("Invalid ID.");
+    };
+    const response = await fetch(`/php/products.php?id=${id}`);
+    if (response.status < 200 || response.status >= 300) {
+        throw Error(response.statusText);
+    };
+    const product = await response.json();
+    return product;
 };
 
 export {

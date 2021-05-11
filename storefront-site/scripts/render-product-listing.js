@@ -1,3 +1,7 @@
+import {
+    getProductById,
+} from "./util-products.js";
+
 /**
  * This script loads and displays product data on the product.php page.
  * To load the product data, the product's ID must be provided as a query string parameter with key "id".
@@ -8,17 +12,7 @@
          * Fetch and find specific product data.
          */
         const pageProductId = new URLSearchParams(window.location.search).get("id");
-        if (typeof pageProductId !== "string") {
-            throw Error("Product ID not specified.");
-        };
-        const response = await fetch("/mock-data/products.json"); // This will be replaced with an actual API call.
-        if (response.status < 200 || response.status >= 300) {
-            throw Error(response.statusText);
-        };
-        const products = await response.json();
-        const currentProduct = products.find(product => {
-            return product.id === pageProductId;
-        });
+        const currentProduct = await getProductById(pageProductId);
         if (!currentProduct) {
             throw Error("Product ID not found.");
         };
@@ -29,7 +23,7 @@
         document.title = `${currentProduct.name}`;
 
         const productImageElement = document.getElementById("product-listing-image");
-        productImageElement.setAttribute("src", `../../images/${currentProduct.images[0]}`); // Currently, this only displays the first image due to the HTML of the product page.
+        productImageElement.setAttribute("src", `../../images/${currentProduct.image}`);
 
         const productNameElement = document.getElementById("product-listing-name");
         productNameElement.textContent = currentProduct.name;
@@ -49,13 +43,13 @@
 
         const productPriceElement = document.getElementById("product-listing-price");
         const originalPriceSpan = document.createElement("span");
-        originalPriceSpan.appendChild(document.createTextNode(`$${currentProduct.price.usd}`));
+        originalPriceSpan.appendChild(document.createTextNode((currentProduct.price / 100).toLocaleString("en-US", {style: "currency", currency: "USD"})));
         productPriceElement.appendChild(originalPriceSpan);
         // If there is a discounted price, strikethrough the original price and append the discounted price.
-        if (currentProduct.discount_price.usd) {
+        if (currentProduct.discount_price) {
             originalPriceSpan.style.setProperty("text-decoration", "line-through");
             const discountedPriceSpan = document.createElement("span");
-            discountedPriceSpan.appendChild(document.createTextNode(`$${currentProduct.discount_price.usd}`));
+            discountedPriceSpan.appendChild(document.createTextNode((currentProduct.discount_price / 100).toLocaleString("en-US", {style: "currency", currency: "USD"})));
             productPriceElement.appendChild(document.createTextNode("\u00A0"));
             productPriceElement.appendChild(discountedPriceSpan);
         };
