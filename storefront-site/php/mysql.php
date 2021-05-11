@@ -11,8 +11,12 @@ class MySQL {
         $username = getenv("MYSQL_USERNAME");
         $password = getenv("MYSQL_PASSWORD");
 
-        $conn = new PDO("mysql:host=$host;port=$port;dbname=$database", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$database", $username, $password);
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    public function getConnection() {
+        return $this->conn;
     }
 }
 ?>
