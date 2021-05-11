@@ -20,7 +20,9 @@ class MySQL {
         try {
             $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
             $stmt->execute([$id]);
-            return $stmt->fetch();
+            $product = $stmt->fetch();
+            $product["description"] = json_decode($product["description"]);
+            return $product;
         } catch (\Throwable $e) {
             throw $e;
         }
@@ -28,9 +30,8 @@ class MySQL {
 
     public function getProductJsonById(int $id) {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
-            $stmt->execute([$id]);
-            return json_encode($stmt->fetch());
+            $product = $this->getProductById($id);
+            return json_encode($product);
         } catch (\Throwable $e) {
             throw $e;
         }
