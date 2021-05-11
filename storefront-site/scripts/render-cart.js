@@ -62,7 +62,7 @@ async function renderCartItems() {
             cartItemCheckboxElement.addEventListener("change", handleSelectedCheckboxChange);
 
             const cartItemImageElement = cartItemElement.querySelector(".cart-item-image img");
-            cartItemImageElement.setAttribute("src", `../images/${item.images[0]}`);
+            cartItemImageElement.setAttribute("src", `../images/${item.image}`);
 
             const cartItemLinkElement = cartItemElement.querySelector(".cart-item-main .cart-item-link");
             cartItemLinkElement.textContent = item.name;
@@ -88,15 +88,15 @@ async function renderCartItems() {
             const originalPriceSpan = document.createElement("span");
             originalPriceSpan.classList.add("cart-item-price-original");
             originalPriceSpan.setAttribute("data-product-id", cartItem.id);
-            originalPriceSpan.appendChild(document.createTextNode(`$${(item.price.usd * cartItem.quantity).toFixed(2)}`));
+            originalPriceSpan.appendChild(document.createTextNode((item.price * cartItem.quantity / 100).toLocaleString("en-US", {style: "currency", currency: "USD"})));
             cartItemPriceElement.appendChild(originalPriceSpan);
             // If there is a discounted price, strikethrough the original price and append the discounted price.
-            if (item.discount_price.usd) {
+            if (item.discount_price) {
                 originalPriceSpan.style.setProperty("text-decoration", "line-through");
                 const discountedPriceSpan = document.createElement("span");
                 discountedPriceSpan.classList.add("cart-item-price-discount");
                 discountedPriceSpan.setAttribute("data-product-id", cartItem.id);
-                discountedPriceSpan.appendChild(document.createTextNode(`$${(item.discount_price.usd * cartItem.quantity).toFixed(2)}`));
+                discountedPriceSpan.appendChild(document.createTextNode((item.discount_price * cartItem.quantity / 100).toLocaleString("en-US", {style: "currency", currency: "USD"})));
                 cartItemPriceElement.appendChild(document.createTextNode("\u00A0"));
                 cartItemPriceElement.appendChild(discountedPriceSpan);
             };
@@ -133,7 +133,7 @@ async function renderTotalCartValues() {
     };
     const cartSubtotalElements = document.getElementsByClassName("cart-subtotal");
     for (const cartSubtotalElement of cartSubtotalElements) {
-        cartSubtotalElement.textContent = cartSubtotal.toFixed(2);
+        cartSubtotalElement.textContent = (cartSubtotal / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
 };
 
@@ -153,13 +153,13 @@ async function rerenderCartItem(productId) {
     const cartItemOriginalPriceElement = Array.from(document.getElementsByClassName("cart-item-price-original")).find(element => {
         return element.dataset.productId === productId;
     });
-    cartItemOriginalPriceElement.textContent = `$${(product.price.usd * cartItem.quantity).toFixed(2)}`;
+    cartItemOriginalPriceElement.textContent = (product.price * cartItem.quantity / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     
     const cartItemDiscountPriceElement = Array.from(document.getElementsByClassName("cart-item-price-discount")).find(element => {
         return element.dataset.productId === productId;
     });
     if (cartItemDiscountPriceElement) {
-        cartItemDiscountPriceElement.textContent = `$${(product.discount_price.usd * cartItem.quantity).toFixed(2)}`;
+        cartItemDiscountPriceElement.textContent = (product.discount_price * cartItem.quantity / 100).toLocaleString("en-US", {style: "currency", currency: "USD"});
     };
 };
 

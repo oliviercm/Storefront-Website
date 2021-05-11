@@ -112,7 +112,7 @@
                         </div>
                     </template>
                     <div style="width: 100%; text-align: right; font-size: 1.2em;">
-                        Subtotal (<span class="cart-total-item-quantity"></span>): <b>$<span class="cart-subtotal"></span></b>
+                        Subtotal (<span class="cart-total-item-quantity"></span>): <b><span class="cart-subtotal"></span></b>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 <div class="subtotal">
                     <span style="color: #007600; font-size: 0.9em;"><span class="material-icons">check_circle</span> Your order qualifies for FREE shipping.</span>
                     <br>
-                    Subtotal (<span class="cart-total-item-quantity"></span>): <b>$<span class="cart-subtotal"></span></b>
+                    Subtotal (<span class="cart-total-item-quantity"></span>): <b><span class="cart-subtotal"></span></b>
                     <br>
                     <input type="checkbox" id="cart-gift"><span style="font-size: 0.9em;"> This order contains a gift
                     <br>

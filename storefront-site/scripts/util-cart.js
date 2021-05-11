@@ -52,7 +52,7 @@ async function calculateCartValues() {
             const product = products.find(product => {
                 return product.id === cartItem.id;
             });
-            const productPrice = product.discount_price.usd || product.price.usd;
+            const productPrice = product.discount_price || product.price;
             const productQuantity = cartItem.quantity;
             cartSubtotal += productPrice * productQuantity;
             cartItemQuantity += productQuantity;
