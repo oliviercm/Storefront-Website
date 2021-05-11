@@ -15,7 +15,7 @@ CREATE TABLE product(
 );
 INSERT INTO product VALUES
     (
-        1,
+        default,
         'Masks (50 ct)',
         'product1.png',
         4,
