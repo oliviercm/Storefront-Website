@@ -21,5 +21,11 @@ class MySQL {
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
+
+    public function getProductJsonById(int $id) {
+        $stmt = $this->conn->prepare("SELECT * FROM product WHERE id=?");
+        $stmt->execute([$id]);
+        return json_encode($stmt->fetch());
+    }
 }
 ?>
