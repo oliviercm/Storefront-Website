@@ -158,5 +158,21 @@ class MySQL {
             throw $e;
         }
     }
+    
 }
+
+public function updateUserPreference(string $newsletter, $promotions, $reminders, int $userId) {
+    try {
+        $this->conn->beginTransaction();
+
+        $user_stmt = $this->conn->prepare("INSERT INTO `storefront`.`user_preference` (`email_newsletter_subscribed `, `email_promotions_subscribed `, `email_reminders_subscribed `) VALUES (?, ?,?) WHERE user_id=? ”);
+        $user_stmt->execute([$newsletter, $promotions, $reminders]);
+
+        $this->conn->commit();
+    } catch (\Throwable $e) {
+        $this->conn->rollBack();
+        throw $e;
+    }
+}
+
 ?>
