@@ -1,9 +1,11 @@
 import {
     getUser,
+    refreshUser,
 } from "./util-user.js";
 
 (async () => {
     try {
+        await refreshUser();
         renderUser();
     } catch(e) {
         console.error(e);

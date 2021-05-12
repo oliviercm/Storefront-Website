@@ -21,8 +21,23 @@ function mapUserForSessionStorage(user) {
     });
 };
 
+/**
+ * Refreshes the user object in session storage by making a database call.
+ */
+async function refreshUser() {
+    const response = await fetch("/php/user.php", {
+        method: "GET",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+        },
+    });
+    const user = (await response.json()).user;
+    sessionStorage.setItem("user", mapUserForSessionStorage(user));
+};
+
 export {
     getUser,
     setUser,
     mapUserForSessionStorage,
+    refreshUser,
 };
