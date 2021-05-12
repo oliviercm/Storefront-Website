@@ -1,6 +1,8 @@
 # Description
 
-This is a storefront website.
+This is a storefront website intended to run on a Apache/MySQL/PHP stack.
+
+No libraries are used in any code.
 
 ## Authors
 
