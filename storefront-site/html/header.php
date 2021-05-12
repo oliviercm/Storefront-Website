@@ -31,7 +31,7 @@
 </header>
 <hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 24px 24px -24px rgba(0, 0, 0, 0.5);">
 <script>
-    if (localStorage.getItem("csrf-token")) {
+    if (sessionStorage.getItem("user")) {
         document.getElementById("account-dropdown").textContent = "Account ▼";
         document.getElementById("login-button").style.display = "none";
         document.getElementById("register-button").style.display = "none";
@@ -46,7 +46,7 @@
     };
 
     function handleAccountDropdownButton() {
-        if (localStorage.getItem("csrf-token")) {
+        if (sessionStorage.getItem("user")) {
             logoutUser();
         } else {
             window.location.href = "/html/login.php";
@@ -54,6 +54,7 @@
     };
 
     function logoutUser() {
+        sessionStorage.removeItem("user");
         localStorage.removeItem("csrf-token");
         window.location.replace("/index.php");
     };
