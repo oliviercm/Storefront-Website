@@ -105,7 +105,7 @@ class MySQL {
             $user = $user_stmt->fetch();
 
             if (empty($user)) {
-                throw new \Exception("User email does not exist.");
+                return false;
             }
 
             $user_id = $user["id"];
@@ -115,7 +115,7 @@ class MySQL {
             $password_hash = $password_stmt->fetch();
 
             if (empty($password_hash)) {
-                throw new \Exception("FATAL: User password does not exist.");
+                return false;
             }
 
             $hash = $password_hash["hash"];
