@@ -1,7 +1,7 @@
 <?php
 namespace JWT;
 
-function generate($payload) {
+function encode($payload) {
     $secret = getenv("JWT_SECRET");
     $expire_time = getenv("JWT_EXPIRE_TIME");
     $payload = array_merge($payload, [
