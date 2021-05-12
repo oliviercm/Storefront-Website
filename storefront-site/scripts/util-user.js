@@ -24,4 +24,5 @@ function mapUserForSessionStorage(user) {
 export {
     getUser,
     setUser,
+    mapUserForSessionStorage,
 };
