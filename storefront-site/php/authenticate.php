@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $csrfToken = bin2hex(random_bytes(32));
         $jwt = JWT\encode([
             "user_id" => $authenticatedUser["id"],
-            "crsf-token" => $csrfToken
+            "csrf-token" => $csrfToken
         ]);
         $response_body = json_encode([
             "access_token" => $jwt,
