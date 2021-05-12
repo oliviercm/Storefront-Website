@@ -32,6 +32,7 @@ header {
 .header-nav a, .header-nav a:hover {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .header-nav-link {
@@ -117,6 +118,7 @@ header {
     color: black;
     display: block;
     padding: 15px 20px;
+    width: 7em;
 }
 
 .header-login-dropdown-content a:hover {
@@ -127,7 +129,7 @@ header {
 .header-login-dropdown-content>div {
     white-space: nowrap;
     position: absolute;
-    left: 40%;
+    left: 20%;
     transform: translateX(-50%);
     padding-top: 12px;
 }
