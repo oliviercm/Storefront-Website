@@ -1,3 +1,7 @@
+import {
+    mapUserForSessionStorage,
+} from "./util-user.js";
+
 (() => {
     try {
         addLoginHandlers();
@@ -84,16 +88,4 @@ async function handleLoginSubmit(event) {
             document.getElementById("error-message-container-general").style.display = "block";
         };
     };
-};
-
-function mapUserForSessionStorage(user) {
-    return JSON.stringify({
-        email: user.email,
-        full_name: user.name,
-        email_subscriptions: {
-            newsletter: user.preferences.email_newsletter_subscribed,
-            promotions: user.preferences.email_promotions_subscribed,
-            reminders: user.preferences.email_reminders_subscribed,
-        },
-    });
 };
