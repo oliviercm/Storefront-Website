@@ -97,5 +97,39 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function authenticateUser(string $email, string $password) {
+        try {
+            $user_stmt = $this->conn->prepare("SELECT * FROM user WHERE email=?");
+            $user_stmt->execute([$email]);
+            $user = $user_stmt->fetch();
+
+            if (empty($user)) {
+                throw new \Exception("User email does not exist.");
+            }
+
+            $user_id = $user["id"];
+
+            $password_stmt = $this->conn->prepare("SELECT hash FROM user_password WHERE user_id=?");
+            $password_stmt->execute([$user_id]);
+            $password_hash = $password_stmt->fetch();
+
+            if (empty($password_hash)) {
+                throw new \Exception("FATAL: User password does not exist.");
+            }
+
+            $hash = $password_hash["hash"];
+
+            $verified = password_verify($password, $hash);
+
+            if (!$verified) {
+                return false;
+            }
+
+            return $user;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
