@@ -22,8 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             return;
         }
 
+        $csrfToken = bin2hex(random_bytes(32));
         $jwt = JWT\encode([
-            "user_id" => $authenticatedUser["id"]
+            "user_id" => $authenticatedUser["id"],
+            "crsf-token" => $csrfToken
         ]);
         $response_body = json_encode([
             "access_token" => $jwt,
@@ -32,7 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ]);
         http_response_code(200);
         header("Content-Type: application/json");
-        setcookie("token", $jwt, time() + getenv("JWT_EXPIRE_TIME"), "/", null, false, true);
+        header("X-CSRF-TOKEN: " . $csrfToken);
+        setcookie("access_token", $jwt, time() + getenv("JWT_EXPIRE_TIME"), "/", null, false, true);
         echo($response_body);
         return;
     } catch (\Throwable $e) {

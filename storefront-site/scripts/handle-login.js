@@ -13,7 +13,9 @@ function addLoginHandlers() {
     };
 };
 
-function handleLoginSubmit(event) {
+async function handleLoginSubmit(event) {
+    event.preventDefault();
+
     const formData = new FormData(event.target);
     const invalid = {
         email: false,
@@ -53,9 +55,32 @@ function handleLoginSubmit(event) {
             hasError = true;
         };
     };
-    if (hasError) {
-        event.preventDefault();
-    } else {
-        // Send login request
+    if (!hasError) {
+        try {
+            const response = await fetch("/php/authenticate.php", {
+                method: "POST",
+                body: formData,
+            });
+            if (200 <= response.status && response.status < 300) {
+                localStorage.setItem("csrf-token", response.headers.get("X-CSRF-TOKEN"));
+                window.location.replace("/index.php");
+            } else if (400 <= response.status && response.status < 500) {
+                if (response.status === 401) {
+                    document.getElementById("login-email-input").classList.add("invalid");
+                    document.getElementById("login-password-input").classList.add("invalid");
+                    document.getElementById("error-message-general").textContent = "Invalid email or password.";
+                    document.getElementById("error-message-container-general").style.display = "block";
+                } else {
+                    document.getElementById("error-message-general").textContent = "Invalid credentials.";
+                    document.getElementById("error-message-container-general").style.display = "block";
+                };
+            } else {
+                throw Error();
+            };
+        } catch(e) {
+            console.error(e);
+            document.getElementById("error-message-general").textContent = "Unknown error. Please try again later.";
+            document.getElementById("error-message-container-general").style.display = "block";
+        };
     };
 };

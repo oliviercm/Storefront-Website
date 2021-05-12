@@ -17,7 +17,7 @@
         <a href="../index.php" class="logo">
             <img src="../images/logo-black.png" class="logo">
         </a>
-        <form id="login-form" class="login-form" action="../index.php">
+        <form id="login-form" class="login-form">
             <h1>Sign-In</h1>
             <label for="email"><b>Email</b></label>
             <input id="login-email-input" type="text" name="email" autofocus spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -34,6 +34,10 @@
             </div>
             <div class="form-spacer"></div>
             <button type="submit" class="sign-in-button">Continue</button>
+            <div id="error-message-container-general" style="display: none; color: #c41829;">
+                <span class="material-icons" style="font-size: 16px;">error</span>
+                <span id="error-message-general" style="font-size: 0.8em;"></span>
+            </div>
             <br>
             <span id="disclaimer">By continuing, you agree to our <a href="./tos.php">Terms of Service</a> and <a href="./privacy-policy.php">Privacy Policy</a>.</span>
             <br>
