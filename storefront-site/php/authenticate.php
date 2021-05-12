@@ -27,16 +27,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "user_id" => $authenticatedUser["id"],
             "csrf-token" => $csrfToken
         ]);
-        $response_body = json_encode([
+        $response_body = [
             "access_token" => $jwt,
             "token_type" => "Bearer",
             "expires_in" => (int)getenv("JWT_EXPIRE_TIME")
-        ]);
+        ];
+        if (htmlspecialchars($_GET["include"]) === "user") {
+            $response_body = array_merge($response_body, [
+                "user" => $db->getUserObject($authenticatedUser["id"])
+            ]);
+        }
         http_response_code(200);
         header("Content-Type: application/json");
         header("X-CSRF-TOKEN: " . $csrfToken);
         setcookie("access_token", $jwt, time() + getenv("JWT_EXPIRE_TIME"), "/", null, false, true);
-        echo($response_body);
+        echo(json_encode($response_body));
         return;
     } catch (\Throwable $e) {
         http_response_code(500);

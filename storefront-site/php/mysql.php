@@ -131,5 +131,32 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function getUserObject(int $userId) {
+        try {
+            $user_stmt = $this->conn->prepare("SELECT * FROM user WHERE id=?");
+            $user_stmt->execute([$userId]);
+            $user = $user_stmt->fetch();
+            $cleaned_user = array_intersect_key($user, [
+                "email" => true,
+                "name" => true
+            ]);
+
+            $user_preference_stmt = $this->conn->prepare("SELECT * FROM user_preference WHERE user_id=?");
+            $user_preference_stmt->execute([$userId]);
+            $user_preference = $user_preference_stmt->fetch();
+            $cleaned_user_preference = array_intersect_key($user_preference, [
+                "email_newsletter_subscribed" => true,
+                "email_promotions_subscribed" => true,
+                "email_reminders_subscribed" => true
+            ]);
+
+            return array_merge($cleaned_user, [
+                "preferences" => $cleaned_user_preference
+            ]);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
