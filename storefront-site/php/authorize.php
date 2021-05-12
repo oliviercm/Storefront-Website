@@ -2,7 +2,7 @@
 namespace Authorization;
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/jwt.php";
 
-function getRequestAuthorizedUser() {
+function getRequestAuthorizedUserId() {
     $accessToken = $_COOKIE["access_token"];
     if (empty($accessToken)) {
         return false;
