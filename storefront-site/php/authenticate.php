@@ -24,10 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "user_id" => $authenticatedUser["id"]
         ]);
         $response_body = json_encode([
-            "token" => $jwt
+            "access_token" => $jwt,
+            "token_type" => "Bearer",
+            "expires_in" => (int)getenv("JWT_EXPIRE_TIME")
         ]);
+        http_response_code(200);
         header("Content-Type: application/json");
         echo($response_body);
+        return;
     } catch (\Throwable $e) {
         http_response_code(500);
         echo("Internal server error.");
