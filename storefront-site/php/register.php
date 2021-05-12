@@ -1,8 +1,8 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/mysql.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 $db = new MySQL();
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"]);
     $name = trim($_POST["name"]);
     $password = trim($_POST["password"]);
