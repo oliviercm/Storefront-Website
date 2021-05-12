@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ]);
         http_response_code(200);
         header("Content-Type: application/json");
+        setcookie("token", $jwt, time() + getenv("JWT_EXPIRE_TIME"), "/", null, false, true);
         echo($response_body);
         return;
     } catch (\Throwable $e) {
