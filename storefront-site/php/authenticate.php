@@ -1,6 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/dotenv.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/jwt.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
+
 $db = new MySQL();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

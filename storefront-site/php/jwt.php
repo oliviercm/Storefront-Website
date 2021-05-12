@@ -1,4 +1,6 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/dotenv.php";
+
 namespace JWT;
 
 function _sign($payload) {
