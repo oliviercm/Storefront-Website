@@ -35,6 +35,12 @@ function encode($payload) {
 
 function verify($jwt) {
     [$headerEncoded, $payloadEncoded, $signatureEncoded] = explode(".", $jwt);
+
+    $payload = json_decode(base64_decode($payloadEncoded));
+    if (!empty($payload->exp) && time() >= $payload->exp) {
+        return false;
+    }
+
     $signature = base64_decode($signatureEncoded);
     $hash = _sign(implode(".", [$headerEncoded, $payloadEncoded]));
 
