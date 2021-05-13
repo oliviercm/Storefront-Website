@@ -11,7 +11,7 @@
         <a id="cart-button" href="/html/cart.php" class="header-nav-link"><span class="material-icons">shopping_cart</span> Cart
             (<span class="cart-total">0</span>)</a>
         <div class="header-login-dropdown">
-            <a id="account-dropdown" class="header-nav-link" onclick="handleAccountDropdownButton()">Sign In ▼</a>
+            <a id="account-dropdown" class="header-nav-link">Sign In ▼</a>
             <nav class="header-login-dropdown-content">
                 <div>
                     <div class="header-login-dropdown-flex">
@@ -39,6 +39,7 @@ import {
 } from "/scripts/util-cart.js";
 
 document.getElementById("logout-button").onclick = logoutUser;
+document.getElementById("account-dropdown").onclick = handleAccountDropdownButton;
 
 if (sessionStorage.getItem("user")) {
     document.getElementById("account-dropdown").textContent = "Account ▼";
@@ -60,7 +61,7 @@ if (sessionStorage.getItem("user")) {
 
 function handleAccountDropdownButton() {
     if (sessionStorage.getItem("user")) {
-        logoutUser();
+        window.location.href = "/html/user-preferences.php";
     } else {
         window.location.href = "/html/login.php";
     };
