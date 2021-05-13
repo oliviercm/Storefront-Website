@@ -19,6 +19,8 @@
                                 style="font-size: 16px;">login</span></a>
                         <a id="register-button" href="/html/register.php">Register <span class="material-icons"
                                 style="font-size: 16px;">person_add</span></a>
+                        <a id="orders-button" href="/html/orders.php">Orders<span class="material-icons"
+                            style="font-size: 16px;">view_list</span></a>
                         <a id="preferences-button" href="/html/user-preferences.php">Preferences <span class="material-icons"
                             style="font-size: 16px;">settings</span></a>
                         <a id="logout-button">Log Out <span class="material-icons"
@@ -45,6 +47,7 @@ if (sessionStorage.getItem("user")) {
     document.getElementById("account-dropdown").textContent = "Account ▼";
     document.getElementById("login-button").style.display = "none";
     document.getElementById("register-button").style.display = "none";
+    document.getElementById("orders-button").style.display = "block";
     document.getElementById("preferences-button").style.display = "block";
     document.getElementById("logout-button").style.display = "block";
     document.getElementById("cart-button").style.display = "inline";
@@ -54,6 +57,7 @@ if (sessionStorage.getItem("user")) {
     document.getElementById("account-dropdown").textContent = "Sign In ▼";
     document.getElementById("login-button").style.display = "block";
     document.getElementById("register-button").style.display = "block";
+    document.getElementById("orders-button").style.display = "none";
     document.getElementById("preferences-button").style.display = "none";
     document.getElementById("logout-button").style.display = "none";
     document.getElementById("cart-button").style.display = "none";
