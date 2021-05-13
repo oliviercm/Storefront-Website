@@ -109,6 +109,20 @@ async function updateCart() {
     return response;
 };
 
+function splitSelectedCartItems() {
+    const cart = getCart();
+    const selected = cart.filter(cartItem => {
+        return cartItem.selected;
+    });
+    const unselected = cart.filter(cartItem => {
+        return !cartItem.selected;
+    });
+    return {
+        selected,
+        unselected,
+    };
+};
+
 export {
     getCart,
     setCart,
@@ -117,4 +131,5 @@ export {
     calculateCartValues,
     refreshCart,
     updateCart,
+    splitSelectedCartItems,
 };

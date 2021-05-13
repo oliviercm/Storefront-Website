@@ -106,7 +106,7 @@
                     <input type="text" id="streetAddress" name="streetAddress" value="">
                     <input type="text" id="Apt" name="Apt" placeholder="Apt/Unit" style="width:60px;"><br>
                     <label for="city"><b>TOWN/CITY</b></label><br>
-                    <input type="text" id="streetAddress" name="streetAddress" value="" ><br>
+                    <input type="text" id="city" name="streetAddress" value="" ><br>
                     <label for="state"><b>STATE</b></label><br>
                     <input type="text" id="State" name="state" value="">
                     <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
@@ -128,7 +128,7 @@
                     <div style="margin: 30px 8px 20px 6px;border-top:1px dotted #C0C0C0;"></div>
                     <span style="font-size: 1.2em;">Total: <b><span class="total-cart-total"></span></b></span>
                     <a href="./confirmation.php">
-                        <button type="submit" class="submit-button">Purchase</button>
+                        <button id="submit-button" class="submit-button">Purchase</button>
                     </a>
                 </div>
             </div>
@@ -137,6 +137,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/footer.php";?>
     <script src="../scripts/render-checkout.js" type="module"></script>
     <script src="../scripts/render-cart-quantity.js" type="module"></script>
+    <script src="../scripts/handle-checkout.js" type="module"></script>
 </body>
 
 </html>

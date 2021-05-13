@@ -2,6 +2,8 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/authorize.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 
+define("TAX_RATE", 1.0725);
+
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     try {
         $db = new MySQL();
@@ -58,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $productPrice = (!$product["discount_price"]) ? $product["price"] : $product["discount_price"];
             $totalPrice += $productPrice * $productQuantity;
         }
+        $totalPrice = (int)($totalPrice * TAX_RATE);
         
         $shippingAddress = $requestBody["shipping_address"];
         $billingAddress = $requestBody["billing_address"];
