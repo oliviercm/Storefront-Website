@@ -184,5 +184,42 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function getUserOrders(int $userId) {
+        try {
+            $order_stmt = $this->conn->prepare("SELECT products, price, shipping_address, billing_address FROM user_order WHERE user_id=:userId");
+            $order_stmt->execute([
+                "userId" => $userId,
+            ]);
+            $orders = $order_stmt->fetchAll();
+
+            foreach($orders as &$order) {
+                $order["products"] = json_decode($order["products"]);
+                $order["shipping_address"] = json_decode($order["shipping_address"]);
+                $order["billing_address"] = json_decode($order["billing_address"]);
+            }
+
+            return $orders;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+
+    public function insertUserOrder(int $userId, string $products, int $price, string $shippingAddress, string $billingAddress) {
+        try {
+            $order_stmt = $this->conn->prepare("INSERT INTO user_order (user_id, products, price, shipping_address, billing_address) VALUES (:userId, :products, :price, :shippingAddress, :billingAddress)");
+            $success = $order_stmt->execute([
+                "userId" => $userId,
+                "products" => $products,
+                "price" => $price,
+                "shippingAddress" => $shippingAddress,
+                "billingAddress" => $billingAddress
+            ]);
+
+            return $success;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
