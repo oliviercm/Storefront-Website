@@ -61,7 +61,7 @@
                 <br>
                 <b>Estimated delivery: 2 weeks</b>
                 <br>
-                You will recieve an email with your tracking number soon.
+                You will receive an email with your tracking number soon.
                 <br>
                 <br>
                 <br>
