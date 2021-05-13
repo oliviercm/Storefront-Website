@@ -253,5 +253,17 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function updateUserEmail(int $userId, string $email) {
+        try {
+            $update_stmt = $this->conn->prepare("UPDATE user SET email=:email WHERE id=:userId");
+            $update_stmt->execute([
+                "userId" => $userId,
+                "email" => $email
+            ]);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
