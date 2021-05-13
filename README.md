@@ -18,6 +18,16 @@ PHP
     - JWT_SECRET must be configured. Recommended to use a random string of 32-64 characters.
 4. Setup and configuration complete!
 
+# Screenshots
+
+![Screenshot](screen1.PNG)
+![Screenshot](screen2.PNG)
+![Screenshot](screen3.PNG)
+![Screenshot](screen4.PNG)
+![Screenshot](screen5.PNG)
+![Screenshot](screen6.PNG)
+![Screenshot](screen7.PNG)
+
 ## Authors
 
 All authors are students at San Francisco State University, San Francisco, California.
