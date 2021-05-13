@@ -22,13 +22,13 @@ PHP
 
 # Screenshots
 
-![Screenshot](screen1.PNG)
-![Screenshot](screen2.PNG)
-![Screenshot](screen3.PNG)
-![Screenshot](screen4.PNG)
-![Screenshot](screen5.PNG)
-![Screenshot](screen6.PNG)
-![Screenshot](screen7.PNG)
+![Screenshot](screenshots/screen1.PNG)
+![Screenshot](screenshots/screen2.PNG)
+![Screenshot](screenshots/screen3.PNG)
+![Screenshot](screenshots/screen4.PNG)
+![Screenshot](screenshots/screen5.PNG)
+![Screenshot](screenshots/screen6.PNG)
+![Screenshot](screenshots/screen7.PNG)
 
 ## Authors
 
