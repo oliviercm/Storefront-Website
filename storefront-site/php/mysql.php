@@ -1,6 +1,8 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/dotenv.php";
 
+class NegativeStockException extends Exception {}
+
 class MySQL {
     protected $conn;
 
@@ -184,6 +186,7 @@ class MySQL {
             throw $e;
         }
     }
+<<<<<<< HEAD
 /*
     public function editUserName(string $name){
         try{
@@ -196,5 +199,62 @@ class MySQL {
 
     }
     */
+=======
+
+    public function getUserOrders(int $userId) {
+        try {
+            $order_stmt = $this->conn->prepare("SELECT products, price, shipping_address, billing_address, created_at FROM user_order WHERE user_id=:userId");
+            $order_stmt->execute([
+                "userId" => $userId,
+            ]);
+            $orders = $order_stmt->fetchAll();
+
+            foreach($orders as &$order) {
+                $order["products"] = json_decode($order["products"]);
+                $order["shipping_address"] = json_decode($order["shipping_address"]);
+                $order["billing_address"] = json_decode($order["billing_address"]);
+            }
+
+            return $orders;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+
+    public function createUserOrder(int $userId, $products, int $price, $shippingAddress, $billingAddress) {
+        try {
+            $this->conn->beginTransaction();
+
+            $order_stmt = $this->conn->prepare("INSERT INTO user_order (user_id, products, price, shipping_address, billing_address) VALUES (:userId, :products, :price, :shippingAddress, :billingAddress)");
+            $order_stmt->execute([
+                "userId" => $userId,
+                "products" => json_encode($products),
+                "price" => $price,
+                "shippingAddress" => json_encode($shippingAddress),
+                "billingAddress" => json_encode($billingAddress)
+            ]);
+
+            $update_product_stmt = $this->conn->prepare("UPDATE product SET stock=stock-:stockDecrement WHERE id=:productId");
+            foreach($products as $product) {
+                $update_product_stmt->execute([
+                    "productId" => $product["id"],
+                    "stockDecrement" => $product["quantity"]
+                ]);
+            }
+
+            $find_negative_stock_stmt = $this->conn->prepare("SELECT 1 FROM product WHERE stock < 0");
+            $find_negative_stock_stmt->execute();
+
+            if ($find_negative_stock_stmt->fetchAll()) {
+                throw new NegativeStockException();
+            }
+
+            $this->conn->commit();
+        } catch (\Throwable $e) {
+            $this->conn->rollBack();
+            throw $e;
+        }
+    }
+>>>>>>> 24e1b9b5ee5c320149fb42e0a24e6c00e1680e52
 }
 ?>
