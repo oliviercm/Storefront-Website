@@ -92,6 +92,12 @@
                         <option value="2029">
                         <option value="2030">
                     </datalist>
+                    <br>
+                    <img src = "/images/visa.jpg" width = 60px;>
+                    <img src = "/images/mastercard.jpg" width = 60px;>
+                    <img src = "/images/discover.jpg" width = 60px;>
+                     -OR-
+                    <a href ="http://www.paypal.com" ><img src = "/images/paypal.jpg" width = 110px, height = 60px;></a>
                     <div style="margin: 30px 8px 20px 6px;border-top:1px dotted #C0C0C0;"></div>
                     <h2>Shipping Address</h2>
                     <label for="fullName"><b>FULL NAME</b></label><br>
@@ -102,8 +108,9 @@
                     <label for="city"><b>TOWN/CITY</b></label><br>
                     <input type="text" id="streetAddress" name="streetAddress" value="" ><br>
                     <label for="state"><b>STATE</b></label><br>
-                <input type="text" id="State" name="state" value="">
-                <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
+                    <input type="text" id="State" name="state" value="">
+                    <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="Zip" name="Zip" maxlength="5" placeholder="Zip Code" style="width:60px;"><br>
+                    <div style="margin: 30px 8px 20px 6px;border-top:1px dotted #C0C0C0;"></div>
                 <h4>Billing Address</h4>
                     <div class="div-left">
                         <label for="sameAddress">Same as Shipping Address</label>
