@@ -158,5 +158,28 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function getUserCart(int $userId) {
+        try {
+            $cart_stmt = $this->conn->prepare("SELECT cart FROM user_cart WHERE user_id=?");
+            $cart_stmt->execute([$userId]);
+            $cart = $cart_stmt->fetch();
+
+            return $cart;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+
+    public function setUserCart(int $userId, string $cart) {
+        try {
+            $cart_stmt = $this->conn->prepare("UPDATE user_cart SET cart=? WHERE user_id=?");
+            $success = $cart_stmt->execute([$cart, $userId]);
+
+            return $success;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
