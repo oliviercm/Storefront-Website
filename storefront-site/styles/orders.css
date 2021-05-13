@@ -1,0 +1,87 @@
+body {
+    background-color: #F0F0F0;
+}
+
+.main-container {
+    background-color: inherit;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: minmax(100px, 30%);
+    grid-template-areas: "orders";
+}
+
+.orders-container {
+    grid-area: orders;
+}
+
+.orders {
+    background-color: #FFFFFF;
+    margin: 16px;
+    padding: 4px 20px 32px 20px;
+}
+
+.order hr {
+    border: none;
+    height: 1px;
+    color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.order-container .order-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.order-container .order-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: 24px minmax(64px, 120px) auto 64px;
+    grid-template-rows: auto;
+    grid-template-areas: "checkbox image main price";
+}
+
+.order-item .order-item-image {
+    grid-area: image;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.order-item .order-item-image img {
+    display: block;
+    margin: auto;
+    max-height: 80%;
+    max-width: 80%;
+    width: auto;
+    height: auto;
+}
+
+.order-item .order-item-main {
+    grid-area: main;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.order-item .order-item-price {
+    grid-area: price;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
