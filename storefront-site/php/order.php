@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $shippingAddress = $requestBody["shipping_address"];
         $billingAddress = $requestBody["billing_address"];
 
-        $db->insertUserOrder($authorizedUserId, json_encode($cart), $totalPrice, json_encode($shippingAddress), json_encode($billingAddress));
+        $db->createUserOrder($authorizedUserId, $cart, $totalPrice, $shippingAddress, $billingAddress);
     } catch(\Throwable $e) {
         http_response_code(500);
         echo("Internal server error.");

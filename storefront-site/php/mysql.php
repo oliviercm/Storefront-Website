@@ -205,15 +205,15 @@ class MySQL {
         }
     }
 
-    public function insertUserOrder(int $userId, string $products, int $price, string $shippingAddress, string $billingAddress) {
+    public function createUserOrder(int $userId, $products, int $price, $shippingAddress, $billingAddress) {
         try {
             $order_stmt = $this->conn->prepare("INSERT INTO user_order (user_id, products, price, shipping_address, billing_address) VALUES (:userId, :products, :price, :shippingAddress, :billingAddress)");
             $success = $order_stmt->execute([
                 "userId" => $userId,
-                "products" => $products,
+                "products" => json_encode($products),
                 "price" => $price,
-                "shippingAddress" => $shippingAddress,
-                "billingAddress" => $billingAddress
+                "shippingAddress" => json_encode($shippingAddress),
+                "billingAddress" => json_encode($billingAddress)
             ]);
 
             return $success;
