@@ -11,7 +11,7 @@ Apache (or another web server),
 MySQL,
 PHP
 
-1. The contents of [/storefront-site](storefront-site) must be moved/copied into your webserver's root, or the websever must be configured to serve the contents of [/storefront-site](storefront-site).
+1. The contents of [/storefront-site](storefront-site) must be moved/copied into your webserver's root, or the webserver must be configured to serve the contents of [/storefront-site](storefront-site).
 2. To set up the MySQL database, run [/setup-mysql.sql](setup-mysql.sql) in a MySQL shell.
 3. To set up required environment variables, make a copy of [/storefront-site/.env.example](storefront-site/.env.example) and rename it `.env`.
     - MySQL credentials must be configured.
