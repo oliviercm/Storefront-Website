@@ -186,20 +186,6 @@ class MySQL {
             throw $e;
         }
     }
-<<<<<<< HEAD
-/*
-    public function editUserName(string $name){
-        try{
-            getRequestAuthorizedUserId();
-    
-            $user_stmt = $this->conn->prepare("UPDATE INTO `storefront`.`user` (`name`)");
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-
-    }
-    */
-=======
 
     public function getUserOrders(int $userId) {
         try {
@@ -255,6 +241,5 @@ class MySQL {
             throw $e;
         }
     }
->>>>>>> 24e1b9b5ee5c320149fb42e0a24e6c00e1680e52
 }
 ?>
