@@ -46,8 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     try {
         $db->createUser($email, $name, $password);
-        http_response_code(200);
-        echo("OK");
+        http_response_code(201);
         return;
     } catch (\Throwable $e) {
         http_response_code(500);
