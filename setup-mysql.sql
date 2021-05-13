@@ -32,6 +32,16 @@ CREATE TABLE user_cart(
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE user_order(
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    purchase JSON NOT NULL,
+    price INT NOT NULL,
+    shipping_address JSON NOT NULL,
+    billing_address JSON NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
 CREATE TABLE product(
     id INT NOT NULL AUTO_INCREMENT,
     name NVARCHAR(255) NOT NULL,
