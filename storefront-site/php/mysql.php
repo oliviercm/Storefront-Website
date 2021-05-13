@@ -298,5 +298,19 @@ class MySQL {
             throw $e;
         }
     }
+
+    public function updateUserEmailPreferences(int $userId, bool $newsletter, bool $promotions, bool $reminders) {
+        try {
+            $update_stmt = $this->conn->prepare("UPDATE user_preference SET email_newsletter_subscribed=:newsletter, email_promotions_subscribed=:promotions, email_reminders_subscribed=:reminders WHERE user_id=:userId");
+            $update_stmt->execute([
+                "userId" => $userId,
+                "newsletter" => $newsletter ? "1" : "0",
+                "promotions" => $promotions ? "1" : "0",
+                "reminders" => $reminders ? "1" : "0"
+            ]);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
