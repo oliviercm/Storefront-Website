@@ -4,6 +4,8 @@ This is a storefront website intended to run on a Apache/MySQL/PHP stack.
 
 No libraries are used in any code.
 
+This site was created as an assignment for SFSU CSC317 Spring 2021.
+
 # Setup
 
 Requirements:
