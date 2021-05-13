@@ -187,7 +187,7 @@ class MySQL {
 
     public function getUserOrders(int $userId) {
         try {
-            $order_stmt = $this->conn->prepare("SELECT products, price, shipping_address, billing_address FROM user_order WHERE user_id=:userId");
+            $order_stmt = $this->conn->prepare("SELECT products, price, shipping_address, billing_address, created_at FROM user_order WHERE user_id=:userId");
             $order_stmt->execute([
                 "userId" => $userId,
             ]);

@@ -39,6 +39,7 @@ CREATE TABLE user_order(
     price INT NOT NULL,
     shipping_address JSON NOT NULL,
     billing_address JSON NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
