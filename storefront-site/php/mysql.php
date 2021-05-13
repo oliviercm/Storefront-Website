@@ -133,6 +133,26 @@ class MySQL {
             throw $e;
         }
     }
+    
+    public function verifyUserPassword(int $userId, string $password) {
+        try {
+            $password_stmt = $this->conn->prepare("SELECT hash FROM user_password WHERE user_id=?");
+            $password_stmt->execute([$userId]);
+            $password_hash = $password_stmt->fetch();
+
+            if (empty($password_hash)) {
+                return false;
+            }
+
+            $hash = $password_hash["hash"];
+
+            $verified = password_verify($password, $hash);
+
+            return $verified;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 
     public function getUserObject(int $userId) {
         try {
@@ -260,6 +280,19 @@ class MySQL {
             $update_stmt->execute([
                 "userId" => $userId,
                 "email" => $email
+            ]);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+
+    public function updateUserPassword(int $userId, string $password) {
+        try {
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $update_stmt = $this->conn->prepare("UPDATE user_password SET hash=:hash WHERE user_id=:userId");
+            $update_stmt->execute([
+                "userId" => $userId,
+                "hash" => $password_hash
             ]);
         } catch (\Throwable $e) {
             throw $e;
