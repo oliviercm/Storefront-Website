@@ -7,8 +7,8 @@ No libraries are used in any code.
 # Setup
 
 Requirements:
-Apache (or another web server)
-MySQL
+Apache (or another web server),
+MySQL,
 PHP
 
 1. The contents of [/storefront-site](storefront-site) must be moved/copied into your webserver's root, or the websever must be configured to serve the contents of [/storefront-site](storefront-site).
