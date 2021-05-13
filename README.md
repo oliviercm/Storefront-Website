@@ -23,11 +23,17 @@ PHP
 # Screenshots
 
 ![Screenshot](screenshots/screen1.PNG)
+___
 ![Screenshot](screenshots/screen2.PNG)
+___
 ![Screenshot](screenshots/screen3.PNG)
+___
 ![Screenshot](screenshots/screen4.PNG)
+___
 ![Screenshot](screenshots/screen5.PNG)
+___
 ![Screenshot](screenshots/screen6.PNG)
+___
 ![Screenshot](screenshots/screen7.PNG)
 
 ## Authors
