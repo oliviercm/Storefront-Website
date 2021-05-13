@@ -11,14 +11,14 @@ CREATE TABLE user(
 );
 CREATE TABLE user_password(
     id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    user_id INT NOT NULL UNIQUE,
     hash NVARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE user_preference(
     id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    user_id INT NOT NULL UNIQUE,
     email_newsletter_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
     email_promotions_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
     email_reminders_subscribed BOOLEAN NOT NULL DEFAULT TRUE,
@@ -27,7 +27,7 @@ CREATE TABLE user_preference(
 );
 CREATE TABLE user_cart(
     id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    user_id INT NOT NULL UNIQUE,
     cart JSON NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
