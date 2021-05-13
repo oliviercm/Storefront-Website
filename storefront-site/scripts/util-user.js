@@ -42,10 +42,94 @@ async function refreshUser() {
     sessionStorage.setItem("user", mapUserForSessionStorage(user));
 };
 
+async function updateUserName(name) {
+    const requestBody = {
+        name: name,
+    };
+    const response = await fetch("/php/changename.php", {
+        method: "PUT",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+    });
+    if (200 <= response.status && response.status < 300) {
+        return true;
+    } else {
+        throw Error(response.text);
+    };
+};
+
+async function updateUserEmail(email) {
+    const requestBody = {
+        email: email,
+    };
+    const response = await fetch("/php/changeemail.php", {
+        method: "PUT",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+    });
+    if (200 <= response.status && response.status < 300) {
+        return true;
+    } else {
+        throw Error(response.text);
+    };
+};
+
+async function updateUserPassword(currentPassword, newPassword, repeatPassword) {
+    const requestBody = {
+        current_password: currentPassword,
+        new_password: newPassword,
+        repeat_password: repeatPassword,
+    };
+    const response = await fetch("/php/changepassword.php", {
+        method: "PUT",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+    });
+    if (200 <= response.status && response.status < 300) {
+        return true;
+    } else {
+        throw Error(response.text);
+    };
+};
+
+async function updateUserEmailPreferences(newsletter, promotions, reminders) {
+    const requestBody = {
+        email_newsletter_subscribed: newsletter,
+        email_promotions_subscribed: promotions,
+        email_reminders_subscribed: reminders,
+    };
+    const response = await fetch("/php/changeemailsubscription.php", {
+        method: "PUT",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+    });
+    if (200 <= response.status && response.status < 300) {
+        return true;
+    } else {
+        throw Error(response.text);
+    };
+};
+
 export {
     getUser,
     setUser,
     logoutUser,
     mapUserForSessionStorage,
     refreshUser,
+    updateUserName,
+    updateUserEmail,
+    updateUserPassword,
+    updateUserEmailPreferences,
 };

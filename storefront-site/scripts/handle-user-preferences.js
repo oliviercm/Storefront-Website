@@ -1,6 +1,10 @@
 import {
     getUser,
     setUser,
+    updateUserName,
+    updateUserEmail,
+    updateUserPassword,
+    updateUserEmailPreferences,
 } from "./util-user.js";
 
 (async () => {
@@ -39,6 +43,8 @@ function addUserPreferencesHandlers() {
 };
 
 function handleUserNameSubmit(event) {
+    event.preventDefault();
+
     const formData = new FormData(event.target);
     const invalid = {
         name: false,
@@ -63,16 +69,18 @@ function handleUserNameSubmit(event) {
             hasError = true;
         };
     };
-    if (hasError) {
-        event.preventDefault();
-    } else {
-        const user = getUser();
-        user.full_name = new FormData(event.target).get("name");
-        setUser(user);
+    if (!hasError) {
+        updateUserName(new FormData(event.target).get("name")).then(result => {
+            window.location.href = "/html/user-preferences.php";
+        }).catch(err => {
+            alert("Failed to update name. Please try again later.");
+        });
     };
 };
 
 function handleUserEmailSubmit(event) {
+    event.preventDefault();
+
     const formData = new FormData(event.target);
     const invalid = {
         email: false,
@@ -100,16 +108,24 @@ function handleUserEmailSubmit(event) {
             hasError = true;
         };
     };
-    if (hasError) {
-        event.preventDefault();
-    } else {
+    if (!hasError) {
         const user = getUser();
-        user.email = new FormData(event.target).get("email");
-        setUser(user);
+        const newEmail = new FormData(event.target).get("email");
+        if (user.email === newEmail) {
+            window.location.href = "/html/user-preferences.php";
+            return;
+        };
+        updateUserEmail(newEmail).then(result => {
+            window.location.href = "/html/user-preferences.php";
+        }).catch(err => {
+            alert("Failed to update email. Please try again later.");
+        });
     };
 };
 
 function handleUserPasswordSubmit(event) {
+    event.preventDefault();
+
     const formData = new FormData(event.target);
     const invalid = {
         current: false,
@@ -161,26 +177,36 @@ function handleUserPasswordSubmit(event) {
             hasError = true;
         };
     };
-    if (hasError) {
-        event.preventDefault();
-    } else {
-        // Send change password request
+    if (!hasError) {
+        const formData = new FormData(event.target);
+        updateUserPassword(formData.get("current-password"), formData.get("new-password"), formData.get("repeat-password")).then(result => {
+            window.location.href = "/html/user-preferences.php";
+        }).catch(err => {
+            alert("Failed to update password. Please try again later.");
+        });
     };
 };
 
 function handleUserSubscriptionsSubmit(event) {
-    const user = getUser();
-    user.email_subscriptions.newsletter = new FormData(event.target).get("newsletter") ? true : false;
-    user.email_subscriptions.promotions = new FormData(event.target).get("promotions") ? true : false;
-    user.email_subscriptions.reminders = new FormData(event.target).get("reminders") ? true : false;
-    setUser(user);
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const newsletter = formData.get("newsletter") ? true : false;
+    const promotions = formData.get("promotions") ? true : false;
+    const reminders = formData.get("reminders") ? true : false;
+    updateUserEmailPreferences(newsletter, promotions, reminders).then(result => {
+        window.location.href = "/html/user-preferences.php";
+    }).catch(err => {
+        alert("Failed to update email preferences. Please try again later.");
+    });
 };
 
 function handleUnsubscribeFromAll(event) {
-    const user = getUser();
-    user.email_subscriptions.newsletter = false;
-    user.email_subscriptions.promotions = false;
-    user.email_subscriptions.reminders = false;
-    setUser(user);
-    window.location.href = "./user-preferences.php";
+    event.preventDefault();
+    
+    updateUserEmailPreferences(false, false, false).then(result => {
+        window.location.href = "/html/user-preferences.php";
+    }).catch(err => {
+        alert("Failed to update email preferences. Please try again later.");
+    });
 };
