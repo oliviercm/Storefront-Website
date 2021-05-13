@@ -35,7 +35,7 @@ CREATE TABLE user_cart(
 CREATE TABLE user_order(
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
-    purchase JSON NOT NULL,
+    products JSON NOT NULL,
     price INT NOT NULL,
     shipping_address JSON NOT NULL,
     billing_address JSON NOT NULL,
