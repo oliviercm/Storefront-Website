@@ -63,6 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $billingAddress = $requestBody["billing_address"];
 
         $db->createUserOrder($authorizedUserId, $cart, $totalPrice, $shippingAddress, $billingAddress);
+    } catch(NegativeStockException $e) {
+        http_response_code(422);
+        echo("Not enough stock.");
+        return;
     } catch(\Throwable $e) {
         http_response_code(500);
         echo("Internal server error.");

@@ -1,6 +1,8 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/php/dotenv.php";
 
+class NegativeStockException extends Exception {}
+
 class MySQL {
     protected $conn;
 
@@ -207,8 +209,10 @@ class MySQL {
 
     public function createUserOrder(int $userId, $products, int $price, $shippingAddress, $billingAddress) {
         try {
+            $this->conn->beginTransaction();
+
             $order_stmt = $this->conn->prepare("INSERT INTO user_order (user_id, products, price, shipping_address, billing_address) VALUES (:userId, :products, :price, :shippingAddress, :billingAddress)");
-            $success = $order_stmt->execute([
+            $order_stmt->execute([
                 "userId" => $userId,
                 "products" => json_encode($products),
                 "price" => $price,
@@ -216,8 +220,24 @@ class MySQL {
                 "billingAddress" => json_encode($billingAddress)
             ]);
 
-            return $success;
+            $update_product_stmt = $this->conn->prepare("UPDATE product SET stock=stock-:stockDecrement WHERE id=:productId");
+            foreach($products as $product) {
+                $update_product_stmt->execute([
+                    "productId" => $product["id"],
+                    "stockDecrement" => $product["quantity"]
+                ]);
+            }
+
+            $find_negative_stock_stmt = $this->conn->prepare("SELECT 1 FROM product WHERE stock < 0");
+            $find_negative_stock_stmt->execute();
+
+            if ($find_negative_stock_stmt->fetchAll()) {
+                throw new NegativeStockException();
+            }
+
+            $this->conn->commit();
         } catch (\Throwable $e) {
+            $this->conn->rollBack();
             throw $e;
         }
     }
