@@ -53,6 +53,7 @@
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/footer.php";?>
     <script src="../scripts/render-orders.js" type="module"></script>
+    <script src="../scripts/render-cart-quantity.js" type="module"></script>
 </body>
 
 </html>
