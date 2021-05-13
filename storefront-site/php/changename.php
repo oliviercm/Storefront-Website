@@ -21,6 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
         $requestBody = json_decode(file_get_contents("php://input"));
         $newName = $requestBody->name;
 
+        if (empty($newName)) {
+            http_response_code(400);
+            echo("Missing name field.");
+            return;
+        }
+
         $db->updateUserName($authorizedUserId, $newName);
         
         http_response_code(200);
