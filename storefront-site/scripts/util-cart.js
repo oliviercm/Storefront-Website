@@ -13,6 +13,7 @@ function setCart(cart) {
     };
     sessionStorage.setItem("cart", JSON.stringify(cart));
     document.dispatchEvent(new Event("cartChange"));
+    updateCart();
 };
 
 function getCartItemById(id) {
@@ -70,10 +71,50 @@ async function calculateCartValues() {
     };
 };
 
+/**
+ * Refreshes the cart in session storage by making a database call.
+ */
+ async function refreshCart() {
+    const response = await fetch("/php/cart.php", {
+        method: "GET",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+        },
+    });
+    const cart = (await response.json()).cart;
+    sessionStorage.setItem("cart", cart || "[]");
+    document.dispatchEvent(new Event("cartChange"));
+};
+
+/**
+ * Updates the user's cart in the database by making a database call.
+ */
+ async function updateCart() {
+    const requestBody = {
+        cart: JSON.stringify(getCart()),
+    };
+    const requestBodyEncoded = [];
+    for (const property in requestBody) {
+        requestBodyEncoded.push(`${encodeURIComponent(property)}=${encodeURIComponent(requestBody[property])}`);
+    };
+    requestBodyEncoded.join("&");
+    const response = await fetch("/php/cart.php", {
+        method: "PUT",
+        headers: {
+            "X-CSRF-TOKEN": localStorage.getItem("csrf-token"),
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: requestBodyEncoded,
+    });
+    return response;
+};
+
 export {
     getCart,
     setCart,
     getCartItemById,
     addToCart,
     calculateCartValues,
+    refreshCart,
+    updateCart,
 };

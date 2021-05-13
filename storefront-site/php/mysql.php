@@ -173,8 +173,11 @@ class MySQL {
 
     public function setUserCart(int $userId, string $cart) {
         try {
-            $cart_stmt = $this->conn->prepare("UPDATE user_cart SET cart=? WHERE user_id=?");
-            $success = $cart_stmt->execute([$cart, $userId]);
+            $cart_stmt = $this->conn->prepare("INSERT INTO user_cart (user_id, cart) VALUES (:userId,:cart) ON DUPLICATE KEY UPDATE cart = :cart");
+            $success = $cart_stmt->execute([
+                "userId" => $userId,
+                "cart" => $cart
+            ]);
 
             return $success;
         } catch (\Throwable $e) {

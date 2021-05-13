@@ -6,6 +6,13 @@ function setUser(user) {
     sessionStorage.setItem("user", JSON.stringify(user));
 };
 
+function logoutUser() {
+    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("cart");
+    localStorage.removeItem("csrf-token");
+    window.location.replace("/index.php");
+};
+
 /**
  * Used for mapping the backend's user object schema to the frontend's user object schema.
  */
@@ -38,6 +45,7 @@ async function refreshUser() {
 export {
     getUser,
     setUser,
+    logoutUser,
     mapUserForSessionStorage,
     refreshUser,
 };
