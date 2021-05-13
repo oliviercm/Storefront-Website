@@ -1,7 +1,12 @@
 <?php
+namespace namechange;
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/authorize.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php/mysql.php";
 
+
+echo \Authorization\getRequestAuthorizedUserId();
+
+/*
 if ($_SERVER["REQUEST_METHOD"] === "PUT") {
     try {
         $db = new MySQL();
@@ -14,14 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
         return;
     }
 }
+*/
 
-public function editUserName(string $name){
-try{
-    $user_stmt = $this->conn->prepare("INSERT INTO `storefront`.`user` (`name`)");
-}
-catch (\Throwable $e) {
-        $this->conn->rollBack();
-        throw $e;
-}
-}
 ?>

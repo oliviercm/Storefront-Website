@@ -184,5 +184,17 @@ class MySQL {
             throw $e;
         }
     }
+/*
+    public function editUserName(string $name){
+        try{
+            getRequestAuthorizedUserId();
+    
+            $user_stmt = $this->conn->prepare("UPDATE INTO `storefront`.`user` (`name`)");
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+
+    }
+    */
 }
 ?>
