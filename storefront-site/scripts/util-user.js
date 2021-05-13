@@ -55,9 +55,9 @@ async function updateUserName(name) {
         body: JSON.stringify(requestBody),
     });
     if (200 <= response.status && response.status < 300) {
-        return true;
+        return response;
     } else {
-        throw Error(response.text);
+        throw response;
     };
 };
 
@@ -74,9 +74,9 @@ async function updateUserEmail(email) {
         body: JSON.stringify(requestBody),
     });
     if (200 <= response.status && response.status < 300) {
-        return true;
+        return response;
     } else {
-        throw Error(response.text);
+        throw response;
     };
 };
 
@@ -95,9 +95,9 @@ async function updateUserPassword(currentPassword, newPassword, repeatPassword) 
         body: JSON.stringify(requestBody),
     });
     if (200 <= response.status && response.status < 300) {
-        return true;
+        return response;
     } else {
-        throw Error(response.text);
+        throw response;
     };
 };
 
@@ -116,9 +116,9 @@ async function updateUserEmailPreferences(newsletter, promotions, reminders) {
         body: JSON.stringify(requestBody),
     });
     if (200 <= response.status && response.status < 300) {
-        return true;
+        return response;
     } else {
-        throw Error(response.text);
+        throw response;
     };
 };
 

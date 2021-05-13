@@ -42,7 +42,7 @@ function addUserPreferencesHandlers() {
     };
 };
 
-function handleUserNameSubmit(event) {
+async function handleUserNameSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -70,15 +70,23 @@ function handleUserNameSubmit(event) {
         };
     };
     if (!hasError) {
-        updateUserName(new FormData(event.target).get("name")).then(result => {
+        try {
+            await updateUserName(new FormData(event.target).get("name"));
             window.location.href = "/html/user-preferences.php";
-        }).catch(err => {
-            alert("Failed to update name. Please try again later.");
-        });
+        } catch(e) {
+            if (e.status === 400) {
+                document.getElementById("error-message-container-name").style.display = "block";
+                document.getElementById("error-message-name").textContent = await e.text();
+                document.getElementById("user-name-input").classList.add("invalid");
+            } else {
+                document.getElementById("error-message-container-general").style.display = "block";
+                document.getElementById("error-message-general").textContent = "Error while updating name. Please try again later.";
+            };
+        };
     };
 };
 
-function handleUserEmailSubmit(event) {
+async function handleUserEmailSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -115,15 +123,23 @@ function handleUserEmailSubmit(event) {
             window.location.href = "/html/user-preferences.php";
             return;
         };
-        updateUserEmail(newEmail).then(result => {
+        try {
+            await updateUserEmail(newEmail);
             window.location.href = "/html/user-preferences.php";
-        }).catch(err => {
-            alert("Failed to update email. Please try again later.");
-        });
+        } catch(e) {
+            if (e.status === 400) {
+                document.getElementById("error-message-container-email").style.display = "block";
+                document.getElementById("error-message-email").textContent = await e.text();
+                document.getElementById("user-email-input").classList.add("invalid");
+            } else {
+                document.getElementById("error-message-container-general").style.display = "block";
+                document.getElementById("error-message-general").textContent = "Error while updating email. Please try again later.";
+            };
+        };
     };
 };
 
-function handleUserPasswordSubmit(event) {
+async function handleUserPasswordSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -178,35 +194,56 @@ function handleUserPasswordSubmit(event) {
         };
     };
     if (!hasError) {
-        const formData = new FormData(event.target);
-        updateUserPassword(formData.get("current-password"), formData.get("new-password"), formData.get("repeat-password")).then(result => {
+        try {
+            const formData = new FormData(event.target);
+            await updateUserPassword(formData.get("current-password"), formData.get("new-password"), formData.get("repeat-password"));
             window.location.href = "/html/user-preferences.php";
-        }).catch(err => {
-            alert("Failed to update password. Please try again later.");
-        });
+        } catch(e) {
+            if (e.status === 400) {
+                document.getElementById("error-message-container-general").style.display = "block";
+                document.getElementById("error-message-general").textContent = await e.text();
+            } else {
+                document.getElementById("error-message-container-general").style.display = "block";
+                document.getElementById("error-message-general").textContent = "Error while updating password. Please try again later.";
+            };
+        };
     };
 };
 
-function handleUserSubscriptionsSubmit(event) {
+async function handleUserSubscriptionsSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const newsletter = formData.get("newsletter") ? true : false;
-    const promotions = formData.get("promotions") ? true : false;
-    const reminders = formData.get("reminders") ? true : false;
-    updateUserEmailPreferences(newsletter, promotions, reminders).then(result => {
+    try {
+        const formData = new FormData(event.target);
+        const newsletter = formData.get("newsletter") ? true : false;
+        const promotions = formData.get("promotions") ? true : false;
+        const reminders = formData.get("reminders") ? true : false;
+        await updateUserEmailPreferences(newsletter, promotions, reminders);
         window.location.href = "/html/user-preferences.php";
-    }).catch(err => {
-        alert("Failed to update email preferences. Please try again later.");
-    });
+    } catch(e) {
+        if (e.status === 400) {
+            document.getElementById("error-message-container-general").style.display = "block";
+            document.getElementById("error-message-general").textContent = await e.text();
+        } else {
+            document.getElementById("error-message-container-general").style.display = "block";
+            document.getElementById("error-message-general").textContent = "Error while updating email preferences. Please try again later.";
+        };
+    };
 };
 
-function handleUnsubscribeFromAll(event) {
+async function handleUnsubscribeFromAll(event) {
     event.preventDefault();
-    
-    updateUserEmailPreferences(false, false, false).then(result => {
+
+    try {
+        await updateUserEmailPreferences(false, false, false);
         window.location.href = "/html/user-preferences.php";
-    }).catch(err => {
-        alert("Failed to update email preferences. Please try again later.");
-    });
+    } catch(e) {
+        if (e.status === 400) {
+            document.getElementById("error-message-container-general").style.display = "block";
+            document.getElementById("error-message-general").textContent = await e.text();
+        } else {
+            document.getElementById("error-message-container-general").style.display = "block";
+            document.getElementById("error-message-general").textContent = "Error while updating email preferences. Please try again later.";
+        };
+    }
 };

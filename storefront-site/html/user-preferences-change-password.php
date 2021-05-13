@@ -51,6 +51,10 @@
                     <a href="../index.php">
                         <button type="submit" class="submit-button">Save Changes</button>
                     </a>
+                    <div id="error-message-container-general" style="display: none; color: #c41829;">
+                        <span class="material-icons" style="font-size: 16px;">error</span>
+                        <span id="error-message-general"></span>
+                    </div>
                 </div>
             </form>
         </div>
