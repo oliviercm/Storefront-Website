@@ -14,7 +14,6 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/header.php";?>
-    <?php include $_SERVER['DOCUMENT_ROOT']."/php/order.php";?>
     <main>
         <div class="grid-container">
             <div class="sidebar">
@@ -38,17 +37,10 @@
                 </nav>
             </div>  
         </div>
-        <table>
-         <?php
-         while($db = mysqli_fetch_Array($orders)){ ?> <tr> <?php
-             while ($cart = mysqli_fetch_field($orders)){                
-                 echo $product; 
-                echo $productquantity; 
-                echo $totalprice
-             }
-         }
-         ?>
-        </table>
+        <script>
+                var printOrders = document.getElementbyID("Orders");
+                document.write(printOrders);
+            </script>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/footer.php";?>
     <script src="../scripts/render-cart-quantity.js" type="module"></script>
