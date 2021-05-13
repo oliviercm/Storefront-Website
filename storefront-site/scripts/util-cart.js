@@ -60,7 +60,7 @@ async function calculateCartValues() {
         };
     };
     const SALES_TAX_RATE = 0.0725;
-    const cartTax = cartSubtotal * SALES_TAX_RATE;
+    const cartTax = Math.trunc(cartSubtotal * SALES_TAX_RATE);
     const cartTotal = cartSubtotal + cartTax;
 
     return {
@@ -74,7 +74,7 @@ async function calculateCartValues() {
 /**
  * Refreshes the cart in session storage by making a database call.
  */
- async function refreshCart() {
+async function refreshCart() {
     const response = await fetch("/php/cart.php", {
         method: "GET",
         headers: {
@@ -89,7 +89,7 @@ async function calculateCartValues() {
 /**
  * Updates the user's cart in the database by making a database call.
  */
- async function updateCart() {
+async function updateCart() {
     const requestBody = {
         cart: JSON.stringify(getCart()),
     };
