@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "PUT") {
         $db = new MySQL();
 
         $requestBody = json_decode(file_get_contents("php://input"));
-        $newName = $requestBody->name;
+        $newName = trim($requestBody->name);
 
         if (empty($newName)) {
             http_response_code(400);
