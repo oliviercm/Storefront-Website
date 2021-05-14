@@ -2,7 +2,7 @@
 
 This is a storefront website intended to run on a Apache/MySQL/PHP stack.
 
-No libraries are used.
+No libraries/frameworks are used.
 
 # Setup
 
